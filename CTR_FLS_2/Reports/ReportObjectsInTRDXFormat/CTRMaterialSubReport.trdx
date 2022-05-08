@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.5in" Name="CTRMaterialSubReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@MaterialLotList&quot;:&quot;[\&quot;CC22985A\&quot;, \&quot;EL23450A\&quot;]&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormMaterialFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@MaterialLotList">
+          <Value>
+            <String>= Parameters.MaterialLotList.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.823in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <TextBox Width="3.398in" Height="0.2in" Left="0.075in" Top="0.208in" Value="= Fields.MaterialSpec" Name="textBox1">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.398in" Height="0.2in" Left="3.723in" Top="0.208in" Value="= Fields.MillNbr" Name="textBox2">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.398in" Height="0.2in" Left="3.723in" Top="0.617in" Value="= Fields.Name" Name="textBox3">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.398in" Height="0.2in" Left="0.075in" Top="0.617in" Value="= Fields.Lot" Name="textBox4">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.1in" Height="0.823in" Left="3.55in" Top="0in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.2in" Height="0.179in" Left="0.075in" Top="0.031in" Value="Material Spec. #" Name="textBox5">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.179in" Left="3.723in" Top="0.027in" Value="Mill Heat No." Name="textBox6">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.179in" Left="0.075in" Top="0.448in" Value="Control Heat No." Name="textBox7">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.179in" Left="3.723in" Top="0.448in" Value="Material Supplier" Name="textBox8">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="7.496in" Height="0.085in" Left="0.004in" Top="0.367in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.514in" Height="0.174in" Left="0.993in" Top="0.031in" Value="= RowNumber()" Name="textBox9">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="MaterialLotList" Text="MaterialLotList">
+      <Value>
+        <String>["CC22985A", "EL23450A"]</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

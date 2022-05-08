@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="6.5in" Name="CTRNotesSubReport" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@LotNbr&quot;:&quot;6530538-000&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormNotesData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.2in" Name="detailSection1">
+      <Items>
+        <TextBox Width="6.4in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Notes" Name="textBox2">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="LotNbr" Text="LotNbr">
+      <Value>
+        <String>6530538-000</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

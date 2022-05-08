@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8dadda4a01545b598c7b8b0b9f33242" Name="Diagram1">
+        <EntityTypeShape EntityType="CTR_FLS_Model.AuditLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Cert" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.CTRUser" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Interchange" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Item" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.ItemInfo" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.JobLotParent" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.JobLot" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.LotInfo" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Material" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Note" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.OSP" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Sample" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Test" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.TestResult" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.TestSpec" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Vendor" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.ItemSpec" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.JobInfo" Width="1.5" PointX="13.375" PointY="14.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.MaterialTran" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.Order" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.PackItem" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.ShipLot" Width="1.5" PointX="15.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.CustomerOrderItem" Width="1.5" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.PackItemExtended" Width="1.5" PointX="9.375" PointY="16.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.DefaultType" Width="1.5" PointX="17.375" PointY="1.375" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.MasterSpec" Width="1.5" PointX="19.625" PointY="1" />
+        <AssociationConnector Association="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.NominalThread" Width="1.5" PointX="17.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.TestTemplate" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="CTR_FLS_Model.ProductFamily" Width="1.5" PointX="18.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

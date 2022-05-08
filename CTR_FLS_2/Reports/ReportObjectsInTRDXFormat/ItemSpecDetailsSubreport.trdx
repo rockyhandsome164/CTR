@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="6.5in" Name="ItemSpecDetailsSubreport" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@Item&quot;:&quot;A1A102&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;&#xA;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetItemSpecDetailSpecRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Item">
+          <Value>
+            <String>= Parameters.Item.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.2in" Name="detailSection1">
+      <Items>
+        <TextBox Width="1.2in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ItemType" Name="textBox4" />
+        <TextBox Width="3.7in" Height="0.2in" Left="1.2in" Top="0in" Value="= Fields.Spec" Name="textBox5" />
+        <TextBox Width="1.6in" Height="0.2in" Left="4.9in" Top="0in" Value="= Fields.Description" Name="textBox6" />
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.3in" Name="groupHeaderSection">
+          <Items>
+            <TextBox Width="1.2in" Height="0.2in" Left="0in" Top="0in" Value="Type" Name="textBox1">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="3.7in" Height="0.2in" Left="1.2in" Top="0in" Value="Specification" Name="textBox2">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.6in" Height="0.2in" Left="4.9in" Top="0in" Value="Description" Name="textBox3">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <Shape Width="6.5in" Height="0.1in" Left="0in" Top="0.2in" Name="shape1">
+              <ShapeType>
+                <LineShape Direction="EW" />
+              </ShapeType>
+            </Shape>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0in" Name="groupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="Item" Text="Item">
+      <Value>
+        <String>A1A108</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTR_FLS_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AuditLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cert">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CertNbr" Type="Int32" Nullable="false" />
+    <Property Name="LotNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CertDate" Type="DateTime" Precision="3" />
+    <Property Name="PartNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PartDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Revision" Type="Int32" Nullable="false" />
+    <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CTRUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Signature" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AccessLevel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Interchange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierItemNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InterchangePartNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Revision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialStatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="StockedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Revision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ReservableFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ABCCode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="AltItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BackflushFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BackflushLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Buyer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PlanningCell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastGenDate" Type="DateTime" Precision="3" />
+    <Property Name="CharFld3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Commodity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LowLevelCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DrawingNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamilyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LotTrack" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderMinimum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="OrderMultiple" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PlannerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhantomFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="UnitCost" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CharFld1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CharFld2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CharFld4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WeightUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ITAR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="HTSCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ECCN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ECCNLicense" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NAFTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USOnly" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DutyRate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NominalThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ItemInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TestBolt" Type="Boolean" Nullable="false" />
+    <Property Name="TextKey" Type="Int32" />
+    <Property Name="CertTextKey" Type="Int32" />
+    <Property Name="LogicalField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastOccurence" Type="Int32" />
+    <Property Name="USOnly" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobLotParent">
+    <Key>
+      <PropertyRef Name="JobLotId" />
+      <PropertyRef Name="ParentJobLotId" />
+    </Key>
+    <Property Name="JobLotId" Type="Int32" Nullable="false" />
+    <Property Name="ParentJobLotId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobLot">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ComponentLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Operation" Type="Int32" />
+    <Property Name="QtyPer" Type="Int32" />
+    <Property Name="Sequence" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LotInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="HeatLotExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeatLotBase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QtyReceived" Type="Int32" />
+    <Property Name="RefSuffix" Type="Int32" />
+    <Property Name="RefNbr" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="RefRelease" Type="Int32" />
+    <Property Name="Ref" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VendorLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VendorId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MillNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialId" Type="Int32" Nullable="false" />
+    <Property Name="ControlNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VendorNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MillNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaterialSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MfgDate" Type="DateTime" Precision="3" />
+    <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HeatNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VendorName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="QtyReceived" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="PONbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RecvdDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TextKey" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="NewParagraph" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LineNbr" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OSP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LotNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttachmentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RevNbr" Type="Int32" />
+    <Property Name="RevDate" Type="DateTime" Precision="3" />
+    <Property Name="Stage" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sample">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cert" Type="Int32" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Test" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Sample1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ResultCycle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Minimum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Maximum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PassFail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DateEntered" Type="DateTime" Precision="3" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Suffix" Type="Int32" />
+    <Property Name="Test1" Type="Int32" />
+    <Property Name="Template" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AuditKey" Type="Int32" />
+    <Property Name="BoltSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CyclesSamples" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateEntered" Type="DateTime" Precision="3" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MasterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaxInstall" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaxValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MinBrkway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MinValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PassFail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PerformanceSpec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrintMinMax" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Requirements" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ResultCycles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SeatLoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TestResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BoltSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentCycle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentSample" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DateEntered" Type="DateTime" Precision="3" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MasterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaxValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MinValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NominalThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassFail_A" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PerformanceSpec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CycleSamples" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MaxInstall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MinBrkway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassFail_B" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PrintMinMax" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ResultCycles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SeatLoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Requirements" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cert" Type="Int32" />
+    <Property Name="Suffix" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Template" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Test" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Vendor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CertDetail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TestSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Specification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SpecType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Job" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="Int32" Nullable="false" />
+    <Property Name="Cert" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StateProv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Sites" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CTR_FLS_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AuditLogs" EntityType="Self.AuditLog" />
+    <EntitySet Name="Certs" EntityType="Self.Cert" />
+    <EntitySet Name="CTRUsers" EntityType="Self.CTRUser" />
+    <EntitySet Name="Interchanges" EntityType="Self.Interchange" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="ItemInfoes" EntityType="Self.ItemInfo" />
+    <EntitySet Name="JobLotParents" EntityType="Self.JobLotParent" />
+    <EntitySet Name="JobLots" EntityType="Self.JobLot" />
+    <EntitySet Name="LotInfoes" EntityType="Self.LotInfo" />
+    <EntitySet Name="Materials" EntityType="Self.Material" />
+    <EntitySet Name="Notes" EntityType="Self.Note" />
+    <EntitySet Name="OSPs" EntityType="Self.OSP" />
+    <EntitySet Name="Samples" EntityType="Self.Sample" />
+    <EntitySet Name="Tests" EntityType="Self.Test" />
+    <EntitySet Name="TestResults" EntityType="Self.TestResult" />
+    <EntitySet Name="TestSpecs" EntityType="Self.TestSpec" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+    <EntitySet Name="ItemSpecs" EntityType="CTR_FLS_Model.ItemSpec" />
+    <EntitySet Name="JobInfoes" EntityType="CTR_FLS_Model.JobInfo" />
+    <EntitySet Name="MaterialTrans" EntityType="CTR_FLS_Model.MaterialTran" />
+    <EntitySet Name="Orders" EntityType="CTR_FLS_Model.Order" />
+    <EntitySet Name="PackItems" EntityType="CTR_FLS_Model.PackItem" />
+    <EntitySet Name="ShipLots" EntityType="CTR_FLS_Model.ShipLot" />
+    <EntitySet Name="CustomerOrderItems" EntityType="CTR_FLS_Model.CustomerOrderItem" />
+    <EntitySet Name="PackItemExtendeds" EntityType="CTR_FLS_Model.PackItemExtended" />
+    <EntitySet Name="DefaultTypes" EntityType="CTR_FLS_Model.DefaultType" />
+    <EntitySet Name="MasterSpecs" EntityType="CTR_FLS_Model.MasterSpec" />
+    <AssociationSet Name="FK__MasterSpe__Defau__4B7734FF" Association="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF">
+      <End Role="DefaultType" EntitySet="DefaultTypes" />
+      <End Role="MasterSpec" EntitySet="MasterSpecs" />
+    </AssociationSet>
+    <EntitySet Name="NominalThreads" EntityType="CTR_FLS_Model.NominalThread" />
+    <FunctionImport Name="GetCTRFormHeaderFooterFields" ReturnType="Collection(CTR_FLS_Model.GetCTRFormHeaderFooterFields_Result)">
+      <Parameter Name="LotNbr" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="ItemSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Spec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateEntered" Type="DateTime" Precision="3" />
+    <Property Name="AuditKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="JobInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="Int32" Nullable="false" />
+    <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Revision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Certificate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RequireCerts" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Completed" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassedInspection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CertTextKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReworkJob" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TextKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Occurrence" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PlanDate" Type="DateTime" Precision="3" />
+    <Property Name="NumericFormat" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NCMR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="JobInfoEnd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MaterialTran">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int64" Nullable="false" />
+    <Property Name="TransDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TransType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RefType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RefNbr" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="RefRelease" Type="Int32" />
+    <Property Name="RefLineSuffix" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Decimal" Precision="19" Scale="9" />
+    <Property Name="WorkCtr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AwaitingEOP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Backflush" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAccount1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAccount2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAccount3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAccount4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaterialAccount5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserInitials" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNbr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShipTo" Type="Int32" />
+    <Property Name="OrderType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NbrOfPackages" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="CloseDate" Type="DateTime" Precision="3" />
+    <Property Name="Contact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PackItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackingSlip" Type="Int32" Nullable="false" />
+    <Property Name="OrderNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderLine" Type="Int32" />
+    <Property Name="Release" Type="Int32" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QtyOrdered" Type="Int32" />
+    <Property Name="QtyPacked" Type="Int32" />
+    <Property Name="UnitOfMeasure" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ShipLot">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LineNbr" Type="Int32" />
+    <Property Name="Release" Type="Int32" />
+    <Property Name="CustPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PackingSlip" Type="Int32" />
+    <Property Name="QtyShipped" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CustomerOrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNbr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LineNbr" Type="Int32" />
+    <Property Name="Release" Type="Int32" />
+    <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrigSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShipTo" Type="Int32" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TextKey" Type="Int32" />
+    <Property Name="PackSlipPrintedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastPickList" Type="DateTime" Precision="3" />
+    <Property Name="Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ordered" Type="Int32" />
+    <Property Name="Packed" Type="Int32" />
+    <Property Name="Shipped" Type="Int32" />
+    <Property Name="LRStat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="Decimal" Precision="12" Scale="5" />
+    <Property Name="Warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastShip" Type="DateTime" Precision="3" />
+    <Property Name="ShipSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SupplUnits" Type="Int32" />
+    <Property Name="Commodity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ConsNbr" Type="Int32" />
+    <Property Name="BOLPrintedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PackItemExtended">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderLine" Type="Int32" />
+    <Property Name="OrderNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Release" Type="Int32" />
+    <Property Name="InvoicedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PackingSlip" Type="Int32" />
+    <Property Name="QtyInvoiced" Type="Int32" />
+    <Property Name="QtyPacked" Type="Int32" />
+    <Property Name="QtyShipped" Type="Int32" />
+    <Property Name="ShippedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DefaultType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DefaultType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MasterSpecs" Relationship="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF" FromRole="DefaultType" ToRole="MasterSpec" />
+  </EntityType>
+  <EntityType Name="MasterSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Specification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Master" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DateEntered" Type="DateTime" Precision="3" />
+    <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DefaultType" Relationship="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF" FromRole="MasterSpec" ToRole="DefaultType" />
+  </EntityType>
+  <Association Name="FK__MasterSpe__Defau__4B7734FF">
+    <End Type="CTR_FLS_Model.DefaultType" Role="DefaultType" Multiplicity="1" />
+    <End Type="CTR_FLS_Model.MasterSpec" Role="MasterSpec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DefaultType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MasterSpec">
+        <PropertyRef Name="DefaultTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="NominalThread">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DashNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NominalThreadSize" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="GetCTRFormHeaderFooterFields_Result">
+    <Property Type="String" Name="ComponentLot" Nullable="true" MaxLength="54" />
+    <Property Type="Int32" Name="CertNbr" Nullable="true" />
+    <Property Type="String" Name="SupplierItemNbr" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductFamily" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ApproverName" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="ApproverTitle" Nullable="false" MaxLength="14" />
+  </ComplexType>
+</Schema>

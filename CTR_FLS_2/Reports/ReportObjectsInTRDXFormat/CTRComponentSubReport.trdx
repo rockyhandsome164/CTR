@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.502in" Name="CTRComponentSubReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style Visible="True" />
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@LotNbr&quot;:&quot;7000555-000&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormComponentFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection CanShrink="True" KeepTogether="False" Height="2.146in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" Bottom="None" />
+      </Style>
+      <Items>
+        <TextBox Width="0.96in" Height="0.169in" Left="0.05in" Top="0.044in" Value="Component #" Name="textBox1">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.96in" Height="0.169in" Left="1.327in" Top="0.044in" Value="Lot Number" Name="textBox2">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.169in" Left="2.749in" Top="0.044in" Value="Supplier Part No." Name="textBox3">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.398in" Height="0.169in" Left="5.526in" Top="0.044in" Value="Supplier Item No." Name="textBox4">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <SubReport Width="7.502in" Height="0.369in" Left="0in" Top="0.788in" Name="TestSpecSubReport">
+          <ReportSource>
+            <UriReportSource Uri="CTRTestSpecSubReport.trdx">
+              <Parameters>
+                <Parameter Name="ItemNbr">
+                  <Value>
+                    <String>= Fields.SupplierItemNbr</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="LotNbr">
+                  <Value>
+                    <String>= Parameters.LotNbr.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+        <SubReport Width="7.502in" Height="0.333in" Left="0in" Top="0.444in" Name="MfgItemInfoSubReport">
+          <ReportSource>
+            <UriReportSource Uri="CTRMfgItemInfoSubReport.trdx">
+              <Parameters>
+                <Parameter Name="LotNbr">
+                  <Value>
+                    <String>= Fields.ComponentLot</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="SupplierItem">
+                  <Value>
+                    <String>= Fields.SupplierItemNbr</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ParentContainer">
+                  <Value>
+                    <String>COMPONENT</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+        <Shape Width="0.083in" Height="0.434in" Left="1.167in" Top="0.002in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.083in" Height="0.444in" Left="2.621in" Top="0in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.083in" Height="0.444in" Left="5.408in" Top="0in" Name="shape3">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <SubReport Width="7.502in" Height="0.51in" Left="0in" Top="1.163in" Name="MaterialSubReport">
+          <ReportSource>
+            <UriReportSource Uri="CTRMaterialSubReport.trdx">
+              <Parameters>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="MaterialLotList">
+                  <Value>
+                    <String>= Parameters.MaterialLotList.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+        <TextBox Width="2.596in" Height="0.174in" Left="2.749in" Top="0.212in" Value="= Fields.Description" Name="textBox5">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.379in" Height="0.174in" Left="5.537in" Top="0.212in" Value="= Fields.SupplierItemNbr" Name="textBox6">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.212in" Height="0.174in" Left="1.359in" Top="0.212in" Value="= Fields.ComponentLot" Name="textBox7">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.369in" Height="0.174in" Left="0.756in" Top="0.212in" Value="= Parameters.ComponentNbr.Value" Name="textBox8">
+          <Style TextAlign="Right">
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <SubReport Width="7.502in" Height="0.463in" Left="0in" Top="1.673in" KeepTogether="False" Name="TestResultsSubReport">
+          <ReportSource>
+            <UriReportSource Uri="CTRTestResultsSubReport.trdx">
+              <Parameters>
+                <Parameter Name="LotNbr">
+                  <Value>
+                    <String>= Substr(Parameters.LotNbr.Value, 0, IndexOfSubstr(Parameters.LotNbr.Value, "-"))</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="LotSuffix">
+                  <Value>
+                    <String>=Substr(Parameters.LotNbr.Value, IndexOfSubstr(Parameters.LotNbr.Value, "-") + 1, 3)</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+          <Bindings>
+            <Binding Path="Height" Expression="=IIF(Fields.TestCount = 0, &quot;0in.&quot;, &quot;0.463in&quot;)" />
+          </Bindings>
+        </SubReport>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ComponentNbr">
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="LotNbr">
+      <Value>
+        <String>7000555-000</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="MaterialLotList">
+      <Value>
+        <String>[]</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

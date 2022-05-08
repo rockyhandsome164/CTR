@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="5.542in" SkipBlankPages="False" Name="CTRContainer" Zoom="1.5" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@Item&quot;:&quot;DAT590&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetFinalReqtsMainRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Item">
+          <Value>
+            <String>= Parameters.Item.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.389in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <TextBox Width="0.539in" Height="0.16in" Left="2.079in" Top="0.033in" Value="Last Lot:" Name="textBox8">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.903in" Height="0.16in" Left="0.014in" Top="0.033in" Value="Product Family:" Name="textBox9">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.153in" Height="0.174in" Left="0.927in" Top="0.033in" Value="= Fields.ProductFamily" Name="textBox11">
+          <Style>
+            <Font Size="8pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.338in" Height="0.174in" Left="2.625in" Top="0.033in" Value="=Fields.Occurrence" Name="textBox7">
+          <Style>
+            <Font Size="8pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.834in" Height="0.143in" Left="0.023in" Top="0.21in" Value="Item:" Name="textBox10">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.869in" Height="0.143in" Left="0.927in" Top="0.21in" Value="= Fields.Item" Name="textBox5">
+          <Style>
+            <Font Size="8pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <SubReport Width="2.566in" Height="0.186in" Left="2.963in" Top="0.023in" Name="ItemSpecSubreport">
+          <ReportSource>
+            <UriReportSource Uri="FinalReqtsMainItemSpecSubreport.trdx">
+              <Parameters>
+                <Parameter Name="Item">
+                  <Value>
+                    <String>= Parameters.Item.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="Item" Text="Item">
+      <Value>
+        <String>CJH223</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Job">
+      <Value>
+        <String>7061021</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

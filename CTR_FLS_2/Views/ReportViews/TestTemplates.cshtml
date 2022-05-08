@@ -1,0 +1,415 @@
+﻿@model CTR_FLS_2.Models.TestTemplate
+
+@{
+    ViewBag.Title = "TestTemplates";
+    Layout = "~/Views/Shared/CTRFLS_Layout.cshtml";
+}
+
+@*<h2>TestTemplates</h2>*@
+<header>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/path/to/bootstrap/js/bootstrap.min.js"></script>
+</header>
+
+<script>
+    $(document).ready(function () {
+        // jQuery button click event to add a row.
+        $('#ReportCycles').on('click', function () {
+            var rowIdx = 0;
+            var increment = 0;
+            var CyclesSamplesVal = $('.CyclesSamples').val();
+            // alert(CyclesSamplesVal);
+            if (CyclesSamplesVal != '') {
+                $('.ChcBox').remove();
+                // Adding a row inside the tbody.
+                var container = $('#cblist');
+                for (var i = 0; i < CyclesSamplesVal; i++) {
+                    increment = ++rowIdx
+                    $('#cblist').append(`
+                        <input class="form-check-input chcBox" type="checkbox" id="inlineCheckbox${increment}" value="1" style="padding: 3px 3px 3px 2px;" />
+                        <label class="form-check-label" for="inlineCheckbox${increment}">Cycle ${increment}</label>`
+
+                    );
+                }
+
+            }
+            else {
+                alert("Please enter any number in Cycles Sample");
+                return false;
+            }
+        });
+
+        $('#btnSave').on('click', function () {
+            var totalCheckBox = $('.chcBox').length;
+            var test2 = "";
+            for (var i = 0; i <= totalCheckBox; i++) {
+
+                var checked = $('#inlineCheckbox' + i).is(':Checked');
+                if (checked) {
+                    var text = $('#ChcBox' + i).find('label').text();
+                    test2 = test2 + ',' + i;
+                }
+            }
+
+            var subString = test2.toString().substr(1);
+            $('.ResultCycles').val(subString);
+            return false;
+        });
+    });
+
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div style="padding-top:60px;">
+        <table style="width: 800px" id="showtable">
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.Label("Test:", htmlAttributes: new { @style = "padding-left:1px" })
+                </td>
+                <td style="width:300px">
+
+                    @Html.EditorFor(model => model.Test, new { htmlAttributes = new { @readonly = "true", @style = "padding-left:1px; width: 45px;" } })
+                    @Html.ValidationMessageFor(model => model.Test, "", new { @class = "text-danger" })
+                    @*@Html.ActionLink("Get Details", "GetTestTemplateDetails", "ReportViews", new { area = "" }, new { @class = "btn btn-primary" })*@
+                    <a id="getTemplateDetails"><i class="fas fa-binoculars" style="font-size:15px;height:20px;width:20px"></i></a>
+                </td>
+
+                <td style="width:400px">
+                    @Html.Label("Cycles/Sample:", htmlAttributes: new { @style = "padding-left:1px" })
+                    @Html.EditorFor(model => model.CyclesSamples, new { htmlAttributes = new { @style = "padding-left:1px; width: 45px;", @class = "CyclesSamples" } })
+                    @Html.ValidationMessageFor(model => model.CyclesSamples, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.Label("Type:", htmlAttributes: new { @style = "padding-left:1px" })
+                </td>
+                <td>
+
+                    @Html.DropDownListFor(model => model.Name, (IEnumerable<SelectListItem>)ViewBag.Name as SelectList)
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </td>
+
+                <td>
+                    @Html.Label("U/M:", htmlAttributes: new { @style = "padding-left:73px" })
+                    @Html.EditorFor(model => model.UnitOfMeasure, new { htmlAttributes = new { @style = "padding-left:1px; width: 45px;" } })
+                    <a id="btnUM" href="/ReportViews/GetTestTemplateDetails"><i class="fas fa-binoculars" style="font-size:15px;height:20px;width:20px" onclick="javascript: alert('Not Functional'); return false;"></i></a>
+                    @Html.ValidationMessageFor(model => model.UnitOfMeasure, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.LabelFor(model => model.Requirements, htmlAttributes: new { @style = "padding-left:1px" })
+                </td>
+                <td>
+
+                    @Html.EditorFor(model => model.Requirements, new { htmlAttributes = new { @style = "padding-left:1px; width: 235px;height:20px" } })
+                    @Html.ValidationMessageFor(model => model.Requirements, "", new { @class = "text-danger" })
+                </td>
+
+                <td style=" padding-left: 27px;">
+
+                    @Html.Label("Frequency:", htmlAttributes: new { @style = "padding-left: 1px" })
+                    @Html.EditorFor(model => model.Frequency, new { htmlAttributes = new { @style = "padding-left:1px; width: 45px;" } })
+                    @Html.ValidationMessageFor(model => model.Frequency, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.Label("ResultCycles:", htmlAttributes: new { @style = "padding-left:1px" })
+                </td>
+                <td>
+
+                    @Html.EditorFor(model => model.ResultCycles, new { htmlAttributes = new { @style = "padding-left:1px; width: 235px;height:20px;", @readonly = "true", @class = "ResultCycles" } })
+                    @Html.ValidationMessageFor(model => model.ResultCycles, "", new { @class = "text-danger " })
+                </td>
+
+                <td &nbsp;&nbsp;&nbsp;
+                    style=" padding-left: 34px;">
+                    <button id="ReportCycles" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Report Cycles
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.Label("Minimum:", htmlAttributes: new { @style = "padding-left:22px" })
+                </td>
+                <td>
+
+                    @Html.EditorFor(model => model.MinBrkway, new { htmlAttributes = new { @style = "padding-left:1px;width: 75px;", @class = "" } })
+                    @Html.ValidationMessageFor(model => model.MinBrkway, "", new { @class = "text-danger" })
+                    &nbsp;
+                    @Html.Label("Maximum:", htmlAttributes: new { @style = "padding-left:1px" })
+                    @Html.EditorFor(model => model.MaxInstall, new { htmlAttributes = new { @style = "padding-left:1px;width: 75px;" } })
+                    @Html.ValidationMessageFor(model => model.MaxInstall, "", new { @class = "text-danger" })
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.Label("Seat Load:", htmlAttributes: new { @style = "padding-left:1px" })
+
+                    @Html.EditorFor(model => model.SeatLoad, new { htmlAttributes = new { @style = "padding-left:1px;width: 30px;" } })
+                    @Html.ValidationMessageFor(model => model.SeatLoad, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;width:100px">
+                    @Html.Label("# of Decimals:", htmlAttributes: new { @style = "padding-left:1px;width: 150px;" })
+                </td>
+                <td>
+
+
+
+                    @Html.EditorFor(model => model.SigDecMax, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })
+                    @Html.ValidationMessageFor(model => model.SigDecMax, "", new { @class = "text-danger" })
+
+
+                    @*@Html.Label("# of Decimals:", htmlAttributes: new { @style = "padding-left:1px" })*@
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.EditorFor(model => model.SigDecMin, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })
+                    @Html.ValidationMessageFor(model => model.SigDecMin, "", new { @class = "text-danger" })
+
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2">
+                    <input type="checkbox" id="cpassfail" name="cpassfail" />
+                    @*Html.EditorFor(model => model.PassFail, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })*@
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.ValidationMessageFor(model => model.MinValueRequired, "", new { @class = "text-danger" })
+                    @Html.Label("Pass/Fail", htmlAttributes: new { @class = "control-label ", @style = "padding-left:1px" })
+
+                    <input type="checkbox" id="PrintMinMax" name="PrintMinMax" />
+                    @*Html.EditorFor(model => model.PrintMinMax, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })*@
+
+                    @Html.ValidationMessageFor(model => model.PrintMinMax, "", new { @class = "text-danger" })
+                    @Html.Label("Print Min/Max", htmlAttributes: new { @class = "control-label col-md-4", @style = "padding-left:1px;width: 150px;" })
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="MinValueReq" name="MinValueReq" />
+                    @*Html.EditorFor(model => model.MinValueRequired, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })*@
+                    @Html.ValidationMessageFor(model => model.MinValueRequired, "", new { @class = "text-danger" })
+                    @Html.Label("Min Value Required", htmlAttributes: new { @class = "control-label col-md-10", @style = "padding-left:1px;width: 150px" })
+
+
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="MaxValueReq" name="MaxValueReq" />
+                    @*Html.EditorFor(model => model.MaxValueRequired, new { htmlAttributes = new { @style = "padding-left:1px;width: 25px;" } })*@
+                    @Html.ValidationMessageFor(model => model.MaxValueRequired, "", new { @class = "text-danger" })
+                    @Html.Label("Max Value Required", htmlAttributes: new { @class = "control-label col-md-10", @style = "text-align:right;padding-left:1px;width: 150px" })
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="submit" value="New" name="submit" id="new" class="btn-primary">
+                    <input type="submit" value="Save" name="submit" id="save" class="btn-primary">
+                    <button id="btnDelete" type="button" class="btn-primary">Delete</button>
+                    @*<button type="button" class="btn-primary">Update</button>*@
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+
+
+            </tr>
+        </table>
+    </div>
+    @*using (Html.BeginForm("SelectResultCycle", "ReportViews", FormMethod.Post))
+        {
+            <form>*@
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="dialogModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" style="text-align:center;" id="dialogModalLabel">Reported Result Cycles</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="cblist">
+
+                    </div>
+
+
+                    <table>
+                        <tr id="trow">
+                        </tr>
+                    </table>
+
+
+
+                </div>
+
+                <div class="modal-body">
+
+                    @*<table>
+                            <tr>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox1">Cycle 1</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="2" style=" padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox2">Cycle 2</label>
+
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="3" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox3">Cycle 3</label>
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="4" style=" padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox4">Cycle 4</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="5" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox5">Cycle 5</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="6" style="padding: 3px 3px 3px 2px; " />
+                                    <label class="form-check-label" for="inlineCheckbox6">Cycle 6</label>
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="7" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox7">Cycle 7</label>
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="8" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox8">Cycle 8</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="9" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox9">Cycle 9</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox10">Cycle 10</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="6" style=" padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox11">Cycle 11</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="7" style=" padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox12">Cycle 12</label>
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="8" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox13">Cycle 13</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="9" style="padding: 3px 3px 3px 2px;" />
+                                    <label class="form-check-label" for="inlineCheckbox14">Cycle 14</label>
+
+                                </td>
+                                <td style="padding-left: 30px;">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10" style="padding: 3px 3px 3px 2px; " />
+                                    <label class="form-check-label" for="inlineCheckbox15">Cycle 15</label>
+
+                                </td>
+                            </tr>
+                        </table>*@
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnSave" type="submit" class="btn btn-primary">Save</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    @*</form>
+
+        }*@
+
+    @*@section scripts{
+            <script>
+                $("#showtable").on("click", "#getTemplateDetails", function () {
+                //var id = $(this).closest("tr").find("td").eq(0).html();
+                $.ajax({
+                    url: "@Url.Action("GetTestTemplateDetails", "ReportViews")",
+                    //data: { id: id },
+                    success: function (data) {
+                        $("#showmodal .modal-dialog").html(data);
+                        $("#showmodal").modal("show");
+                    }
+                });
+            });
+            </script>
+        }*@
+
+}
+<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#showtable").on("click", "#getTemplateDetails", function () {
+             $.ajax({
+                url: "@Url.Action("GetTestTemplateDetails", "ReportViews")",
+                //data: { id: id },
+                 success: function (data) {
+                     $("#showmodal .modal-dialog").html(data);
+                     $("#showmodal").modal("show");
+                }
+            });
+        });
+
+        $("#btnDelete").click(function () {
+            let testID = $('#Test').val();
+            var url = "/ReportViews/DeleteTestTemplate/" + testID;
+            $.ajax({
+                url: url,
+                type: 'Delete',
+            }).done(function () {
+                alert("Record has been deleted successfully.")
+            });
+        });
+    }).error(function () {
+        alert("Failed");
+    });
+</script>

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31409.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTR_FLS_2", "CTR_FLS_2.csproj", "{F0C9600C-3A7E-4831-9D3E-04285F0637C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTR_FLS_2.Tests", "..\CTR_FLS_2.Tests\CTR_FLS_2.Tests.csproj", "{FC74B813-8A94-4BBC-8FDB-2E03469CCF7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0C9600C-3A7E-4831-9D3E-04285F0637C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C9600C-3A7E-4831-9D3E-04285F0637C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C9600C-3A7E-4831-9D3E-04285F0637C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C9600C-3A7E-4831-9D3E-04285F0637C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC74B813-8A94-4BBC-8FDB-2E03469CCF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC74B813-8A94-4BBC-8FDB-2E03469CCF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC74B813-8A94-4BBC-8FDB-2E03469CCF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC74B813-8A94-4BBC-8FDB-2E03469CCF7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3201ED85-C5CD-47F8-9D2D-CEF4A98685DD}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://afs-dcw-v220.afsdc.alcoa.com:8080/tfs/afsris
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\CTR_FLS_2.Tests\\CTR_FLS_2.Tests.csproj
+		SccProjectName1 = ../CTR_FLS_2.Tests
+		SccLocalPath1 = ..\\CTR_FLS_2.Tests
+		SccProjectUniqueName2 = CTR_FLS_2.csproj
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

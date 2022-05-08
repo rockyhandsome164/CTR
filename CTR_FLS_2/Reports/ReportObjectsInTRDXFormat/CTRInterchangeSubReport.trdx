@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.5in" Name="CTRInterchangeSubReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@SupplierItemNbr&quot;:&quot;AAA895&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormInterchangeFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@SupplierItemNbr">
+          <Value>
+            <String>= Parameters.SupplierItemNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.385in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <TextBox Width="1.4in" Height="0.179in" Left="0in" Top="0in" Value="Interchange Part No." Name="textBox1">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.4in" Height="0.179in" Left="2.406in" Top="0in" Value="Interchange Part No." Name="textBox2">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.4in" Height="0.179in" Left="5.094in" Top="0in" Value="Interchange Part No." Name="textBox3">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.087in" Height="0.174in" Left="0.021in" Top="0.179in" Value="= Fields.PartNbrSlotOne" Name="textBox4">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.087in" Height="0.174in" Left="5.094in" Top="0.179in" Value="= Fields.PartNbrSlotThree" Name="textBox5">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.087in" Height="0.174in" Left="2.406in" Top="0.179in" Value="= Fields.PartNbrSlotTwo" Name="textBox6">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.094in" Height="0.375in" Left="2.354in" Top="0in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.094in" Height="0.375in" Left="5.052in" Top="0in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="SupplierItemNbr" Text="SupplierItemNbr">
+      <Value>
+        <String>AAA895</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

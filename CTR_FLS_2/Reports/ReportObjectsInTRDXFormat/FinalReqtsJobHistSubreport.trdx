@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="5.385in" Name="FinalJobHistSubreport" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style>
+    <Font Size="8pt" />
+  </Style>
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@Item&quot;:&quot;DAT595&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetFinalReqtsJobHistRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Item">
+          <Value>
+            <String>= Parameters.Item.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.4in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="CTRFLS" Width="7.499in" Height="0.4in" Left="0in" Top="0in" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.732in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Occurrence" Name="textBox8" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.618in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Revision" Name="textBox9" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.691in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Completed" Name="textBox10" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.618in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.JobInfoEnd" Name="textBox11" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.773in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.job" Name="textBox12" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.701in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.NCMR" Name="textBox13" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.366in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.comments" Name="textBox14" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.732in" />
+              <Column Width="0.618in" />
+              <Column Width="0.691in" />
+              <Column Width="0.618in" />
+              <Column Width="0.773in" />
+              <Column Width="0.701in" />
+              <Column Width="3.366in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="occurrence">
+              <ReportItem>
+                <TextBox Width="0.732in" Height="0.2in" Left="0in" Top="0in" Value="Occurrence" Name="textBox1" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="revision">
+              <ReportItem>
+                <TextBox Width="0.618in" Height="0.2in" Left="0in" Top="0in" Value="Revision" Name="textBox2" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="completed">
+              <ReportItem>
+                <TextBox Width="0.691in" Height="0.2in" Left="0in" Top="0in" Value="Completed" Name="textBox3" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="jobInfoEnd">
+              <ReportItem>
+                <TextBox Width="0.618in" Height="0.2in" Left="0in" Top="0in" Value="End" Name="textBox4" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" Italic="False" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="job">
+              <ReportItem>
+                <TextBox Width="0.773in" Height="0.2in" Left="0in" Top="0in" Value="Job Number" Name="textBox5" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="nCMR">
+              <ReportItem>
+                <TextBox Width="0.701in" Height="0.2in" Left="0in" Top="0in" Value="NCMR" Name="textBox6" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="comments">
+              <ReportItem>
+                <TextBox Width="3.366in" Height="0.2in" Left="0in" Top="0in" Value="Comments" Name="textBox7" StyleName="Normal.TableHeader">
+                  <Style>
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+          </Bindings>
+        </Table>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="Item">
+      <Value>
+        <String>DAT595</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

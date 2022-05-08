@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QADModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="abs_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="abs_shipfrom" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="abs_par_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_shipto" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_timezone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_shp_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_shp_time" Type="Int32" />
+    <Property Name="abs_arr_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_arr_time" Type="Int32" />
+    <Property Name="abs_crt_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_crt_time" Type="Int32" />
+    <Property Name="abs_apr_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_apr_time" Type="Int32" />
+    <Property Name="abs_apr_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_gwt" Type="Decimal" Precision="25" Scale="10" />
+    <Property Name="abs_nwt" Type="Decimal" Precision="25" Scale="10" />
+    <Property Name="abs_vol" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_wt_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_vol_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_dim_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_fr_class" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_est_fcst" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_act_fcst" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_fr_curr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_doc_data__1" Type="String" MaxLength="214" FixedLength="false" Unicode="true" />
+    <Property Name="abs_doc_data__2" Type="String" MaxLength="214" FixedLength="false" Unicode="true" />
+    <Property Name="abs_doc_data__3" Type="String" MaxLength="214" FixedLength="false" Unicode="true" />
+    <Property Name="abs_doc_data__4" Type="String" MaxLength="214" FixedLength="false" Unicode="true" />
+    <Property Name="abs_doc_data__5" Type="String" MaxLength="214" FixedLength="false" Unicode="true" />
+    <Property Name="abs_dataset" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_order" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_line" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_inv_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_item" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_lotser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_ship_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_cum_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_cust_ref" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_cmtindx" Type="Int32" />
+    <Property Name="abs__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec05" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec06" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec07" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec08" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec09" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec10" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs__qad01" Type="String" MaxLength="230" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qad10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_master_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_inv_mov" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_nr_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_format" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_cons_ship" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qadc01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_lang" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_canceled" Type="Boolean" />
+    <Property Name="abs__qadd01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_trl_cmtindx" Type="Int32" />
+    <Property Name="abs_eff_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_cancel_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_preship_nr_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_preship_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_fa_lot" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_asn_crt_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_asn_crt_time" Type="Int32" />
+    <Property Name="abs_export_batch" Type="Int32" />
+    <Property Name="abs_export_date" Type="DateTime" Precision="3" />
+    <Property Name="abs_export_time" Type="Int32" />
+    <Property Name="abs_charge_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_desc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_master_shipfrom" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_abs_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_consigned_return" Type="Boolean" />
+    <Property Name="abs_vend_lot" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_rcpt_qty" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="abs_routing" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_bom_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_production_line" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_complete" Type="Boolean" />
+    <Property Name="abs_scrap_qty" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="abs_combined_invoice" Type="Boolean" />
+    <Property Name="abs_act_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_bulk_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_tax_in" Type="Boolean" />
+    <Property Name="abs_tax_env" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_tax_usage" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_taxc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="abs_taxable" Type="Boolean" />
+    <Property Name="abs_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="abs_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="abs_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="abs_proj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qadc02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qadc03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs__qadi01" Type="Int32" />
+    <Property Name="abs__qadl01" Type="Boolean" />
+    <Property Name="abs__qadt01" Type="DateTime" Precision="3" />
+    <Property Name="abs_ship_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="oid_lgdd_det" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="abs_to_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="abs_to_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="prh_hist">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prh_part" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_line" Type="Int32" />
+    <Property Name="prh_rcvd" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pur_cost" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pur_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_rcp_date" Type="DateTime" Precision="3" />
+    <Property Name="prh_vend" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_receiver" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_lot" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ps_nbr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ps_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_bo_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qadc02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_xinvoice" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_xinv_dt" Type="DateTime" Precision="3" />
+    <Property Name="prh__qadd01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_xinv_cst" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qadc03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__qadc04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__qadc05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_rev" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_print" Type="Boolean" />
+    <Property Name="prh_lbr_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_mtl_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_bdn_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_sub_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_buyer" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__qad03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qad02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_shipto" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_cst_up" Type="Boolean" />
+    <Property Name="prh_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_um_conv" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_curr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ex_rate" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_curr_amt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pay_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_pum_conv" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ovh_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ship" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_qty_ord" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_per_date" Type="DateTime" Precision="3" />
+    <Property Name="prh_rcp_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_reason" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_request" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_approve" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__qad04" Type="Int32" />
+    <Property Name="prh_tax_at" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__dte01" Type="DateTime" Precision="3" />
+    <Property Name="prh__dte02" Type="DateTime" Precision="3" />
+    <Property Name="prh__dte03" Type="DateTime" Precision="3" />
+    <Property Name="prh__dte04" Type="DateTime" Precision="3" />
+    <Property Name="prh__dte05" Type="DateTime" Precision="3" />
+    <Property Name="prh__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec05" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh__log01" Type="Boolean" />
+    <Property Name="prh__log02" Type="Boolean" />
+    <Property Name="prh_rma_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_fix_rate" Type="Boolean" />
+    <Property Name="prh_po_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_cum_req" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_cum_rcvd" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_fsm_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_bank" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_curr_rlse_id__1" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="prh_curr_rlse_id__2" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="prh_curr_rlse_id__3" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="prh_element" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_fix_pr" Type="Boolean" />
+    <Property Name="prh_tax_usage" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_tax_env" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_crt_int" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_tax_in" Type="Boolean" />
+    <Property Name="prh_taxc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_vend_lot" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prh_ship_date" Type="DateTime" Precision="3" />
+    <Property Name="prh__qadi01" Type="Int32" />
+    <Property Name="prh_ex_rate2" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="prh_ex_ratetype" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_exru_seq" Type="Int32" />
+    <Property Name="prh__qadc06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh__qadc01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="prh_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_prh_hist" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="oid_lgd_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="pt_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pt_part" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_desc1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_desc2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt__qad13" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt__qad12" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_draw" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_prod_line" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_group" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_part_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_abc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_iss_pol" Type="Boolean" />
+    <Property Name="pt_phantom" Type="Boolean" />
+    <Property Name="pt_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__qad01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_abc_amt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_avg_int" Type="Int32" />
+    <Property Name="pt__qad05" Type="DateTime" Precision="3" />
+    <Property Name="pt_cyc_int" Type="Int32" />
+    <Property Name="pt__qad06" Type="DateTime" Precision="3" />
+    <Property Name="pt__qad07" Type="DateTime" Precision="3" />
+    <Property Name="pt__qad08" Type="DateTime" Precision="3" />
+    <Property Name="pt_ms" Type="Boolean" />
+    <Property Name="pt_plan_ord" Type="Boolean" />
+    <Property Name="pt_mrp" Type="Boolean" />
+    <Property Name="pt_ord_pol" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ord_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_ord_per" Type="Int32" />
+    <Property Name="pt_sfty_stk" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_sfty_time" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_rop" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_buyer" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_vend" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__qad09" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pm_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_mfg_lead" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_pur_lead" Type="Int32" />
+    <Property Name="pt_insp_rqd" Type="Boolean" />
+    <Property Name="pt_insp_lead" Type="Int32" />
+    <Property Name="pt_cum_lead" Type="Int32" />
+    <Property Name="pt_ord_min" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_ord_max" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_ord_mult" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_yield_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad16" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_setup" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_setup_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_run_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_run" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xmtl_tl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_tl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_tl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_tl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xmtl_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xtot_cur" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_cur_date" Type="DateTime" Precision="3" />
+    <Property Name="pt_xmtl_stdtl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_stdtl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_stdtl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_stdtl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xtot_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_std_date" Type="DateTime" Precision="3" />
+    <Property Name="pt_ll_code" Type="Int32" />
+    <Property Name="pt_abc_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad10" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad11" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_routing" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_lot_ser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_timefence" Type="Int32" />
+    <Property Name="pt_xmtl_stdll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_stdll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_stdll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_stdll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_rev" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_last_eco" Type="DateTime" Precision="3" />
+    <Property Name="pt__qad15" Type="Boolean" />
+    <Property Name="pt__qad17" Type="Boolean" />
+    <Property Name="pt_qc_lead" Type="Int32" />
+    <Property Name="pt_auto_lot" Type="Boolean" />
+    <Property Name="pt_assay" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_batch" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad14" Type="DateTime" Precision="3" />
+    <Property Name="pt_user3" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_net_wt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_net_wt_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_size" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_size_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_taxable" Type="Boolean" />
+    <Property Name="pt_taxc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rollup" Type="Boolean" />
+    <Property Name="pt_xovh_ll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_tl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_stdll" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_stdtl" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_shelflife" Type="Int32" />
+    <Property Name="pt_critical" Type="Boolean" />
+    <Property Name="pt_sngl_lot" Type="Boolean" />
+    <Property Name="pt_upc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_hazard" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_added" Type="DateTime" Precision="3" />
+    <Property Name="pt__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt__dte01" Type="DateTime" Precision="3" />
+    <Property Name="pt__dte02" Type="DateTime" Precision="3" />
+    <Property Name="pt__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__log01" Type="Boolean" />
+    <Property Name="pt__log02" Type="Boolean" />
+    <Property Name="pt__qad18" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad21" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad19" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad20" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_length" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_height" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_width" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_dim_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_pkg_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_network" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ll_drp" Type="Int32" />
+    <Property Name="pt_fr_class" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_spec_hdlg" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_bom_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_loc_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_transtype" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_cover" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_unit_isb" Type="Boolean" />
+    <Property Name="pt_article" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_po_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ship_wt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_ship_wt_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_formula" Type="Boolean" />
+    <Property Name="pt_dea" Type="Boolean" />
+    <Property Name="pt__qad26" Type="Boolean" />
+    <Property Name="pt__qad22" Type="Boolean" />
+    <Property Name="pt__qad25" Type="Int32" />
+    <Property Name="pt__qad24" Type="Int32" />
+    <Property Name="pt__qad23" Type="Int32" />
+    <Property Name="pt_comm_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_inst_call" Type="Boolean" />
+    <Property Name="pt_sys_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_tariff" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_origin" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_sttr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mfg_mtbf" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mfg_mttr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_fru" Type="Boolean" />
+    <Property Name="pt_ven_warr" Type="Boolean" />
+    <Property Name="pt_svc_group" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_svc_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_mtbf" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mttr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_isb" Type="Boolean" />
+    <Property Name="pt_pvm_days" Type="Int32" />
+    <Property Name="pt_warr_cd" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_mod_date" Type="DateTime" Precision="3" />
+    <Property Name="pt_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_obs_date" Type="DateTime" Precision="3" />
+    <Property Name="pt_pvm_bom" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_pvm_route" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_pvm_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rp_bom" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rp_route" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rp_vendor" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rctpo_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rollup_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_spec_grav" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_joint_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_mfg_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pur_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_drp_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pou_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_wks_avg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_wks_max" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_wks_min" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pick_logic" Type="Int32" />
+    <Property Name="pt_fiscal_class" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_dsgn_grp" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_drwg_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ecn_rev" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_drwg_size" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_model" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_repairable" Type="Boolean" />
+    <Property Name="pt_rctwo_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_lot_grp" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rctpo_active" Type="Boolean" />
+    <Property Name="pt_rctwo_active" Type="Boolean" />
+    <Property Name="pt_break_cat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_fsc_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_trace_active" Type="Boolean" />
+    <Property Name="pt_trace_detail" Type="Boolean" />
+    <Property Name="pt_pm_mrp" Type="Boolean" />
+    <Property Name="pt_ins_call_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ins_bom" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_ins_route" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_promo" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_meter_interval" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_meter_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_wh" Type="Boolean" />
+    <Property Name="pt_btb_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_cfg_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_app_owner" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_op_yield" Type="Boolean" />
+    <Property Name="pt_run_seq1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_run_seq2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_atp_enforcement" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="pt_atp_family" Type="Boolean" />
+    <Property Name="pt_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_pt_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_classification" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pt_memo_type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="pt_um_group" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="pt_opc_threshold" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="pt_pop_code" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="pt_whse_part_type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="pt_issue_method" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="pt_rep_type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="pt_same_days__1" Type="Int32" />
+    <Property Name="pt_same_days__2" Type="Int32" />
+    <Property Name="pt_same_days__3" Type="Int32" />
+    <Property Name="pt_same_days__4" Type="Int32" />
+    <Property Name="pt_same_days__5" Type="Int32" />
+    <Property Name="pt_same_days__6" Type="Int32" />
+    <Property Name="pt_same_days__7" Type="Int32" />
+    <Property Name="pt_same_days__8" Type="Int32" />
+    <Property Name="pt_same_days__9" Type="Int32" />
+    <Property Name="pt_same_days__10" Type="Int32" />
+    <Property Name="pt_invent_days__1" Type="Int32" />
+    <Property Name="pt_invent_days__2" Type="Int32" />
+    <Property Name="pt_invent_days__3" Type="Int32" />
+    <Property Name="pt_invent_days__4" Type="Int32" />
+    <Property Name="pt_invent_days__5" Type="Int32" />
+    <Property Name="pt_invent_days__6" Type="Int32" />
+    <Property Name="pt_invent_days__7" Type="Int32" />
+    <Property Name="pt_invent_days__8" Type="Int32" />
+    <Property Name="pt_invent_days__9" Type="Int32" />
+    <Property Name="pt_invent_days__10" Type="Int32" />
+    <Property Name="pt_crit_days" Type="Int32" />
+    <Property Name="pt_shelf_offset" Type="Int32" />
+    <Property Name="pt_single_trans" Type="Boolean" />
+    <Property Name="pt_print_id" Type="Boolean" />
+    <Property Name="pt_id_qty" Type="Int32" />
+    <Property Name="pt_insp_req" Type="Boolean" />
+    <Property Name="pt__qad27" Type="Int32" />
+    <Property Name="pt_sample_pct" Type="Int32" />
+    <Property Name="pt_insp_freq" Type="Int32" />
+    <Property Name="pt_destructive" Type="Boolean" />
+    <Property Name="pt_insp_days" Type="Int32" />
+    <Property Name="pt_barcode1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_barcode2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_insp_ref" Type="Boolean" />
+    <Property Name="pt_random_insp_pct" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="pt_atp_horizon" Type="Int32" />
+    <Property Name="pt_gcfg_type" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_replenishment_mthd" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_gtin_barcode1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_gtin_barcode2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_fiscal_type" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="pt_service_code" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="pt_freight_nature" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="pt_trade_class" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_serialized" Type="Int32" />
+    <Property Name="pt_sample_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="pt_sourcetype" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve1_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve2_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve3_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve4_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve5_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve6_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve7_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_nve8_code" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="pt_cest_code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="pt_enforce_cert" Type="Boolean" />
+    <Property Name="pt_relev_scale" Type="Boolean" />
+    <Property Name="pt_service_type" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="pt_xml_group" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_anp_code" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="pt_pk_ord" Type="Int32" />
+    <Property Name="pt_pk_ord_ascend" Type="Boolean" />
+    <Property Name="pt_pick_pol" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_all_pol" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_xfer_all_pol" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_picklist_ord_mult" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_picklist_ord_max" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_picklist_ord_min" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pt_comp_iss_pol" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_po_buyer" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="pt_plan_pos_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="pt_plan_neg_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="pt_ship_pos_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="pt_ship_neg_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="pt_schedule_type" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_smoothing_rule" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_avg_period" Type="Int32" />
+    <Property Name="pt_period_type" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="pt_anp_desc" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="pt_relevant_scale" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sod_det">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sod_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_due_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_per_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_req_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_line" Type="Int32" />
+    <Property Name="sod_part" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_qty_ord" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_all" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_pick" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_ship" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_inv" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_std_cost" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_bo_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_abnormal" Type="Boolean" />
+    <Property Name="sod_taxable" Type="Boolean" />
+    <Property Name="sod_serial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sod_desc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comment__1" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comment__2" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comment__3" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comment__4" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comment__5" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="sod_lot" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_um_conv" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fa_nbr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_disc_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_project" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_cmtindx" Type="Int32" />
+    <Property Name="sod_custpart" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qad01" Type="Int32" />
+    <Property Name="sod_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_xslspsn__1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_xslspsn__2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_xslspsn__3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_xcomm_pct__1" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_xcomm_pct__2" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_dsc_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_dsc_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_list_pr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_sob_rev" Type="DateTime" Precision="3" />
+    <Property Name="sod_sob_std" Type="Boolean" />
+    <Property Name="sod_qty_qote" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_consume" Type="Boolean" />
+    <Property Name="sod_expire" Type="DateTime" Precision="3" />
+    <Property Name="sod__qad02" Type="Boolean" />
+    <Property Name="sod_taxc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_inv_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_partial" Type="Boolean" />
+    <Property Name="sod_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_prodline" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_tax_in" Type="Boolean" />
+    <Property Name="sod_fst_list" Type="Boolean" />
+    <Property Name="sod_pst" Type="Boolean" />
+    <Property Name="sod__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__dte01" Type="DateTime" Precision="3" />
+    <Property Name="sod__dte02" Type="DateTime" Precision="3" />
+    <Property Name="sod__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod__log01" Type="Boolean" />
+    <Property Name="sod_calc_isb" Type="Boolean" />
+    <Property Name="sod_owner" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_rma_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_qty_item" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_per" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ref" Type="Int32" />
+    <Property Name="sod_for" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_tax_max" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_contr_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_pickdate" Type="DateTime" Precision="3" />
+    <Property Name="sod_confirm" Type="Boolean" />
+    <Property Name="sod_cum_qty__1" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty__2" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty__3" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty__4" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_date__1" Type="DateTime" Precision="3" />
+    <Property Name="sod_cum_date__2" Type="DateTime" Precision="3" />
+    <Property Name="sod_cum_date__3" Type="DateTime" Precision="3" />
+    <Property Name="sod_cum_date__4" Type="DateTime" Precision="3" />
+    <Property Name="sod_fr_rate" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_slspsn__1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_slspsn__2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_slspsn__3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_slspsn__4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sod_comm_pct__1" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct__2" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct__3" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct__4" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ord_mult" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="sod_pkg_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_curr_rlse_id__1" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="sod_curr_rlse_id__2" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="sod_curr_rlse_id__3" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="sod_sched" Type="Boolean" />
+    <Property Name="sod_sch_data" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_sch_mrp" Type="Boolean" />
+    <Property Name="sod_rlse_nbr" Type="Int32" />
+    <Property Name="sod_translt_days" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fsm_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_conrep" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_start_eff__1" Type="DateTime" Precision="3" />
+    <Property Name="sod_start_eff__2" Type="DateTime" Precision="3" />
+    <Property Name="sod_start_eff__3" Type="DateTime" Precision="3" />
+    <Property Name="sod_start_eff__4" Type="DateTime" Precision="3" />
+    <Property Name="sod_end_eff__1" Type="DateTime" Precision="3" />
+    <Property Name="sod_end_eff__2" Type="DateTime" Precision="3" />
+    <Property Name="sod_end_eff__3" Type="DateTime" Precision="3" />
+    <Property Name="sod_end_eff__4" Type="DateTime" Precision="3" />
+    <Property Name="sod_dock" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_pr_list" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_translt_hrs" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_out_po" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_raw_days" Type="Int32" />
+    <Property Name="sod_fab_days" Type="Int32" />
+    <Property Name="sod_tax_usage" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_rbkt_days" Type="Int32" />
+    <Property Name="sod_rbkt_weeks" Type="Int32" />
+    <Property Name="sod_rbkt_mths" Type="Int32" />
+    <Property Name="sod_sched_chgd" Type="Boolean" />
+    <Property Name="sod_pastdue" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fix_pr" Type="Boolean" />
+    <Property Name="sod_fr_wt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fr_wt_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fr_class" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fr_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sa_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_isb_loc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_ship" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_auto_ins" Type="Boolean" />
+    <Property Name="sod_drp_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_tax_env" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_upd_isb" Type="Boolean" />
+    <Property Name="sod_isb_ref" Type="Int32" />
+    <Property Name="sod_enduser" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_crt_int" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fr_list" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_pricing_dt" Type="DateTime" Precision="3" />
+    <Property Name="sod_act_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_covered_amt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ca_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fixed_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_inv_cost" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_car_load" Type="Boolean" />
+    <Property Name="sod_ca_line" Type="Int32" />
+    <Property Name="sod_qty_cons" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_ret" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_pend" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_to_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_to_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_to_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_ln_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_qty_exch" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sad_line" Type="Int32" />
+    <Property Name="sod_warr_start" Type="DateTime" Precision="3" />
+    <Property Name="sod_mod_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_mod_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_sv_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_alt_pkg" Type="Boolean" />
+    <Property Name="sod_for_serial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sod_override_lmt" Type="Boolean" />
+    <Property Name="sod__qadc01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qadc02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qadc03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qadc04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qadt01" Type="DateTime" Precision="3" />
+    <Property Name="sod__qadt02" Type="DateTime" Precision="3" />
+    <Property Name="sod__qadt03" Type="DateTime" Precision="3" />
+    <Property Name="sod__qadt04" Type="DateTime" Precision="3" />
+    <Property Name="sod__qadd01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadd02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadd03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadl01" Type="Boolean" />
+    <Property Name="sod__qadl02" Type="Boolean" />
+    <Property Name="sod__qadl03" Type="Boolean" />
+    <Property Name="sod__qadi01" Type="Int32" />
+    <Property Name="sod__qadi02" Type="Int32" />
+    <Property Name="sod_bonus" Type="Boolean" />
+    <Property Name="sod_btb_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_btb_po" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_btb_pod_line" Type="Int32" />
+    <Property Name="sod_btb_vend" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_exp_del" Type="DateTime" Precision="3" />
+    <Property Name="sod_dir_all" Type="Boolean" />
+    <Property Name="sod_cfg_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_div" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_pl_priority" Type="Int32" />
+    <Property Name="sod_prig1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_prig2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod__qadd04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_dsc_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_dsc_project" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_qty_ivcd" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_time__1" Type="Int32" />
+    <Property Name="sod_cum_time__2" Type="Int32" />
+    <Property Name="sod_cum_time__3" Type="Int32" />
+    <Property Name="sod_cum_time__4" Type="Int32" />
+    <Property Name="sod_ship_part" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_promise_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_charge_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_order_category" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_modelyr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_custref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_consignment" Type="Boolean" />
+    <Property Name="sod_max_aging_days" Type="Int32" />
+    <Property Name="sod_consign_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_intrans_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sod_auto_replenish" Type="Boolean" />
+    <Property Name="sod_manual_fr_list" Type="Boolean" />
+    <Property Name="sod_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_sod_det" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_trade_sale_po" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="sod_trade_sale_po_line" Type="Int32" />
+    <Property Name="sod_trade_sale_vend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fsrev_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fsrev_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_fsrev_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sod_req_time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="sod_shipvia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="sod_compl_stat" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="sod_compl_date" Type="DateTime" Precision="3" />
+    <Property Name="sod_hold_stat" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="sod_unadjust_cum_qty" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="sod_config_id" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="sod_bg_offer_id" Type="String" MaxLength="72" FixedLength="false" Unicode="true" />
+    <Property Name="sod_po_line" Type="Int32" />
+    <Property Name="sod_plan_pos_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="sod_plan_neg_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="sod_ship_pos_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="sod_ship_neg_var" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="sod_origin_line" Type="Int32" />
+    <Property Name="sod_bulk_supply" Type="Boolean" />
+    <Property Name="sod_supply_mthd" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="sod_supply_rop" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="sod_contract_start" Type="DateTime" Precision="3" />
+    <Property Name="sod_contract_end" Type="DateTime" Precision="3" />
+    <Property Name="sod_due_time" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tr_hist">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tr_part" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_per_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_loc_begin" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_begin_qoh" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_req" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_short" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_um" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_last_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_nbr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_so_job" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ship_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_addr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_rmks" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xdr_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xcr_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_mtl_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_lbr_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_bdn_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_price" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_trnbr" Type="Int64" />
+    <Property Name="tr_gl_amt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_xdr_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xcr_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_lot" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_sub_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_gl_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_qty_loc" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_serial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tr_effdate" Type="DateTime" Precision="3" />
+    <Property Name="tr_prod_line" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xslspsn1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xslspsn2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xcr_proj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_xdr_proj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_line" Type="Int32" />
+    <Property Name="tr_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_curr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ex_rate" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_rev" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_time" Type="Int32" />
+    <Property Name="tr_ovh_std" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_status" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_grade" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_expire" Type="DateTime" Precision="3" />
+    <Property Name="tr_assay" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_xgl_ref" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr11" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr12" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr13" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr14" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__chr15" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr__dte01" Type="DateTime" Precision="3" />
+    <Property Name="tr__dte02" Type="DateTime" Precision="3" />
+    <Property Name="tr__dte03" Type="DateTime" Precision="3" />
+    <Property Name="tr__dte04" Type="DateTime" Precision="3" />
+    <Property Name="tr__dte05" Type="DateTime" Precision="3" />
+    <Property Name="tr__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec05" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr__log01" Type="Boolean" />
+    <Property Name="tr__log02" Type="Boolean" />
+    <Property Name="tr_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_msg" Type="Int32" />
+    <Property Name="tr_program" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ord_rev" Type="Int32" />
+    <Property Name="tr_ref_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_rsn_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_vend_lot" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_vend_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_daycode" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_for" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_slspsn__1" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="tr_slspsn__2" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="tr_slspsn__3" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="tr_slspsn__4" Type="String" MaxLength="82" FixedLength="false" Unicode="true" />
+    <Property Name="tr_fsm_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_upd_isb" Type="Boolean" />
+    <Property Name="tr_auto_install" Type="Boolean" />
+    <Property Name="tr_ca_int_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_covered_amt" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_fcg_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_batch" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_fsc_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_sa_nbr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_sv_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_eng_area" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_sys_prod" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_svc_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ca_opn_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_cprice" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_eng_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_wod_op" Type="Int32" />
+    <Property Name="tr_enduser" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ship_inv_mov" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ship_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_ship_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tr_ex_rate2" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_ex_ratetype" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_exru_seq" Type="Int32" />
+    <Property Name="tr_promise_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_fldchg_cmtindx" Type="Int32" />
+    <Property Name="tr_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_tr_hist" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_cn_adj" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_doc_id" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="oid_lgd_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_due_date" Type="DateTime" Precision="3" />
+    <Property Name="tr_wo_line" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="tr_wo_qty_comp" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_qty_ord" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_yield_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_intercompanyref" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="tr_pc_sequence" Type="Int64" />
+    <Property Name="tr_gl_amt_sc" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="wo_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="wo_nbr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lot" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_so_job" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_ord_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_rel_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_due_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_per_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_part" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_qty_ord" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_comp" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_rjct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_status" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_vend" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_rmks" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_qty_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rjct_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bo_chg" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_yield_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rev" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo__qad01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lot_prev" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_schd_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_cmtindx" Type="Int32" />
+    <Property Name="wo_project" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lead_time" Type="Int32" />
+    <Property Name="wo_wip_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mtl_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_ovh_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_serial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wo_routing" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_bom_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_queue_eff" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_draw" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lbr_up" Type="Boolean" />
+    <Property Name="wo_bdn_up" Type="Boolean" />
+    <Property Name="wo_gl_lbr" Type="Boolean" />
+    <Property Name="wo_gl_bdn" Type="Boolean" />
+    <Property Name="wo__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__dte01" Type="DateTime" Precision="3" />
+    <Property Name="wo__dte02" Type="DateTime" Precision="3" />
+    <Property Name="wo__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo__log01" Type="Boolean" />
+    <Property Name="wo_line" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_var" Type="Boolean" />
+    <Property Name="wo_mtl_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mvar_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_mvar_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_mvrr_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_mvrr_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svar_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svar_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svrr_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svrr_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_flr_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_flr_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo__dec03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rjct_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mthd_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rval_tot" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_acct_close" Type="Boolean" />
+    <Property Name="wo_close_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_close_eff" Type="DateTime" Precision="3" />
+    <Property Name="wo_fsm_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_xvar_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_xvar_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_myld_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_joint_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_prod_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo__dec04" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_base_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_unit_cost" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mix_var" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_totx" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_totx" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mtl_totx" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_totx" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_ovh_totx" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rctstat_active" Type="Boolean" />
+    <Property Name="wo_batch" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_assay" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_grade" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_expire" Type="DateTime" Precision="3" />
+    <Property Name="wo_rctstat" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lot_next" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_lot_rcpt" Type="Boolean" />
+    <Property Name="wo_ca_int_type" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_iss_site" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_itm_line" Type="Int32" />
+    <Property Name="wo_date_posted" Type="DateTime" Precision="3" />
+    <Property Name="wo__qadc01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__qadc02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__qadc03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo__qadt01" Type="DateTime" Precision="3" />
+    <Property Name="wo__qadt02" Type="DateTime" Precision="3" />
+    <Property Name="wo__qade01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qade02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qade03" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qadi01" Type="Int32" />
+    <Property Name="wo__qadi02" Type="Int32" />
+    <Property Name="wo__qadl01" Type="Boolean" />
+    <Property Name="wo__qadl02" Type="Boolean" />
+    <Property Name="wo_eng_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_flr_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_mvar_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_mvrr_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svar_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_svrr_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_xvar_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wo_ref" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_record_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_stat_close_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_stat_close_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_app_owner" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="wo_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_wo_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_doc_id" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="wo_rate" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_selected_for_print" Type="Boolean" />
+    <Property Name="wo_seq" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="wo_shift" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="wo_order_sheet_printed" Type="Boolean" />
+    <Property Name="wo_setup_time" Type="Int32" />
+    <Property Name="wo_due_date_anchor" Type="Boolean" />
+    <Property Name="wo_tool" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="wo_run_size" Type="Int32" />
+    <Property Name="wo_nbr_lines" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="wo_duration_buffer" Type="Int32" />
+    <Property Name="wo_qty_booked" Type="Int32" />
+    <Property Name="wo_need_date" Type="DateTime" Precision="3" />
+    <Property Name="wo_priority" Type="Int32" />
+    <Property Name="wo_restriction" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="wo_allow_splits" Type="Boolean" />
+    <Property Name="wo_qty_exp_complete" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_exp_scrap" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mfg_type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="wo_cum_lot_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wo_need_time" Type="Int32" />
+    <Property Name="wo_mps_auto_reschedule" Type="Boolean" />
+    <Property Name="oid_wo_demand" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="wo_demand_dataset" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="QADEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="abs_mstr" EntityType="Self.abs_mstr" />
+    <EntitySet Name="prh_hist" EntityType="Self.prh_hist" />
+    <EntitySet Name="pt_mstr" EntityType="Self.pt_mstr" />
+    <EntitySet Name="sod_det" EntityType="Self.sod_det" />
+    <EntitySet Name="tr_hist" EntityType="Self.tr_hist" />
+    <EntitySet Name="wo_mstr" EntityType="Self.wo_mstr" />
+    <EntitySet Name="vd_mstr" EntityType="QADModel.vd_mstr" />
+  </EntityContainer>
+  <EntityType Name="vd_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="vd_addr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_cr_terms" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_buyer" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_disc_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_shipvia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_partial" Type="Boolean" />
+    <Property Name="vd_rmks" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_ap_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_ap_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pur_acct" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pur_cc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pur_cntct" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_ap_cntct" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_1099" Type="Boolean" />
+    <Property Name="vd_sort" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_last_ck" Type="DateTime" Precision="3" />
+    <Property Name="vd_balance" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_hold" Type="Boolean" />
+    <Property Name="vd_tax_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_taxable" Type="Boolean" />
+    <Property Name="vd_user1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_user2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_curr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_lang" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_vt_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr05" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr06" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr07" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr08" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr09" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__chr10" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__dte01" Type="DateTime" Precision="3" />
+    <Property Name="vd__dte02" Type="DateTime" Precision="3" />
+    <Property Name="vd__dec01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd__dec02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd__log01" Type="Boolean" />
+    <Property Name="vd_fob" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_debtor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_bank" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_ckfrm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pay_spec" Type="Boolean" />
+    <Property Name="vd_remit" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_mod_date" Type="DateTime" Precision="3" />
+    <Property Name="vd_userid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_prepay" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_conrep_logic" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pr_list" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_fr_list" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_fr_terms" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_fr_min_wt" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="vd_drft_bal" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_lc_bal" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_pr_list2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_fix_pr" Type="Boolean" />
+    <Property Name="vd_tid_notice" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_promo" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_misc_cr" Type="Boolean" />
+    <Property Name="vd_rcv_so_price" Type="Boolean" />
+    <Property Name="vd_rcv_held_so" Type="Boolean" />
+    <Property Name="vd_tp_use_pct" Type="Boolean" />
+    <Property Name="vd_tp_pct" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_ex_ratetype" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_db" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd__qadc01" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__qadc02" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__qadc03" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__qadc04" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd__qadd01" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd__qadd02" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd__qadl01" Type="Boolean" />
+    <Property Name="vd__qadl02" Type="Boolean" />
+    <Property Name="vd__qadt01" Type="DateTime" Precision="3" />
+    <Property Name="vd__qadt02" Type="DateTime" Precision="3" />
+    <Property Name="vd__qadi01" Type="Int32" />
+    <Property Name="vd__qadi02" Type="Int32" />
+    <Property Name="vd__qadl03" Type="Boolean" />
+    <Property Name="vd__qadl04" Type="Boolean" />
+    <Property Name="vd_ap_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pur_sub" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vd_tot_terms_code" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_domain" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="oid_vd_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_carrier_id" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="vd_kanban_supplier" Type="Boolean" />
+    <Property Name="oid_btr_mstr" Type="Decimal" Precision="38" Scale="10" />
+    <Property Name="vd_active" Type="Boolean" />
+    <Property Name="vd_data_complete" Type="Boolean" />
+    <Property Name="vd_tax_zone" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="vd_taxc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="vd_tax_usage" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="vd_gst_id" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="vd_pst_id" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="vd_misc1_id" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="vd_misc2_id" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="vd_misc3_id" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="vd_tax_in" Type="Boolean" />
+    <Property Name="vd_tax_in_city" Type="Boolean" />
+    <Property Name="vd_daybookset" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="vd_site" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="vd_def_rlse_status" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="vd_supply_cust" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_supply_shipto" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_control_supply" Type="Boolean" />
+    <Property Name="vd_bulk_supply" Type="Boolean" />
+    <Property Name="vd_subcnt_loc" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="vd_auto_horizon" Type="Int32" />
+    <Property Name="Pro2SrcPDB" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="pro2created" Type="DateTime" Precision="3" />
+    <Property Name="pro2modified" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

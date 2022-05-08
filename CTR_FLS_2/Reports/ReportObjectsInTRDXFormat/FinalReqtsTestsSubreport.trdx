@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="7.5in" Name="FinalReqtsTestsSubreportParm" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@Item&quot;:&quot;DAT595&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetFinalReqtsTestsRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Item">
+          <Value>
+            <String>= Parameters.Item.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.7in" Name="detailSection1">
+      <Style>
+        <Font Size="7pt" />
+      </Style>
+      <Items>
+        <Table DataSourceName="CTRFLS" Width="7.501in" Height="0.587in" Left="0in" Top="0in" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.61in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Template" Name="textBox7" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.41in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Name" Name="textBox8" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.3in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Frequency" Name="textBox9" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.393in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.CyclesSamples" Name="textBox10" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" Bold="False" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.33in" Height="0.2in" Left="0in" Top="0in" Value="= Format(&quot;{0:#,##0.0}&quot;, CDbl(Fields.SeatLoad))" Format="" Name="textBox11" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" Bold="False" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.834in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Requirements" Name="textBox12" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.38in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.PerformanceSpec" Name="textBox14" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.529in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.TestBolt" Name="textBox16" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.715in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.BoltSpec" Name="textBox18" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="7pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.61in" />
+              <Column Width="1.41in" />
+              <Column Width="0.3in" />
+              <Column Width="0.393in" />
+              <Column Width="0.33in" />
+              <Column Width="1.834in" />
+              <Column Width="1.38in" />
+              <Column Width="0.529in" />
+              <Column Width="0.715in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <Style>
+            <Font Size="7pt" />
+          </Style>
+          <RowGroups>
+            <TableGroup Name="detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="template">
+              <ReportItem>
+                <TextBox Width="0.61in" Height="0.387in" Left="0in" Top="0in" Value="Template" Name="textBox1" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="test">
+              <ReportItem>
+                <TextBox Width="1.41in" Height="0.387in" Left="0in" Top="0in" Value="Name" Name="textBox2" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="frequency">
+              <ReportItem>
+                <TextBox Width="0.3in" Height="0.387in" Left="0in" Top="0in" Value="Freq" Name="textBox3" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="cyclesSamples">
+              <ReportItem>
+                <TextBox Width="0.393in" Height="0.387in" Left="0in" Top="0in" Value="Cycles" Name="textBox4" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="seatLoad">
+              <ReportItem>
+                <TextBox Width="0.33in" Height="0.387in" Left="0in" Top="0in" Value="Seat Load" Name="textBox5" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="requirements">
+              <ReportItem>
+                <TextBox Width="1.834in" Height="0.387in" Left="0in" Top="0in" Value="Requirements" Name="textBox6" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group">
+              <ReportItem>
+                <TextBox Width="1.38in" Height="0.387in" Left="0in" Top="0in" Value="Performance Spec" Name="textBox13" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group1">
+              <ReportItem>
+                <TextBox Width="0.529in" Height="0.387in" Left="0in" Top="0in" Value="Test Bolt" Name="textBox15" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group2">
+              <ReportItem>
+                <TextBox Width="0.715in" Height="0.387in" Left="0in" Top="0in" Value="Bolt Spec" Name="textBox17" StyleName="Normal.TableHeader">
+                  <Style VerticalAlign="Bottom">
+                    <Font Size="7pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+          </Bindings>
+        </Table>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="True" ColumnCount="1" ColumnSpacing="0in" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="Item">
+      <Value>
+        <String>DAT595</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

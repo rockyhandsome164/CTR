@@ -1,0 +1,85 @@
+﻿<h1 style="margin:50px 0 0 100px">Item Specification Report</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="ItemStart" class="control-label" style="font-size:16px; padding-right:5px">Items Starting With:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="ItemStart" style="max-width:225px" name="ItemStart" onkeypress='CheckKeyPress(event)'>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="ItemEnd" class="control-label" style="font-size:16px; padding-right:5px">Items Ending With:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="ItemEnd" style="max-width:225px" name="ItemEnd" onkeypress='CheckKeyPress(event)'>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="Status" class="control-label" style="font-size:16px; padding-right:5px">Status:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="Status" style="max-width:225px" name="Status" onkeypress='CheckKeyPress(event)' value="CI">
+                </div>
+                <div style="display:inline-flex">
+                    <a id="ViewButton" class="btn btn-success" style="margin-left:40px" href="#" role="button">View</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="ReportBody">
+    </div>
+</div>
+
+<script>
+    // Trigger the vew button if user presses enter key
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ViewButton").click();
+        }
+    }
+
+    ViewButton.addEventListener('click', function () {
+        var ValidationOK = false;
+
+        if (!ItemStart.value) {
+            alert("Please enter a valid starting Item number");
+        }
+        if (!ItemEnd.value) {
+            alert("Please enter a valid ending Item number");
+        }
+        var Statuses = Status.value;
+        if (!Statuses) {
+            alert("Please enter a valid status");
+        }
+
+        ValidationOK = true;
+
+        if (ValidationOK) {
+
+            // Format the list of statuses into a valid parameter for the report
+            var ListOfStatuses = '[';
+            for (var i = 0; i < Statuses.length; i++) {
+                ListOfStatuses += '"' + Statuses.charAt(i) + '", ';
+            }
+            // strip off the last ', '
+            ListOfStatuses = ListOfStatuses.substring(0, ListOfStatuses.length - 2) + "]";
+
+            // Now call to load the report. Pass in the file name as an parm to the controller
+            // and just set it to the temp data var
+            var RptURI = encodeURI("getitemspec?StartItem=" + ItemStart.value +
+                "&EndItem=" + ItemEnd.value +
+                "&StatusList=" + ListOfStatuses);
+
+            $("#ReportBody").load(RptURI);
+        }
+    });
+
+
+</script>

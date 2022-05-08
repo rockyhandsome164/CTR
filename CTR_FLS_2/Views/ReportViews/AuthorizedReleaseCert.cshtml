@@ -1,0 +1,96 @@
+﻿<h1 style="margin:50px 0 0 100px">Authorized Release Certificate</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="ShipNbr" class="control-label" style="font-size:16px; padding-right:5px">Shipper Number:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="ShipNbr" style="max-width:225px" name="ShipNbr" onkeypress='CheckKeyPress(event)'>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="FormType" class="control-label" style="font-size:16px; padding-right:5px">Form Type:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <select class="form-control" id="FormType" name="FormType" style="width:auto">
+                        <option value="T">TSO</option>
+                        <option value="P">PMA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="AuthName" class="control-label" style="font-size:16px; padding-right:5px">Authorize Name:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="AuthName" style=" max-width:500px" name="AuthName" onkeypress='CheckKeyPress(event)'>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="AuthDate" class="control-label" style="font-size:16px; padding-right:5px">Authorize Date:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="AuthDate" style="max-width:225px" name="AuthDate" onkeypress='CheckKeyPress(event)'>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="Remarks1" class="control-label" style="font-size:16px; padding-right:5px">Remarks:</label>
+                </div>
+                <div style="display:inline-flex; width:70%">
+                    <div style="width:80%">
+                        <input type="text" class="form-control" id="Remarks1" name="Remarks1" maxlength="200" style="max-width:700px" onkeypress='CheckKeyPress(event)'>
+                        <input type="text" class="form-control" id="Remarks2" name="Remarks2" maxlength="200" style="max-width:700px" onkeypress='CheckKeyPress(event)'>
+                        <input type="text" class="form-control" id="Remarks3" name="Remarks3" maxlength="200" style="max-width:700px" onkeypress='CheckKeyPress(event)'>
+                        <a id="ViewButton" class="btn btn-success" style="margin-top:10px" href="#" role="button">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ReportBody">
+    </div>
+</div>
+
+<script>
+    // Trigger the vew button if user presses enter key
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ViewButton").click();
+        }
+    }
+
+    ViewButton.addEventListener('click', function () {
+        var ValidationOK = false;
+
+        var Shipper = ShipNbr.value;
+        if (!Shipper) {
+            alert("Please enter a valid Shipper Number");
+        }
+
+        ValidationOK = true;
+
+        if (ValidationOK) {
+
+            // Now call to load the report. Pass in the file name as an parm to the controller
+            // and just set it to the temp data var
+            var RptURI = encodeURI("getauthcert?ShipNbr=" + ShipNbr.value +
+                "&FormType=" + FormType.value +
+                "&AuthName=" + AuthName.value +
+                "&AuthDate=" + AuthDate.value +
+                "&Rem1=" + encodeURIComponent(Remarks1.value) +
+                "&Rem2=" + encodeURIComponent(Remarks2.value) +
+                "&Rem3=" + encodeURIComponent(Remarks3.value));
+
+            $("#ReportBody").load(RptURI);
+        }
+    });
+
+
+</script>
+

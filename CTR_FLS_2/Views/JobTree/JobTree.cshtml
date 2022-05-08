@@ -1,0 +1,231 @@
+﻿
+<h1 style="margin:50px 0 0 100px">Job Tree View</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex">
+                    <label for="CompNbr" class="control-label col-sm-12" style="font-size:16px">Lot Number</label>
+                    <input type="text" class="form-control" id="CompNbr" style="text-transform: uppercase; max-width:225px" name="CompNbr" onkeypress='CheckKeyPress(event)'>
+                </div>
+                <div style="display:inline-flex">
+                    <a id="ShowTree" class="btn btn-success" style="margin-left:40px" href="#" role="button">ShowTree</a>
+                    <button id="ShowMaterials" type="button" class="btn btn-primary" style="margin-left:25px" disabled>
+                        Show Materials
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div style="display:inline-flex; margin-top:25px">
+            <label style="font-size:24px;">Tree For: </label>
+            <label id="ComponentNbrTree" style="font-size:24px; font-weight:700; margin-left:10px"></label>
+            <label id="ComponentNbrItemCode" class="control-label" style="font-size:24px; font-weight:700; margin-left:10px"></label>
+            <label id="ComponentNbrItemDesc" class="control-label" style="font-size:24px; font-weight:700; margin-left:10px"></label>
+            <label id="ComponentNbrCert" class="control-label" style="font-size:24px; font-weight:700; margin-left:15px"></label>
+            <label id="ComponentNbrOSP" class="control-label" style="font-size:24px; font-weight:700; margin-left:100px"></label>
+        </div>
+        <div>
+            <table id="JobTreeTable" class="table table-bordered" style="width:70%">
+                <thead>
+                    <tr style="font-size:16px">
+                        <th style="width:10%">Item</th>
+                        <th style="width:25%">Component Lot</th>
+                        <th style="width:25%">Material Lot</th>
+                        <th style="width:10%">Level</th>
+                        <th style="width:30%">OSP Attachment Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="MaterialListModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl  modal-dialog-centered" style="width:80%"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div style="font-size:24pt; font-weight:700">
+                    <label class="modal-title" id="MaterialListLabel">Material List For: </label>
+                    <label id="MaterialListComponentNbr"></label>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table id="MaterialListTable" class="table table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th style="width:8%">Lot</th>
+                                <th style="width:8%">Item</th>
+                                <th style="width:15%">Description</th>
+                                <th style="width:15%">Spec</th>
+                                <th style="width:8%">Vendor Mill Number</th>
+                                <th style="width:6%">Vendor Number</th>
+                                <th style="width:7%">Vendor Name</th>
+                                <th style="width:9%">PO</th>
+                                <th style="width:9%">PO Line / Release</th>
+                                <th style="width:5%">Stage</th>
+                                <th style="width:9%">Date Received</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="MaterialsModalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    ShowMaterials.addEventListener('click', function () {
+        $("#MaterialListModal").modal("show");
+    });
+
+    MaterialsModalClose.addEventListener('click', function () {
+        $("#MaterialListModal").modal("hide");
+    });
+
+    ShowTree.addEventListener('click', function () {
+        var ComponentToView = CompNbr.value;
+        if (ComponentToView) {
+            var request = new XMLHttpRequest();
+            request.open('POST', '/JobTree/Show?ComponentNbr=' + ComponentToView, true);
+
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    // Grab the JSON response and parse
+                    var resp = JSON.parse(this.response);
+
+                    var TreeTable = document.getElementById("JobTreeTable");
+
+                    // Clear out the table from any past queries
+                    for (var i = TreeTable.rows.length - 1; i > 0; i--) {
+                        TreeTable.deleteRow(i);
+                    }
+                    for (var i = MaterialListTable.rows.length - 1; i > 0; i--) {
+                        MaterialListTable.deleteRow(i);
+                    }
+
+                    ComponentNbrTree.textContent = "";
+                    ComponentNbrItemCode.textContent = "";
+                    ComponentNbrItemDesc.textContent = "";
+                    ComponentNbrCert.textContent = "";
+                    MaterialListComponentNbr.textContent = "";
+
+                    if (resp.Message == "OK") {
+
+                        // Set the component nbr in the UI
+                        ComponentNbrTree.textContent = ComponentToView;
+                        MaterialListComponentNbr.textContent = ComponentToView;
+
+                        var TopLevelItemCode = resp.TopLevelComponentItemCode;
+                        ComponentNbrItemCode.textContent = TopLevelItemCode;
+
+                        var TopLevelItemDesc = resp.TopLevelComponentItemDesc;
+                        ComponentNbrItemDesc.textContent = TopLevelItemDesc;
+
+                        var CertNbr = resp.CertNumber;
+                        if (CertNbr) {
+                            // Need to extract the date data from the response
+                            var CertDate = new Date(resp.CertDate.match(/\d+/)[0] * 1);
+                            ComponentNbrCert.textContent = "Cert# " + CertNbr + "   Cert Date: " + CertDate.toLocaleDateString();
+                        }
+
+                        // Set any OSP info 
+                        ComponentNbrOSP.textContent = resp.TopLevelComponentOSP;
+
+                        // iterate over the tree items
+                        Object.entries(resp.JobTreeItems).forEach((entry) => {
+                            var [key, value] = entry;
+
+                            var NewRow = TreeTable.insertRow();
+
+                            var NewCell;
+                            NewCell = NewRow.insertCell()
+                            NewCell.innerHTML = value.ItemCode;
+                            NewCell = NewRow.insertCell()
+                            NewCell.innerHTML = value.ComponentLot;
+                            NewCell = NewRow.insertCell()
+                            NewCell.innerHTML = value.MaterialLot;
+                            NewCell = NewRow.insertCell()
+                            NewCell.style = "text-align: center";
+                            NewCell.innerHTML = value.ItemLevel;
+                            NewCell = NewRow.insertCell()
+                            NewCell.innerHTML = value.OSPAttachType;
+                        });
+
+                        // iterate over the material items
+                        Object.entries(resp.MaterialList).forEach((entry) => {
+                            var [key, value] = entry;
+
+                            var NewRow = MaterialListTable.insertRow();
+
+                            var NewCell;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.ControlNbr;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.ItemCode;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.Description;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.MaterialSpec;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.MillNbr;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.VendorNbr;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.VendorName;
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.Ponbr;
+                            NewCell = NewRow.insertCell();
+                            NewCell.style = "text-align: center";
+                            NewCell.innerHTML = (value.POLineNbr) ? value.POLineNbr : "" + " / " + (value.POReleaseNbr) ? value.POReleaseNbr : "";
+                            NewCell = NewRow.insertCell();
+                            NewCell.innerHTML = value.Stage;
+                            NewCell = NewRow.insertCell();
+
+                            NewCell.style = "text-align: center";
+                            var DateRec = new Date(value.RecvdDate.match(/\d+/)[0] * 1);
+                            NewCell.innerHTML = DateRec.toLocaleDateString();
+                        });
+
+                        // Enable the button to show materials once we have the tree built
+                        document.getElementById("ShowMaterials").removeAttribute("disabled");
+                    }
+                    else {
+                        alert(resp.Message);
+                    }
+
+                } else {
+                    // We reached our target server, but it returned an error
+                    alert("An error occurred trying to display the tree");
+                }
+            };
+
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert("An error occurred trying to display the tree");
+            };
+
+            request.send();
+        }
+        else {
+            alert("Please enter a valid component number");
+        }
+    }, false);
+
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ShowTree").click();
+        }
+    }
+</script>

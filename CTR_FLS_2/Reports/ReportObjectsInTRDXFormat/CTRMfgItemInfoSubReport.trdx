@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.5in" Name="CTRMfgItemInfoSubReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@LotNbr&quot;:&quot;6526603-000&quot;,&quot;@SupplierItem&quot;:&quot;CVY850&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormManufacturingFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@SupplierItem">
+          <Value>
+            <String>= Parameters.SupplierItem.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.385in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <TextBox Width="1.5in" Height="0.169in" Left="0in" Top="0.021in" Value="Manufactured Quantity" Name="textBox1">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.1in" Height="0.169in" Left="1.7in" Top="0.021in" Value="Mfg. Date" Name="textBox2">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.5in" Height="0.169in" Left="2.9in" Top="0.021in" Value="Generic Description" Name="textBox3">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.5in" Height="0.169in" Left="5.75in" Top="0.021in" Value="Thread Size" Name="textBox4">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.069in" Height="0.385in" Left="1.5in" Top="0in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.069in" Height="0.385in" Left="2.8in" Top="0in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.069in" Height="0.385in" Left="5.65in" Top="0in" Name="shape3">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.181in" Height="0.174in" Left="0.1in" Top="0.18in" Value="= Fields.MfgQty" Name="textBox5">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+          <Bindings>
+            <Binding Path="Visible" Expression="= IIF(Parameters.ParentContainer.Value = &quot;COMPONENT&quot;, false, true)" />
+          </Bindings>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.174in" Left="1.688in" Top="0.198in" Value="= Format('{0:MM/dd/yy}', Fields.MfgDate)" Name="textBox6">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.448in" Height="0.174in" Left="5.802in" Top="0.198in" Value="= Fields.ThreadSize" Name="textBox7">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.66in" Height="0.174in" Left="2.928in" Top="0.198in" Value="= Fields.Description" Name="textBox8">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="LotNbr" Text="LotNbr">
+      <Value>
+        <String>6526603-000</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="SupplierItem" Text="SupplierItem">
+      <Value>
+        <String>CVY850</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ParentContainer">
+      <Value>
+        <String>CONTAINER</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

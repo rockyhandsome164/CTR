@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="7.5in" Name="QAJobCardContainer" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection PageBreak="After" KeepTogether="False" Height="1.3in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <SubReport Width="7.5in" Height="1.2in" Left="0in" Top="0in" Name="FinalInspectionSubreport">
+          <ReportSource>
+            <UriReportSource Uri="FinalReqtsContainer.trdx">
+              <Parameters>
+                <Parameter Name="Job">
+                  <Value>
+                    <String>= Parameters.LotNbr.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="Item">
+                  <Value>
+                    <String>= Parameters.ItemNbr.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="0in" Name="groupHeaderSection">
+          <Style Visible="False" />
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="Before" Height="1.1in" Name="groupFooterSection">
+          <Items>
+            <SubReport Width="7.4in" Height="1in" Left="0in" Top="0in" KeepTogether="False" Name="QAJobCardSubreport">
+              <ReportSource>
+                <UriReportSource Uri="QAJobCard.trdx">
+                  <Parameters>
+                    <Parameter Name="LotNbr">
+                      <Value>
+                        <String>= Parameters.LotNbr.Value</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="ConnectionString">
+                      <Value>
+                        <String>= Parameters.ConnectionString.Value</String>
+                      </Value>
+                    </Parameter>
+                  </Parameters>
+                </UriReportSource>
+              </ReportSource>
+            </SubReport>
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="LotNbr">
+      <Value>
+        <String>7061020-000</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;
+&#xD;
+</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ItemNbr">
+      <Value>
+        <String>DAT595</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.504in" SkipBlankPages="False" Name="CTRTestSpecSubReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@ItemNbr&quot;:&quot;C1F062&quot;,&quot;@LotNbr&quot;:&quot;7001383-000&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormTestSpecFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@ItemNbr">
+          <Value>
+            <String>= Parameters.ItemNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False">
+        <BorderStyle Default="Solid" />
+      </Style>
+    </PageHeaderSection>
+    <DetailSection Height="0.389in" Name="detailSection1">
+      <Style>
+        <BorderStyle Default="Solid" />
+      </Style>
+      <Items>
+        <Shape Width="0.063in" Height="0.385in" Left="3.565in" Top="0in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="3.471in" Height="0.195in" Left="0.052in" Top="0.01in" Value="= Item(0, Split(&quot;|&quot;, Fields.SpecInfoSlotOne))" Name="textBox1">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.554in" Height="0.195in" Left="3.708in" Top="0.01in" Value="= Item(0, Split(&quot;|&quot;, Fields.SpecInfoSlotTwo))" Name="textBox2">
+          <Style>
+            <Font Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.483in" Height="0.184in" Left="0.052in" Top="0.184in" Value="= Item(1, Split(&quot;|&quot;, Fields.SpecInfoSlotOne))" Name="textBox3">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.567in" Height="0.184in" Left="3.708in" Top="0.184in" Value="= Item(1, Split(&quot;|&quot;, Fields.SpecInfoSlotTwo))" Name="textBox4">
+          <Style>
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="ItemNbr" Text="ItemNbr">
+      <Value>
+        <String>DGT944</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="LotNbr">
+      <Value>
+        <String>M044976-000</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

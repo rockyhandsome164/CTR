@@ -1,0 +1,119 @@
+﻿
+<h1 style="margin:50px 0 0 100px">Generate Cert Package</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="LotNbr" class="control-label" style="font-size:16px; padding-right:5px">Lot Number:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="LotNbr" style="text-transform: uppercase; max-width:225px" name="LotNbr" onkeypress='LotKeyPress(event)'>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="ShipperNbr" class="control-label" style="font-size:16px; padding-right:5px">Shipper Number:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="ShipperNbr" style="text-transform: uppercase; max-width:225px" name="ShipperNbr" maxlength="8" >
+                </div>
+                <div style="display:inline-flex">
+                    <a id="GenerateCertPkg" class="btn btn-success" style="margin-left:40px" href="#" role="button">Generate Cert Package</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="font-size:12px; font-style:italic; color:darkred;">
+            <label  id="WaitMsg"></label>
+        </div>
+    </div>
+</div>
+
+@*<embed id="PDFViewer" src="" frameborder="0" style="margin-left:100px; width:80%; height:600px">*@
+
+
+<script>
+
+    GenerateCertPkg.addEventListener('click', function () {
+        var ValidationOK = false;
+
+        var LotToView = LotNbr.value;
+        if (!LotToView) {
+            alert("Please enter a valid Lot Number");
+            return;
+        }
+
+        var Shipper = ShipperNbr.value;
+        if (!Shipper) {
+            alert("Please enter a valid Shipper Number");
+            return;
+        }
+
+        ValidationOK = true;
+
+        if (ValidationOK) {
+            var RegenPkg = true;
+
+            // Show the wait message
+            var WaitMsg = document.getElementById("WaitMsg");
+            WaitMsg.innerHTML = "Cert package will be created and stored in OnBase as well as made available to print. This may take a minute to complete.";
+            
+
+            // First check for an existing package
+            // If exsits, prompt the user to use the existing or regenerate the package
+
+            setTimeout(() => {
+                var request = new XMLHttpRequest();
+
+                if (RegenPkg) {
+                    request.open('GET', '/onbase/savepkgtoonbase?LotNbr=' + LotNbr.value + '&ShipperNbr=' + ShipperNbr.value, false);
+
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            // Grab the JSON response and parse
+                            var resp = JSON.parse(this.response);
+                            alert(resp.Data.UserMessage);
+                            PkgCreateSuccess = true;
+                            WaitMsg.innerHTML = "";
+
+                            Object.entries(resp.Data.DocMetaData).forEach((entry) => {
+                                var [key, value] = entry;
+                                window.open(value.DocumentName, '_blank', 'fullscreen=yes');
+
+                                // *** Couldn't get the streaming of the PDF to load. Call was coming back with a 500
+                                // *** due to maxJsonlength error even though it is set. Check the onbaseservices class
+                                // *** for more info
+                                //var viewer = document.getElementById("PDFViewer");
+                                //                            viewer.src = 'data:application/pdf;base64,' + value.DocumentImg;
+                                //viewer.src = value.DocumentImg;
+                                return;
+                            });
+
+                        }
+                    };
+
+                    request.onerror = function () {
+                        // There was a connection error of some sort
+                        alert("An error occurred trying to save the Cert Package to OnBase");
+                        WaitMsg.innerHTML = "";
+                    };
+
+                    request.send();
+
+                }
+            }, 500);
+
+        }
+    });
+
+    function LotKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("GenerateCertPkg").click();
+        }
+    }
+
+</script>
+

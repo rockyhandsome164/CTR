@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CRFLS" Width="10.421in" Name="QAJobCardLockingTorque" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@LotNbr&quot;:&quot;7061020-000&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;&#xA;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetQAJobCardLockingTorqueData" SelectCommandType="StoredProcedure" Name="CRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="8.073in" Name="detailSection1">
+      <Items>
+        <TextBox Width="10.025in" Height="0.158in" Left="0.2in" Top="0.006in" Value="Locking Torque Test" Name="textBox1">
+          <Style TextAlign="Center">
+            <Font Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.8in" Height="0.158in" Left="0.2in" Top="0.181in" Value="Sequence #________________" Name="textBox2">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="4.3in" Top="0.181in" Value="Submitted by ____________________" Name="textBox3">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="7.607in" Top="0.181in" Value="Serial No. ____________________" Name="textBox4">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.558in" Height="0.158in" Left="0.2in" Top="0.35in" Value="Part No." Name="textBox5">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.866in" Height="0.158in" Left="0.2in" Top="0.521in" Value="Specification(s)" Name="textBox6">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.648in" Height="0.158in" Left="0.2in" Top="0.69in" Value="Test Bolt(s)" Name="textBox7">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.799in" Height="0.158in" Left="0.201in" Top="0.85in" Value="Sample Size________________" Name="textBox8">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.783in" Height="0.158in" Left="2.306in" Top="0.85in" Value="Bolt PO___________________" Name="textBox9">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.799in" Height="0.158in" Left="0.201in" Top="1.019in" Value="Lot Size____________________" Name="textBox10">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.896in" Height="0.158in" Left="2.306in" Top="1.019in" Value="Bolt Lot/Heat________________" Name="textBox11">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.938in" Height="0.158in" Left="0.2in" Top="1.188in" Value="Heat No.(1)__________________" Name="textBox12">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.875in" Height="0.158in" Left="2.306in" Top="1.188in" Value="Heat No.(2)_________________" Name="textBox13">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.212in" Height="0.158in" Left="4.3in" Top="1.188in" Value="Heat No.(3)__________________" Name="textBox14">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.5in" Height="0.158in" Left="7.607in" Top="1.188in" Value="Heat No.(4)__________" Name="textBox15">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.594in" Height="0.158in" Left="0.2in" Top="1.356in" Value="Max. Inst." Name="textBox16">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.473in" Height="0.158in" Left="4.3in" Top="0.35in" Value="Lot No." Name="textBox17">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="4.3in" Top="0.521in" Value="Plating____________________" Name="textBox18">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="4.3in" Top="0.687in" Value="PD Range____________________" Name="textBox19">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.856in" Height="0.158in" Left="2.306in" Top="1.356in" Value="1st Bkwy_________________" Name="textBox20">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.608in" Height="0.158in" Left="4.3in" Top="1.356in" Value="Last Bkwy" Name="textBox21">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.612in" Height="0.158in" Left="6.1in" Top="1.356in" Value="Seat Load" Name="textBox22">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.158in" Left="7.607in" Top="1.356in" Value="ACC__________" Name="textBox23">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.158in" Left="8.9in" Top="1.356in" Value="REJ__________" Name="textBox24">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.6in" Height="0.158in" Left="0.258in" Top="1.544in" Value="Bolt PO" Name="textBox25">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="0.898in" Top="1.544in" Value="CYCLE #___________" Name="textBox26">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="2.225in" Top="1.544in" Value="CYCLE #___________" Name="textBox27">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="3.548in" Top="1.544in" Value="CYCLE #___________" Name="textBox28">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="4.865in" Top="1.544in" Value="CYCLE #___________" Name="textBox29">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="6.202in" Top="1.544in" Value="CYCLE #___________" Name="textBox30">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="7.531in" Top="1.544in" Value="CYCLE #___________" Name="textBox31">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.331in" Height="0.158in" Left="8.863in" Top="1.544in" Value="CYCLE #___________" Name="textBox32">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.131in" Left="0.096in" Top="1.885in" Value="1" Name="textBox33">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.131in" Left="0.096in" Top="2.102in" Value="2" Name="textBox34">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.131in" Left="0.096in" Top="2.306in" Value="3" Name="textBox35">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.131in" Left="0.096in" Top="2.514in" Value="4" Name="textBox36">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.131in" Left="0.096in" Top="2.718in" Value="5" Name="textBox37">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="2.912in" Value="6" Name="textBox38">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="3.112in" Value="7" Name="textBox39">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="3.306in" Value="8" Name="textBox40">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="3.5in" Value="9" Name="textBox41">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="3.693in" Value="10" Name="textBox42">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="3.897in" Value="11" Name="textBox43">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="4.081in" Value="12" Name="textBox44">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="4.275in" Value="13" Name="textBox45">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="4.458in" Value="14" Name="textBox46">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="4.672in" Value="15" Name="textBox47">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="4.856in" Value="16" Name="textBox48">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="5.06in" Value="17" Name="textBox49">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="5.254in" Value="18" Name="textBox50">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="5.427in" Value="19" Name="textBox51">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="5.827in" Value="21" Name="textBox52">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="6.018in" Value="22" Name="textBox53">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="6.222in" Value="23" Name="textBox54">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="6.397in" Value="24" Name="textBox55">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="6.594in" Value="25" Name="textBox56">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="5.634in" Value="20" Name="textBox57">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.2in" Height="0.152in" Left="0.096in" Top="6.788in" Value="26" Name="textBox58">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.202in" Height="0.152in" Left="0.096in" Top="6.992in" Value="27" Name="textBox59">
+          <Style TextAlign="Center">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="0.338in" Top="1.702in" Value="S/M" Name="textBox60">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="0.929in" Top="1.702in" Value="INST" Name="textBox61">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="1.333in" Top="1.702in" Value="BKW" Name="textBox62">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="1.737in" Top="1.702in" Value="REM" Name="textBox63">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="2.258in" Top="1.71in" Value="INST" Name="textBox66">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="2.662in" Top="1.71in" Value="BKW" Name="textBox65">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="3.067in" Top="1.71in" Value="REM" Name="textBox64">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="3.584in" Top="1.689in" Value="INST" Name="textBox69">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="3.988in" Top="1.689in" Value="BKW" Name="textBox68">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="4.392in" Top="1.689in" Value="REM" Name="textBox67">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="4.89in" Top="1.689in" Value="INST" Name="textBox72">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="5.294in" Top="1.689in" Value="BKW" Name="textBox71">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="5.698in" Top="1.689in" Value="REM" Name="textBox70">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="6.221in" Top="1.689in" Value="INST" Name="textBox75">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="6.625in" Top="1.689in" Value="BKW" Name="textBox74">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="7.029in" Top="1.689in" Value="REM" Name="textBox73">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="7.556in" Top="1.689in" Value="INST" Name="textBox78">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="7.96in" Top="1.689in" Value="BKW" Name="textBox77">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="8.364in" Top="1.689in" Value="REM" Name="textBox76">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="8.894in" Top="1.689in" Value="INST" Name="textBox81">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="9.298in" Top="1.689in" Value="BKW" Name="textBox80">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.404in" Height="0.148in" Left="9.702in" Top="1.689in" Value="REM" Name="textBox79">
+          <Style TextAlign="Center">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.13in" Height="0.142in" Left="5.269in" Top="7.305in" Name="shape3">
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.13in" Height="0.142in" Left="5.895in" Top="7.305in" Name="shape4">
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.306in" Height="0.163in" Left="5.502in" Top="7.295in" Value="Acc." Name="textBox140">
+          <Style TextAlign="Left">
+            <Font Size="9pt" Bold="False" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.306in" Height="0.163in" Left="6.043in" Top="7.295in" Value="Rej." Name="textBox141">
+          <Style TextAlign="Left">
+            <Font Size="9pt" Bold="False" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.263in" Height="0.158in" Left="7.625in" Top="7.3in" Value="MACH.  TQ__________" Name="textBox85">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="6.646in" Height="0.169in" Left="0.085in" Top="7.469in" Value="This test report must not be reproduced except in full and relates only to the item tested for the above referenced work order number." Name="textBox87">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.506in" Height="0.148in" Left="0.094in" Top="7.64in" Value="Lab Accredited by: _____________________________________" Name="textBox88">
+          <Style TextAlign="Left">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.952in" Height="0.148in" Left="3.779in" Top="7.64in" Value="Lab Code No.________________________________" Name="textBox89">
+          <Style TextAlign="Left">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.442in" Height="0.148in" Left="6.752in" Top="7.483in" Value="STAMP APPROVAL_____________________________________" Name="textBox90">
+          <Style TextAlign="Right">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="6.625in" Height="0.159in" Left="0.075in" Top="7.798in" Value="The recording of false, ficticious, or fraudulent statements or entries on the certificate my be punished as a felony under Federal Law" Name="textBox91">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.48in" Height="0.117in" Left="0.085in" Top="7.957in" Value="WHITE - Work Order File" Name="textBox92">
+          <Style>
+            <Font Size="7pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.98in" Height="0.117in" Left="9.213in" Top="7.894in" Value="Form 1101 Rev 6/21" Name="textBox93">
+          <Style TextAlign="Right">
+            <Font Size="7pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.578in" Height="0.158in" Left="7.607in" Top="0.35in" Value="Date Mfd." Name="textBox690">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.69in" Height="0.158in" Left="7.607in" Top="0.521in" Value="Lubricant ____________________" Name="textBox691">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.69in" Height="0.158in" Left="7.607in" Top="0.687in" Value="Torque Lube (if Req'd)____________________" Name="textBox692">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.844in" Height="0.158in" Left="7.607in" Top="0.85in" Value="Nominal Size" Name="textBox693">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.844in" Height="0.158in" Left="7.607in" Top="1.019in" Value="Product Family" Name="textBox694">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="4.3in" Top="0.85in" Value="Sample Std.____________________" Name="textBox695">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.2in" Height="0.158in" Left="4.3in" Top="1.019in" Value="Mat'l Type(s)____________________" Name="textBox696">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="1.819in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="2.019in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="2.215in" Name="shape5">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="2.429in" Name="shape6">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="2.637in" Name="shape7">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="2.841in" Name="shape8">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="3.056in" Name="shape9">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.052in" Left="0.33in" Top="3.258in" Name="shape10">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="3.452in" Name="shape11">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="3.643in" Name="shape12">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="3.833in" Name="shape13">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.037in" Name="shape14">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.231in" Name="shape15">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.412in" Name="shape16">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.606in" Name="shape17">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.8in" Name="shape18">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="4.993in" Name="shape19">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="5.187in" Name="shape20">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="5.384in" Name="shape21">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="5.577in" Name="shape22">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="5.771in" Name="shape23">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="5.967in" Name="shape24">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="6.161in" Name="shape25">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="6.355in" Name="shape26">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="6.54in" Name="shape27">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="6.729in" Name="shape28">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="6.923in" Name="shape29">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.83in" Height="0.081in" Left="0.33in" Top="7.127in" Name="shape30">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.181in" Height="0.163in" Left="0.779in" Top="0.35in" Value="= Fields.Description" Name="textBox82">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.794in" Height="0.163in" Left="1.106in" Top="0.521in" Value="= Fields.PerformanceSpec" Name="textBox83">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.971in" Height="0.163in" Left="0.929in" Top="0.687in" Value="= Fields.TestBolt" Name="textBox84">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.158in" Left="4.798in" Top="0.35in" Value="= Parameters.LotNbr.Value" Name="textBox86">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.796in" Height="0.163in" Left="8.49in" Top="0.85in" Value="= Fields.NominalThreadSize" Name="textBox94">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.796in" Height="0.163in" Left="8.51in" Top="1.019in" Value="= Fields.Description1" Name="textBox95">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.767in" Height="0.163in" Left="6.792in" Top="1.356in" Value="= Format(&quot;{0:#,##0.0}&quot;, CDbl(Fields.SeatLoad))" Format="" Name="textBox96">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.973in" Height="0.153in" Left="0.838in" Top="1.356in" Value="= Fields.MaxInstall" Name="textBox97">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.66in" Height="0.163in" Left="4.969in" Top="1.356in" Value="= Fields.MinBrkway" Name="textBox98">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.454in" Height="0.163in" Left="5.667in" Top="1.356in" Value="= Fields.UnitOfMeasure" Name="textBox99">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.174in" Left="8.231in" Top="0.35in" Value="=Now()" Format="{0:MM/dd/yy}" Name="textBox100">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.358in" Height="0.174in" Left="0.096in" Top="7.292in" Value="COMMENTS________________________________________________________" Name="textBox101">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.238in" Height="0.158in" Left="8.9in" Top="7.3in" Value="MACH.  #__________" Name="textBox102">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.19in" Height="0.158in" Left="6.391in" Top="7.3in" Value="HAND TQ__________" Name="textBox103">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.701in" Height="0.158in" Left="4.479in" Top="7.286in" Value="10X VISUAL" Name="textBox104">
+          <Style>
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.509in" Height="0.148in" Left="6.698in" Top="7.652in" Value="Accreditation Expires_____________________________________" Name="textBox105">
+          <Style TextAlign="Right">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.075in" Height="5.323in" Left="0.29in" Top="1.854in" Name="shape31">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.281in" Left="0.765in" Top="1.871in" Name="shape32">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="1.281in" Top="1.867in" Name="shape33">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="1.715in" Top="1.873in" Name="shape34">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="2.193in" Top="1.867in" Name="shape35">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="2.662in" Top="1.871in" Name="shape36">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="3.067in" Top="1.873in" Name="shape37">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.302in" Left="3.489in" Top="1.862in" Name="shape38">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="3.913in" Top="1.867in" Name="shape39">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="4.327in" Top="1.867in" Name="shape40">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="4.796in" Top="1.867in" Name="shape41">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="5.219in" Top="1.864in" Name="shape42">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="5.667in" Top="1.871in" Name="shape43">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="6.1in" Top="1.875in" Name="shape44">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="6.55in" Top="1.875in" Name="shape45">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="6.986in" Top="1.867in" Name="shape46">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="7.458in" Top="1.871in" Name="shape47">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="7.885in" Top="1.868in" Name="shape48">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="8.32in" Top="1.858in" Name="shape49">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.292in" Left="8.787in" Top="1.863in" Name="shape50">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.302in" Left="9.223in" Top="1.856in" Name="shape51">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.302in" Left="9.648in" Top="1.868in" Name="shape52">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.075in" Height="5.302in" Left="10.119in" Top="1.858in" Name="shape53">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="True" ColumnCount="1" ColumnSpacing="0in" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.25in" Right="0.25in" Top="0.1in" Bottom="0.1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="LotNbr" Text="LotNbr">
+      <Value>
+        <String>7061020-000</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;
+</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

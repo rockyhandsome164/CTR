@@ -1,0 +1,131 @@
+﻿<h1 style="margin:50px 0 0 100px">QA Job Log Report</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="Item" class="control-label" style="font-size:16px; padding-right:5px">Item:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="Item" style="text-transform: uppercase; max-width:225px"
+                           name="Item" onkeypress='CheckKeyPress(event)'>
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="Job" class="control-label" style="font-size:16px; padding-right:5px">Job:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="Job" style="text-transform: uppercase; max-width:225px" name="Job"
+                           onkeypress='CheckKeyPress(event)'>
+                </div>
+                <div style="display:inline-flex">
+                    <a id="ViewButton" class="btn btn-success" style="margin-left:40px" href="#" role="button">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ReportBodyViewer1">
+    </div>
+    <div id="ReportBodyViewer2" style="margin-top:25px">
+    </div>
+</div>
+
+<script>
+
+    var ValidationOK = "";
+
+    ViewButton.addEventListener('click', function () {
+
+        ValidationOK = true;
+
+        ValidateParameters();
+
+        if (ValidationOK) {
+
+            document.getElementById('ReportBodyViewer2').innerHTML = "";
+
+            var RptURI = encodeURI("GetQAJobLog?Item=" + Item.value + "&Job=" + Job.value);
+            $("#ReportBodyViewer1").load(RptURI);
+
+            DetermineLockTorqRptNeeded();
+        }
+    });
+
+    function DetermineLockTorqRptNeeded() {
+        // only do this if a job # was entered
+        if (Job.value) {
+
+            var ReturnValue = "NO";
+            var request = new XMLHttpRequest();
+            request.open('GET', '/reportviews/getlocktorqreq?Job=' + Job.value, false);
+
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    // Grab the JSON response and parse
+                    ReturnValue = JSON.parse(this.response);
+                    if (ReturnValue == "YES") {
+                        var RptURI = encodeURI("GetQAJobLogLockTorq?Job=" + Job.value);
+                        $("#ReportBodyViewer2").load(RptURI);
+                    }
+
+                } else {
+                    // We reached our target server, but it returned an error
+                    alert("An error occurred trying to display the list of documents");
+                }
+            };
+
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert("An error occurred trying to display the list of documents");
+            };
+
+            request.send();
+        }
+    }
+
+    // make sure the values entered are valid
+    function ValidateParameters() {
+        if (!Item.value) {
+            alert("Please enter an Item");
+            ValidationOK = false;
+            return;
+        }
+
+        if (Job.value) {
+            var ReturnValue = "";
+
+            // make sure the item and the job are related
+            var request = new XMLHttpRequest();
+            request.open('GET', '/reportviews/validateitemjob?Job=' + Job.value + '&Item=' + Item.value, false);
+
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    // Grab the JSON response and parse
+                    ReturnValue = JSON.parse(this.response);
+                    if (ReturnValue == "NO") {
+                        alert("The Item entered is not related to the Job");
+                        ValidationOK = false;
+                    }
+                }
+            };
+
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert("An error occurred trying to validate item and job info");
+            };
+
+            request.send();
+
+        }
+    }
+
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ViewButton").click();
+        }
+    }
+
+</script>

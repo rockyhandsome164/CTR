@@ -1,0 +1,428 @@
+
+<h1 style="margin:50px 0 50px 100px;">Master Specification</h1>
+
+<div style="margin-left:100px">
+    <form id="masterspecform" class="form-horizontal">
+        <div class="form-group col-sm-12">
+            <div class="row-no-gutters">
+                <div class="col-sm-4" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px; ">
+                        <label for="Specification" class="control-label" style="font-size:16px;">Specification:</label>
+                    </div>
+
+                    <div class="input-group" style="display: inline-flex; inline-size:225px">
+                        <button class="input-group-addon" id="ShowMasterSpecs" type="button"> <i class="glyphicon glyphicon-search"></i></button>
+                        <input type="text" class="form-control" id="Specification" placeholder="Specification"
+                               name="Specification" onkeypress='CheckKeyPress(event)'>
+                    </div>
+                    <p id="show_Specification_error" style=" margin-left: 100px;"></p>
+                </div>
+
+
+                <div class="col-sm-4" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px; ">
+                        <label for="Master" class="control-label " style="font-size:16px;">Master:</label>
+                    </div>
+                    <div style="display: inline-flex; inline-size: 225px">
+                        <input type="text" class="form-control" id="Master" placeholder="Master" name="Master" onkeypress='CheckKeyPress(event)'>
+                    </div>
+                    <p id="show_Master_error" style="margin-left: 100px;"></p>
+                </div>
+
+                <div class="col-sm-4" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px; ">
+                        <label for="Description" class="control-label" style="font-size:16px;">Description:</label>
+                    </div>
+                    <div style="display: inline-flex; inline-size: 225px">
+                        <input type="text" class="form-control" id="Description" name="Description" onkeypress='CheckKeyPress(event)'>
+                    </div>
+                    <p id="show_Description_error" style=" margin-left: 100px; "></p>
+                </div>
+            </div>
+
+            <div class="row-no-gutters">
+                <div class="col-sm-4" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px;">
+                        <label for="DefaultType" class="control-label" style="font-size:16px;">Type:</label>
+                    </div>
+                    <div style="display:inline-flex; inline-size:225px">
+                        <select class="form-control" id="DefaultTypeId" name="DefaultTypeId">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 HiddenProperty" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px;">
+                        <label for="EnteredBy" class="control-label" style="font-size:16px;">Entered By:</label>
+                    </div>
+                    <div id="EnteredBy" style="display: inline-flex; inline-size: 225px">
+                    </div>
+                </div>
+
+                <div class="col-sm-4 HiddenProperty" style="margin-top: 20px">
+                    <div class="form-floating" style="display: inline-flex; inline-size: 110px;">
+                        <label for="DateEntered" class="control-label" style="font-size:16px; ">Date Entered:</label>
+                    </div>
+                    <div id="DateEntered" style="display: inline-flex; inline-size: 225px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group" style="display:inline-flex;">
+                <input type="text" id="Id" name="Id" hidden>
+            </div>
+
+            <div class="col-sm-10" style="margin:70px 0 30px 0;" align="center">
+                <div style="display:inline-flex;">
+                    <input id="ViewButton" class="btn btn-success" type="submit" value="Submit">
+                    <button id="DeleteButton" type="button" style="margin-left:40px" hidden> Delete  </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="MasterSpecListModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl  modal-dialog-centered" style="width:80%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div style="font-size:24pt; font-weight:700">
+                    <label class="modal-title" id="MasterSpecListLabel">Search: </label>
+                    <label id="MasterSpecListComponentNbr"></label>
+                </div>
+            </div>
+
+            <form id="mastersearchform" class="form-horizontal">
+                <div class="form-group col-sm-10">
+
+                    <div class="row-no-gutters">
+                        <div class="col-sm-4" style="margin-top: 20px">
+                            <div class="form-floating" style="display: inline-flex; inline-size: 110px; ">
+                                <label for="Specification" class="control-label" style="font-size:16px;">Specification:</label>
+                            </div>
+                            <div class="input-group" style="display: inline-flex; inline-size:225px">
+                                <input type="text" class="form-control" id="SpecificationSearch" placeholder="Specification" name="Specification">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4" style="margin-top: 20px">
+                            <div class="form-floating" style="display: inline-flex; inline-size: 110px; ">
+                                <label for="Master" class="control-label " style="font-size:16px;">Master:</label>
+                            </div>
+                            <div style="display: inline-flex; inline-size: 225px">
+                                <input type="text" class="form-control" id="MasterSearch" placeholder="Master" name="Master">
+                            </div>
+                            <p id="show_Master_error" style="margin-left: 100px;"></p>
+                        </div>
+
+                        <div class="col-sm-4" style="margin-top: 20px">
+                            <div class="form-floating" style="display: inline-flex; inline-size: 110px;">
+                                <label for="DefaultType" class="control-label" style="font-size:16px;">Type:</label>
+                            </div>
+                            <div style="display:inline-flex; inline-size:225px">
+                                <select class="form-control" id="DefaultTypes" name="DefaultTypeId">
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-2" style="margin-top: 20px">
+                    <div style="display:inline-flex;">
+                        <input id="SearchButton" class="btn btn-success" type="submit" value="Search">
+                    </div>
+                    <div style="display:inline-flex;">
+                        <button id="MasterSpecsModalClose" onclick="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+            <table id="MasterSpecListTable" class="table table-bordered table-hover" style="width:70%; margin-left:110px">
+                <thead class="item">
+                    <tr>
+                        <th class="text-center" style="width:8%">Specification</th>
+                        <th class="text-center" style="width:8%">Description</th>
+                        <th class="text-center" style="width:10%">Type</th>
+                        <th class="text-center" style="width:6%">Master</th>
+                        <th class="text-center" style="width:5%">Select</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    ShowMasterSpecs.addEventListener('click', function () {
+        $("#mastersearchform")['0'].reset();
+        $("#MasterSpecListTable tbody tr").remove();
+        GetMasterSpecData("");
+        $("#MasterSpecListModal").modal("show");
+
+    });
+
+    // hiding the EnteredBy & DateEntered Field of MasterSpec initially
+    $('.HiddenProperty').hide();
+
+    SearchButton.addEventListener('click', function (event) {
+        $("#masterspecform")['0'].reset();
+        $("#MasterSpecListTable tbody tr").remove();
+        event.preventDefault();
+
+        var Specification = $("#SpecificationSearch").val();
+        var Master = $("#MasterSearch").val();
+        var DefaultTypeId = $("#DefaultTypes").val();
+        var searchData = {};
+        searchData.Specification = Specification;
+        searchData.Master = Master;
+        searchData.DefaultTypeId = DefaultTypeId;
+
+        if ((searchData.Specification.length != '') || (searchData.Master.length != '') || (searchData.DefaultTypeId != '0')) {
+            GetMasterSpecData(searchData);
+        }
+        else {
+            GetMasterSpecData("");
+            /* alert('Please fill the Searchdata'); */
+        }
+    });
+
+    function GetMasterSpecData(searchData) {
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: "JSON",
+            url: "/utilities/search",
+            data: searchData ? searchData : null,
+            success: function (response) {
+                if (response != null) {
+                    response.forEach((dt, index) => {
+
+                        $("#MasterSpecListTable tbody").append("<tr>" +
+                            "<td class='text-center'>" + dt.Specification + "</td>" +
+                            "<td class='text-center'>" + dt.Description + "</td>" +
+                            "<td class='text-center'>" + dt.DefaultType.DefaultType1 + "</td>" +
+                            "<td class='text-center'>" + dt.Master + "</td>" +
+                            "<td class='text-center'>" + `<button onclick= 'selectMasterSpec(${JSON.stringify(dt)})' class='btn btn-success btn-sm' name='MasterSpecs' type='button'
+                                          > Select</button>` + "</td >" +
+                            + "</td>"
+                            + "</tr>"
+                        );
+                    });
+                }
+                else {
+                    swal('Please fill the Data');
+                }
+            },
+            error: function (response) {
+                console.log(response.statusText);
+            }
+
+        });
+
+    }
+
+    function selectMasterSpec(masterSpecs) {
+        $('.HiddenProperty').show();
+        document.getElementById("DeleteButton").hidden = false;
+        $("#DeleteButton").addClass("btn btn-danger");
+        $("#DeleteButton").click(function () {
+            //call Delete function to delete MasterSpec Data with selectedID
+            deleteMasterSpecs(masterSpecs);
+        });
+
+        Id.value = masterSpecs.Id;
+        Specification.value = masterSpecs.Specification;
+        Description.value = masterSpecs.Description;
+        $("#EnteredBy").html(masterSpecs.EnteredBy);
+        var DateEntered = new Date(masterSpecs.DateEntered.match(/\d+/)[0] * 1).toLocaleDateString();
+        $("#DateEntered").html(DateEntered);
+        Master.value = masterSpecs.Master;
+        DefaultTypeId.value = masterSpecs.DefaultType ? masterSpecs.DefaultType.Id : masterSpecs.DefaultTypeId;
+
+        /*Reset searchform on modal close */
+        this.closeModal();
+
+    }
+
+    function deleteMasterSpecs(masterSpecs) {
+        var Id = masterSpecs.Id;
+        $.ajax({
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            dataType: "JSON",
+            url: "/utilities/delete",
+            data: '{Id: ' + Id + '}',
+            success: function (response) {
+                $("#DeleteButton").removeClass("btn btn-danger");
+                document.getElementById("DeleteButton").hidden = true;
+                swal(response.message).then(function () {
+                    refreshMasterSpecForm();
+                    //$("#masterspecform")['0'].reset();
+                    //$("#mastersearchform")['0'].reset();
+                });
+
+            },
+            error: function (response) {
+                console.log(response.statusText);
+            }
+        });
+    }
+
+
+    function closeModal() {
+        $("#MasterSpecListModal").modal("hide")
+    }
+
+    function refreshMasterSpecForm() {
+        location.reload(true);
+    }
+
+    MasterSpecsModalClose.addEventListener('click', function () {
+        $("#MasterSpecListModal").modal("hide");
+    });
+
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "/utilities/gettypes",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response != null) {
+                    var Master_DefaultTypes = document.getElementById('DefaultTypeId');
+                    var Master_Search_DefaultTypes = document.getElementById('DefaultTypes');
+                    if (Master_DefaultTypes) {
+                        $.each(response, function (index, el) {
+                            // append Data to MasterSpecForm Dropdown
+                            $('#DefaultTypeId').append('<option value="' + el.Value + '">' + el.Text + '</option>');
+
+                            //Set Default value of Dropdownlist to ''Performance'
+                            if (el.Text == "Performance") {
+                                $("#DefaultTypeId option:selected").val(el.Value).html(el.Text);
+                            }
+                        });
+                    }
+                    if (Master_Search_DefaultTypes) {
+                        $.each(response, function (index, el) {
+                            // append Data to masterSearchForm Dropdown
+                            $('#DefaultTypes').append('<option value="' + el.Value + '">' + el.Text + '</option>');
+
+                            //Set Default value of Dropdownlist to Null
+                            $("#DefaultTypes option:selected").val(0).html('');
+
+                        });
+                    }
+                }
+            },
+
+            failure: function (response) {
+                console.log(response.responseText);
+            },
+            error: function (response) {
+                console.log(response.responseText);
+            }
+        });
+    });
+
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ViewButton").click();
+        }
+    }
+
+    //Start of Validation Handling Part
+    $('#show_Specification_error').hide();
+    $('#show_Description_error').hide();
+    $('#show_Master_error').hide();
+
+    var spec_error = false;
+    var master_error = false;
+    var descr_error = false;
+
+    $("#Specification").keyup(function () {
+        Specification_Check();
+    });
+
+    function Specification_Check() {
+        var specValue = $("#Specification").val();
+        if (specValue.length == '') {
+            $('#show_Specification_error').show();
+            $('#show_Specification_error').html('**The Specification Detail must be filled.');
+            $('#show_Specification_error').focus();
+            $('#show_Specification_error').css('color', 'red');
+            spec_error = false;
+            return false;
+        }
+        else {
+            $('#show_Specification_error').hide();
+        }
+    }
+
+    // End of Validation  Handling Part
+
+    ViewButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        //Start of form validation checking
+        spec_error = true;
+        master_error = true;
+        descr_error = true;
+
+        Specification_Check();
+        // End of form validation checking
+        var Id = $("#Id").val();
+        var Specification = $("#Specification").val();
+        var Description = $("#Description").val();
+        var Master = $("#Master").val();
+        var DefaultTypeId = $("#DefaultTypeId").val();
+        var DefaultType = $("#DefaultTypeId option:selected").text();
+        var dataToPost = {};
+
+        dataToPost.Id = Id ? Id : 0;
+        dataToPost.Specification = Specification;
+        dataToPost.Master = Master;
+        dataToPost.Description = Description;
+        dataToPost.DefaultTypeId = DefaultTypeId;
+        dataToPost.DateEntered = null;
+        dataToPost.EnteredBy = null;
+        dataToPost.DefaultType = {
+            Id: DefaultTypeId,
+            DefaultType1: DefaultType
+        };
+
+        //confirmation for form submission
+        if ((spec_error == true) && (master_error == true) && (descr_error == true)) {
+            $.ajax({
+                type: "POST",
+                contentType: 'application/json; charset=utf-8',
+                dataType: "JSON",
+                url: "/utilities/savemasterspec",
+                data: JSON.stringify(dataToPost),
+                success: function (response) {
+                    swal(response.message).then(function () {
+                        refreshMasterSpecForm();
+                    });
+
+                    //swal(response.message);
+                    //$("#mastersearchform")['0'].reset();
+                    //$("#masterspecform")['0'].reset();
+
+                },
+                error: function (response) {
+                    console.log(response.status);
+                },
+            });
+        }
+        else {
+            return false;
+        }
+    });
+
+</script>

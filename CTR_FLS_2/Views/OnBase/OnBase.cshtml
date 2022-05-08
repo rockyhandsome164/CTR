@@ -1,0 +1,148 @@
+﻿
+<h1 style="margin:50px 0 0 100px">OnBase Interface</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="DocumentType" class="control-label" style="font-size:16px; padding-right:5px">Document Type:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <select class="form-control" id="DocType" name="DocumentType" style="width:auto">
+                        <option value="MFG QA - Cert Package">Cert Package</option>
+                        <option value="MFG QA - Material Cert">Material Cert</option>
+                        <option value="MFG QA - Outside Processing Cert">Outside Processing Cert</option>
+                        <option value="MFG QA - Test Report">Test Report</option>
+                        @*<option>Work Order</option>*@
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <div class="form-floating" style="display:inline-flex;  width:10%">
+                    <label for="LotNbr" class="control-label " style="font-size:16px; padding-right:5px">Lot Number:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="LotNbr" style="text-transform: uppercase; max-width:225px" name="LotNbr" onkeypress='CheckKeyPress(event)'>
+                </div>
+                <div style="display:inline-flex">
+                    <a id="GetDocInfo" class="btn btn-success" style="margin-left:40px" href="#" role="button">Get Document Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:25px">
+        <table id="OnBaseDocumentResultsTable" class="table table-bordered" style="width:70%">
+            <thead>
+                <tr style="font-size:16px">
+                    <th style="width:57%">Name</th>
+                    <th style="width:10%">Date</th>
+                    <th style="width:15%">Type</th>
+                    <th style="width:10%">Document ID</th>
+                    <th style="width:8%"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<embed id="PDFViewer" src="" frameborder="0" style="margin-left:100px; width:80%; height:600px">
+
+<script>
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("GetDocInfo").click();
+        }
+    }
+
+    GetDocInfo.addEventListener('click', function () {
+        var LotNbr = document.getElementById("LotNbr").value;
+        var DocTypeSelect = document.getElementById("DocType").value;
+
+        var DocTable = document.getElementById("OnBaseDocumentResultsTable");
+        //Clear out the table from any past queries
+        for (var i = DocTable.rows.length - 1; i > 0; i--) {
+            DocTable.deleteRow(i);
+        }
+
+        var request = new XMLHttpRequest();
+        request.open('GET', '/onbase/query?DocType=' + DocTypeSelect + '&LotNbr=' + LotNbr, true);
+
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                // Grab the JSON response and parse
+                var resp = JSON.parse(this.response);
+
+                if (resp.UserMessage == "OK") {
+                    // iterate over the tree items
+                    Object.entries(resp.DocMetaData).forEach((entry) => {
+                        var [key, value] = entry;
+
+                        var NewRow = DocTable.insertRow();
+
+                        var NewCell;
+                        NewCell = NewRow.insertCell()
+                        NewCell.innerHTML = value.DocumentDisplayName;
+
+                        NewCell = NewRow.insertCell()
+                        NewCell.style = "text-align: center";
+                        var DateRec = new Date(value.DocumentDate.match(/\d+/)[0] * 1);
+                        NewCell.innerHTML = DateRec.toLocaleDateString();
+
+                        NewCell = NewRow.insertCell()
+                        NewCell.innerHTML = value.DocumentType;
+
+                        NewCell = NewRow.insertCell()
+                        NewCell.innerHTML = value.DocumentId;
+
+                        var DownloadLink = 'data:application/pdf;base64,' + value.DocumentImg;
+
+                        // Insert a link that allows the user to download the PDF file
+                        // ** Use embedded view for now - keep this here just in case things change **
+                        //NewCell = NewRow.insertCell()
+                        //NewCell.innerHTML = "<a download='" + LotNbr + ".pdf' href='" + DownloadLink + "'>Download</a>";
+
+                        NewCell = NewRow.insertCell()
+//                        NewCell.innerHTML = "<button class='view-doc btn btn-success btn-sm' type='button' data-doc-id='" + value.DocumentId + "' data-doc-stream='" + DownloadLink + "'>View</button>";
+                        NewCell.innerHTML = "<button class='view-doc btn btn-success btn-sm' type='button' data-doc-id='" + value.DocumentId + "' data-doc-name='" + value.DocumentName + "'>View</button>";
+
+
+                    });
+
+                    // Add event listeners to the buttons. They will display the PDF associated with their data stream attribute
+                    var DocViewButtons = Array.from(document.getElementsByClassName('view-doc'));
+                    DocViewButtons.forEach(DocButton => {
+                        DocButton.addEventListener('click', function handleClick(event) {
+                            //var viewer = document.getElementById("PDFViewer");
+                            //viewer.src = DocButton.getAttribute('data-doc-stream');
+                            window.open(DocButton.getAttribute('data-doc-name', '_blank', 'fullscreen=yes'));
+                        });
+                    });
+                }
+                else {
+                    var NewRow = DocTable.insertRow();
+                    var NewCell;
+                    NewCell = NewRow.insertCell()
+                    NewCell.innerHTML = resp.UserMessage;
+                }
+
+            } else {
+                // We reached our target server, but it returned an error
+                alert("An error occurred trying to display the list of documents");
+            }
+        };
+
+        request.onerror = function () {
+            // There was a connection error of some sort
+            alert("An error occurred trying to display the list of documents");
+        };
+
+        request.send();
+
+    });
+
+</script>

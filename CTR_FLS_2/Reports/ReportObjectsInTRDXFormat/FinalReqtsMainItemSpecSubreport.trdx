@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="4.531in" Name="FinalReqtsMainItemSpecSubreport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style>
+    <BorderWidth Default="0pt" />
+  </Style>
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@Item&quot;:&quot;CJH223&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;&#xA;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetFinalReqtsMainItemSpecRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Item">
+          <Value>
+            <String>= Parameters.Item.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" />
+    </PageHeaderSection>
+    <DetailSection Height="0.181in" Name="detailSection1">
+      <Style>
+        <BorderWidth Default="0pt" />
+      </Style>
+      <Items>
+        <TextBox Width="1.585in" Height="0.137in" Left="0.804in" Top="0.023in" Value="= Fields.Spec" Name="textBox1">
+          <Style>
+            <Font Size="7pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.179in" Height="0.138in" Left="2.81in" Top="0.023in" Value="= Fields.ItemType" Name="textBox2">
+          <Style>
+            <Font Size="7pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.785in" Height="0.16in" Left="0in" Top="0.011in" Value="Specification:" Name="textBox14">
+          <Style>
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.366in" Height="0.143in" Left="2.434in" Top="0.01in" Value="Type:" Name="textBox15">
+          <Style>
+            <Font Size="7pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="Item" Text="Item">
+      <Value>
+        <String>CJH223</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

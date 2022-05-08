@@ -1,0 +1,26 @@
+<h1 style="margin:50px 0 50px 150px;">Nominal Threads</h1>
+
+<div style="margin-left:100px; max-width:50%">
+
+    <div id="root">
+        @*React Landing component: NominalThreadTableView will be rendered here
+        Vtsit:NominalThreadTableView.jsx and scroll to the bottom of the page 
+            Following line of code renders the component in here
+            ReactDOM.render(<NominalThreadTableView />, document.getElementById('root'));
+        *@
+    </div>
+
+</div>
+
+@section ReactScripts{
+
+    @*Will search the required NominalThreas*@
+    <script src="@Url.Content("~/Content/ReactJS/NominalThread/SearchNominalThread.jsx")"></script>
+
+    @*Will Add NominalThread Data*@
+    <script src="@Url.Content("~/Content/ReactJS/NominalThread/AddNominalThreads.jsx")"></script>
+
+    @*Main React component to display the NominalThread*@
+    <script src="@Url.Content("~/Content/ReactJS/NominalThread/NominalThreadTableView.jsx")"></script>
+}
+

@@ -1,0 +1,163 @@
+﻿
+<h1 style="margin:50px 0 0 100px">Certified Test Report</h1>
+
+<div style="margin-left:100px">
+    <div class="form-horizontal" style="margin:25px 0 0 0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="form-floating" style="display:inline-flex; width:10%">
+                    <label for="LotNbr" class="control-label" style="font-size:16px; padding-right:5px">Lot Number:</label>
+                </div>
+                <div style="display:inline-flex">
+                    <input type="text" class="form-control" id="LotNbr" style="text-transform: uppercase; max-width:225px" name="LotNbr" onkeypress='CheckKeyPress(event)'>
+                </div>
+                <div style="display:inline-flex">
+                    <a id="ViewButton" class="btn btn-success" style="margin-left:40px" href="#" role="button">View</a>
+                </div>
+                <div style="display:inline-flex">
+                    <a id="SendToOnBaseButton" class="btn btn-default" style="margin-left:40px" href="#" role="button">Send To OnBase</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="font-size:12px; font-style:italic; color:darkred;">
+            <label id="WaitMsg"></label>
+        </div>
+    </div>
+    <div id="ReportBody">
+    </div>
+</div>
+
+<script>
+
+    var CTRFileName = "";
+    var CTRPDFExportFileName = "";
+
+    ViewButton.addEventListener('click', function () {
+        var ValidationOK = false;
+
+        var LotToView = LotNbr.value;
+        if (!LotToView) {
+            alert("Please enter a valid Lot Number");
+        }
+
+        ValidationOK = true;
+
+        if (ValidationOK) {
+
+            // make call to generae dynamic report and return file name
+            CTRFileName = GetCTRFileName();
+            if (CTRFileName) {
+                // Now call to load the report. Pass in the file name as an parm to the controller
+                // and just set it to the temp data var
+                $("#ReportBody").load("getctr?LotNbr=" + LotNbr.value + "&FileName=" + CTRFileName);
+            }
+        }
+    });
+
+    SendToOnBaseButton.addEventListener('click', function () {
+
+        // Show the wait message
+        var WaitMsg = document.getElementById("WaitMsg");
+        WaitMsg.innerHTML = "CTR will be stored in OnBase. This may take a minute to complete.";
+
+        setTimeout(() => {
+            // Make sure the user has created the CTR first
+            if (CTRFileName) {
+                // First export the file to PDF
+                ExportCTRFileToPDF();
+
+                if (CTRPDFExportFileName) {
+                    // If we have a good file name, push to Onbase
+                    SendCTRReportToOnBase();
+                }
+                WaitMsg.innerHTML = "";
+            }
+            else {
+                alert("Please generate the CTR by clicking View before sending to OnBase");
+                WaitMsg.innerHTML = "";
+            }
+        }, 500);
+    });
+
+    // Trigger the vew button if user presses enter key
+    function CheckKeyPress(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("ViewButton").click();
+        }
+    }
+
+    // Get the CTR file name that is dynamically generated
+    // Note this just gets the name of the file. It does not render it
+    function GetCTRFileName() {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/reportviews/getctrfilename?LotNbr=' + LotNbr.value, false);
+
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                // Grab the JSON response and parse
+                CTRReportFileName = JSON.parse(this.response);
+            } else {
+                // We reached our target server, but it returned an error
+                CTRReportFileName = null;
+                alert("An error occurred trying to generate the CTR report file");
+            }
+        };
+
+        request.onerror = function () {
+            // There was a connection error of some sort
+            alert("An error occurred trying to generate the CTR report file");
+        };
+
+        request.send();
+
+        return CTRReportFileName;
+    }
+
+    // Export the CTR report to PDF format
+    function ExportCTRFileToPDF() {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/onbase/ctrpdfexport?FileName=' + CTRFileName + "&LotNbr=" + LotNbr.value, false);
+
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                // Grab the JSON response and parse
+                CTRPDFExportFileName = JSON.parse(this.response);
+                if (CTRPDFExportFileName.substring(0, 5) == "Error") {
+                    alert("An error occurred trying to export the CTR report to PDF");
+                }
+            } else {
+                alert("An error occurred trying to export the CTR report to PDF");
+            }
+        };
+
+        request.onerror = function () {
+            alert("An error occurred trying to export the CTR report to PDF");
+        };
+
+        request.send();
+    }
+
+    // Send the exported report to OnBase
+    function SendCTRReportToOnBase() {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/onbase/savedoctoonbase?FileName=' + CTRPDFExportFileName +
+            "&DocType=MFG QA - Test Report&LotNbr=" + LotNbr.value, false);
+
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                var resp = JSON.parse(this.response);
+                alert(resp.Data.UserMessage);
+            } else {
+                alert("An error occurred trying to send the CTR report to OnBase");
+            }
+        };
+
+        request.onerror = function () {
+            alert("An error occurred trying to send the CTR report to OnBase");
+        };
+
+        request.send();
+    }
+
+</script>
+

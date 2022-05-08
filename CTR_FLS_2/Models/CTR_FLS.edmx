@@ -1,0 +1,1780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CTR_FLS_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Cert">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CertNbr" Type="int" Nullable="false" />
+          <Property Name="LotNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CertDate" Type="datetime" />
+          <Property Name="PartNbr" Type="varchar" MaxLength="50" />
+          <Property Name="PartDesc" Type="varchar" MaxLength="50" />
+          <Property Name="Revision" Type="int" Nullable="false" />
+          <Property Name="Stage" Type="varchar" MaxLength="50" />
+          <Property Name="FileName" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="CTRUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="255" />
+          <Property Name="Title" Type="varchar" MaxLength="255" />
+          <Property Name="Signature" Type="image" Nullable="false" />
+          <Property Name="AccessLevel" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerOrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LineNbr" Type="int" />
+          <Property Name="Release" Type="int" />
+          <Property Name="Customer" Type="varchar" MaxLength="50" />
+          <Property Name="OrigSite" Type="varchar" MaxLength="50" />
+          <Property Name="CI" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerNbr" Type="varchar" MaxLength="50" />
+          <Property Name="PO" Type="varchar" MaxLength="50" />
+          <Property Name="ShipTo" Type="int" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="TextKey" Type="int" />
+          <Property Name="PackSlipPrintedFlag" Type="varchar" MaxLength="10" />
+          <Property Name="LastPickList" Type="datetime" />
+          <Property Name="Origin" Type="varchar" MaxLength="50" />
+          <Property Name="Ordered" Type="int" />
+          <Property Name="Packed" Type="int" />
+          <Property Name="Shipped" Type="int" />
+          <Property Name="LRStat" Type="varchar" MaxLength="10" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+          <Property Name="Weight" Type="decimal" Precision="12" Scale="5" />
+          <Property Name="Warehouse" Type="varchar" MaxLength="50" />
+          <Property Name="LastShip" Type="datetime" />
+          <Property Name="ShipSite" Type="varchar" MaxLength="50" />
+          <Property Name="SupplUnits" Type="int" />
+          <Property Name="Commodity" Type="varchar" MaxLength="25" />
+          <Property Name="ConsNbr" Type="int" />
+          <Property Name="BOLPrintedFlag" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DefaultType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DefaultType" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Interchange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierItemNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InterchangePartNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Revision" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="MaterialStatus" Type="varchar" MaxLength="25" />
+          <Property Name="StockedFlag" Type="varchar" MaxLength="10" />
+          <Property Name="Revision" Type="varchar" MaxLength="10" />
+          <Property Name="ReservableFlag" Type="varchar" MaxLength="10" />
+          <Property Name="ABCCode" Type="varchar" MaxLength="25" />
+          <Property Name="AltItem" Type="varchar" MaxLength="50" />
+          <Property Name="BackflushFlag" Type="varchar" MaxLength="10" />
+          <Property Name="BackflushLocation" Type="varchar" MaxLength="255" />
+          <Property Name="Buyer" Type="varchar" MaxLength="255" />
+          <Property Name="PlanningCell" Type="varchar" MaxLength="50" />
+          <Property Name="LastGenDate" Type="datetime" />
+          <Property Name="CharFld3" Type="varchar" MaxLength="255" />
+          <Property Name="Commodity" Type="varchar" MaxLength="25" />
+          <Property Name="LowLevelCode" Type="varchar" MaxLength="50" />
+          <Property Name="DrawingNbr" Type="varchar" MaxLength="50" />
+          <Property Name="FamilyCode" Type="varchar" MaxLength="255" />
+          <Property Name="LotTrack" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="OrderMinimum" Type="varchar" MaxLength="25" />
+          <Property Name="OrderMultiple" Type="varchar" MaxLength="25" />
+          <Property Name="Origin" Type="varchar" MaxLength="255" />
+          <Property Name="Source" Type="varchar" MaxLength="255" />
+          <Property Name="PlannerCode" Type="varchar" MaxLength="50" />
+          <Property Name="ProductionType" Type="varchar" MaxLength="50" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+          <Property Name="PhantomFlag" Type="varchar" MaxLength="10" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+          <Property Name="UnitCost" Type="varchar" MaxLength="25" />
+          <Property Name="CharFld1" Type="varchar" MaxLength="255" />
+          <Property Name="CharFld2" Type="varchar" MaxLength="255" />
+          <Property Name="CharFld4" Type="varchar" MaxLength="255" />
+          <Property Name="WeightUnits" Type="varchar" MaxLength="50" />
+          <Property Name="ITAR" Type="varchar" MaxLength="25" />
+          <Property Name="HTSCode" Type="varchar" MaxLength="50" />
+          <Property Name="ECCN" Type="varchar" MaxLength="50" />
+          <Property Name="ECCNLicense" Type="varchar" MaxLength="255" />
+          <Property Name="NAFTA" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduleB" Type="varchar" MaxLength="50" />
+          <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+          <Property Name="USOnly" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="DutyRate" Type="varchar" MaxLength="25" />
+          <Property Name="NominalThreadSize" Type="varchar" MaxLength="50" />
+          <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ItemInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="ThreadSize" Type="varchar" MaxLength="50" />
+          <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="25" />
+          <Property Name="TestBolt" Type="bit" Nullable="false" />
+          <Property Name="TextKey" Type="int" />
+          <Property Name="CertTextKey" Type="int" />
+          <Property Name="LogicalField" Type="varchar" MaxLength="50" />
+          <Property Name="LastOccurence" Type="int" />
+          <Property Name="USOnly" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Spec" Type="varchar" MaxLength="255" />
+          <Property Name="ItemType" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="AuditKey" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="JobInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Suffix" Type="int" Nullable="false" />
+          <Property Name="Lot" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Revision" Type="varchar" MaxLength="10" />
+          <Property Name="Certificate" Type="varchar" MaxLength="10" />
+          <Property Name="RequireCerts" Type="varchar" MaxLength="10" />
+          <Property Name="Completed" Type="varchar" MaxLength="10" />
+          <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+          <Property Name="PassedInspection" Type="varchar" MaxLength="10" />
+          <Property Name="CertTextKey" Type="varchar" MaxLength="50" />
+          <Property Name="ReworkJob" Type="varchar" MaxLength="25" />
+          <Property Name="TextKey" Type="varchar" MaxLength="50" />
+          <Property Name="Occurrence" Type="varchar" MaxLength="10" />
+          <Property Name="PlanDate" Type="datetime" />
+          <Property Name="NumericFormat" Type="varchar" MaxLength="25" />
+          <Property Name="NCMR" Type="varchar" MaxLength="50" />
+          <Property Name="Comments" Type="varchar" MaxLength="8000" />
+          <Property Name="JobInfoEnd" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="JobLotParent">
+          <Key>
+            <PropertyRef Name="JobLotId" />
+            <PropertyRef Name="ParentJobLotId" />
+          </Key>
+          <Property Name="JobLotId" Type="int" Nullable="false" />
+          <Property Name="ParentJobLotId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobLots">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ComponentLot" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialLot" Type="varchar" MaxLength="50" />
+          <Property Name="ParentLot" Type="varchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Operation" Type="int" />
+          <Property Name="QtyPer" Type="int" />
+          <Property Name="Sequence" Type="int" />
+        </EntityType>
+        <EntityType Name="LotInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="HeatLotExtension" Type="varchar" MaxLength="50" />
+          <Property Name="HeatLotBase" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Lot" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialSpec" Type="varchar" MaxLength="50" />
+          <Property Name="QtyReceived" Type="int" />
+          <Property Name="RefSuffix" Type="int" />
+          <Property Name="RefNbr" Type="varchar" MaxLength="25" />
+          <Property Name="RefRelease" Type="int" />
+          <Property Name="Ref" Type="varchar" MaxLength="25" />
+          <Property Name="VendorLot" Type="varchar" MaxLength="50" />
+          <Property Name="VendorId" Type="varchar" MaxLength="50" />
+          <Property Name="MillNbr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MasterSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Specification" Type="varchar" MaxLength="255" />
+          <Property Name="Master" Type="varchar" MaxLength="255" />
+          <Property Name="DefaultTypeId" Type="int" Nullable="false" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialId" Type="int" Nullable="false" />
+          <Property Name="ControlNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VendorNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MillNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialSpec" Type="varchar" MaxLength="50" />
+          <Property Name="MfgDate" Type="datetime" />
+          <Property Name="Stage" Type="varchar" MaxLength="50" />
+          <Property Name="HeatNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VendorName" Type="varchar" MaxLength="256" />
+          <Property Name="QtyReceived" Type="int" />
+          <Property Name="FileName" Type="varchar" MaxLength="256" />
+          <Property Name="Description" Type="varchar" MaxLength="256" />
+          <Property Name="PONbr" Type="varchar" MaxLength="50" />
+          <Property Name="RecvdDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MaterialTrans">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="bigint" Nullable="false" />
+          <Property Name="TransDate" Type="datetime" Nullable="false" />
+          <Property Name="TransType" Type="varchar" MaxLength="10" />
+          <Property Name="RefType" Type="varchar" MaxLength="10" />
+          <Property Name="RefNbr" Type="varchar" MaxLength="25" />
+          <Property Name="RefRelease" Type="int" />
+          <Property Name="RefLineSuffix" Type="int" />
+          <Property Name="Reason" Type="varchar" MaxLength="255" />
+          <Property Name="Qty" Type="decimal" Precision="19" Scale="9" />
+          <Property Name="WorkCtr" Type="varchar" MaxLength="50" />
+          <Property Name="Warehouse" Type="varchar" MaxLength="50" />
+          <Property Name="Lot" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="AwaitingEOP" Type="varchar" MaxLength="10" />
+          <Property Name="Backflush" Type="varchar" MaxLength="10" />
+          <Property Name="MaterialAccount1" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialAccount2" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialAccount3" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialAccount4" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialAccount5" Type="varchar" MaxLength="50" />
+          <Property Name="UserInitials" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="NominalThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DashNumber" Type="varchar" MaxLength="50" />
+          <Property Name="NominalThreadSize" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextKey" Type="int" />
+          <Property Name="NewParagraph" Type="varchar" MaxLength="10" />
+          <Property Name="LineNbr" Type="int" />
+          <Property Name="Notes" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer" Type="varchar" MaxLength="50" />
+          <Property Name="PO" Type="varchar" MaxLength="50" />
+          <Property Name="ShipTo" Type="int" />
+          <Property Name="OrderType" Type="varchar" MaxLength="25" />
+          <Property Name="Status" Type="varchar" MaxLength="25" />
+          <Property Name="NbrOfPackages" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="CloseDate" Type="datetime" />
+          <Property Name="Contact" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="OSP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LotNbr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AttachmentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="255" />
+          <Property Name="RevNbr" Type="int" />
+          <Property Name="RevDate" Type="datetime" />
+          <Property Name="Stage" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="PackItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackingSlip" Type="int" Nullable="false" />
+          <Property Name="OrderNbr" Type="varchar" MaxLength="50" />
+          <Property Name="OrderLine" Type="int" />
+          <Property Name="Release" Type="int" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="QtyOrdered" Type="int" />
+          <Property Name="QtyPacked" Type="int" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PackItemExtended">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderLine" Type="int" />
+          <Property Name="OrderNbr" Type="varchar" MaxLength="50" />
+          <Property Name="Release" Type="int" />
+          <Property Name="InvoicedFlag" Type="varchar" MaxLength="10" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="Lot" Type="varchar" MaxLength="50" />
+          <Property Name="PackingSlip" Type="int" />
+          <Property Name="QtyInvoiced" Type="int" />
+          <Property Name="QtyPacked" Type="int" />
+          <Property Name="QtyShipped" Type="int" />
+          <Property Name="ShippedFlag" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductFamily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cert" Type="int" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Test" Type="varchar" MaxLength="25" />
+          <Property Name="Sample" Type="varchar" MaxLength="25" />
+          <Property Name="ResultCycle" Type="varchar" MaxLength="25" />
+          <Property Name="Minimum" Type="varchar" MaxLength="25" />
+          <Property Name="Maximum" Type="varchar" MaxLength="25" />
+          <Property Name="PassFail" Type="varchar" MaxLength="25" />
+          <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+          <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ShipLot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineNbr" Type="int" />
+          <Property Name="Release" Type="int" />
+          <Property Name="CustPO" Type="varchar" MaxLength="100" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Lot" Type="varchar" MaxLength="50" />
+          <Property Name="PackingSlip" Type="int" />
+          <Property Name="QtyShipped" Type="int" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Suffix" Type="int" />
+          <Property Name="Test" Type="int" />
+          <Property Name="Template" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+          <Property Name="AuditKey" Type="int" />
+          <Property Name="BoltSpec" Type="varchar" MaxLength="50" />
+          <Property Name="CyclesSamples" Type="varchar" MaxLength="255" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+          <Property Name="Frequency" Type="varchar" MaxLength="25" />
+          <Property Name="MasterKey" Type="varchar" MaxLength="50" />
+          <Property Name="MaxInstall" Type="nchar" MaxLength="10" />
+          <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+          <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+          <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+          <Property Name="PassFail" Type="varchar" MaxLength="25" />
+          <Property Name="PerformanceSpec" Type="varchar" MaxLength="255" />
+          <Property Name="PrintMinMax" Type="varchar" MaxLength="255" />
+          <Property Name="Requirements" Type="varchar" MaxLength="255" />
+          <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+          <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="TestResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BoltSpec" Type="varchar" MaxLength="50" />
+          <Property Name="CurrentCycle" Type="varchar" MaxLength="25" />
+          <Property Name="CurrentSample" Type="varchar" MaxLength="25" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+          <Property Name="Frequency" Type="varchar" MaxLength="25" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Job" Type="varchar" MaxLength="50" />
+          <Property Name="MasterKey" Type="varchar" MaxLength="50" />
+          <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+          <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+          <Property Name="NominalThreadSize" Type="varchar" MaxLength="50" />
+          <Property Name="PassFail_A" Type="varchar" MaxLength="25" />
+          <Property Name="PerformanceSpec" Type="varchar" MaxLength="255" />
+          <Property Name="CycleSamples" Type="varchar" MaxLength="255" />
+          <Property Name="MaxInstall" Type="varchar" MaxLength="50" />
+          <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+          <Property Name="PassFail_B" Type="varchar" MaxLength="25" />
+          <Property Name="PrintMinMax" Type="varchar" MaxLength="250" />
+          <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+          <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+          <Property Name="Requirements" Type="varchar" MaxLength="255" />
+          <Property Name="Cert" Type="int" />
+          <Property Name="Suffix" Type="varchar" MaxLength="25" />
+          <Property Name="Template" Type="varchar" MaxLength="255" />
+          <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Test" Type="varchar" MaxLength="255" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+          <Property Name="Vendor" Type="varchar" MaxLength="255" />
+          <Property Name="CertDetail" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TestSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Suffix" Type="int" Nullable="false" />
+          <Property Name="Cert" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Specification" Type="varchar" MaxLength="255" />
+          <Property Name="SpecType" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TestTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Test" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+          <Property Name="CyclesSamples" Type="varchar" MaxLength="255" />
+          <Property Name="Frequency" Type="varchar" MaxLength="25" />
+          <Property Name="MaxInstall" Type="nchar" MaxLength="10" />
+          <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+          <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+          <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+          <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+          <Property Name="PassFail" Type="varchar" MaxLength="25" />
+          <Property Name="PrintMinMax" Type="varchar" MaxLength="255" />
+          <Property Name="Requirements" Type="varchar" MaxLength="255" />
+          <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+          <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Phone" Type="varchar" MaxLength="25" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="varchar" MaxLength="255" />
+          <Property Name="Address1" Type="varchar" MaxLength="255" />
+          <Property Name="Address2" Type="varchar" MaxLength="255" />
+          <Property Name="Address3" Type="varchar" MaxLength="255" />
+          <Property Name="Address4" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="255" />
+          <Property Name="StateProv" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="25" />
+          <Property Name="County" Type="varchar" MaxLength="100" />
+          <Property Name="Fax" Type="varchar" MaxLength="25" />
+          <Property Name="Sites" Type="varchar" MaxLength="255" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="CTR_FLS_ModelStoreContainer">
+          <EntitySet Name="AuditLog" EntityType="Self.AuditLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cert" EntityType="Self.Cert" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CTRUser" EntityType="Self.CTRUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerOrderItem" EntityType="Self.CustomerOrderItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DefaultType" EntityType="Self.DefaultType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interchange" EntityType="Self.Interchange" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemInfo" EntityType="Self.ItemInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemSpec" EntityType="Self.ItemSpec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobInfo" EntityType="Self.JobInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobLotParent" EntityType="Self.JobLotParent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobLots" EntityType="Self.JobLots" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotInfo" EntityType="Self.LotInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterSpec" EntityType="Self.MasterSpec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialTrans" EntityType="Self.MaterialTrans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NominalThread" EntityType="Self.NominalThread" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Note" EntityType="Self.Note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OSP" EntityType="Self.OSP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackItem" EntityType="Self.PackItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackItemExtended" EntityType="Self.PackItemExtended" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductFamily" EntityType="Self.ProductFamily" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sample" EntityType="Self.Sample" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipLot" EntityType="Self.ShipLot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestResult" EntityType="Self.TestResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestSpec" EntityType="Self.TestSpec" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestTemplate" EntityType="Self.TestTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CTR_FLS_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cert">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CertNbr" Type="Int32" Nullable="false" />
+          <Property Name="LotNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CertDate" Type="DateTime" Precision="3" />
+          <Property Name="PartNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PartDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Revision" Type="Int32" Nullable="false" />
+          <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CTRUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Signature" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="AccessLevel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Interchange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierItemNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InterchangePartNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Revision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialStatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="StockedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Revision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ReservableFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ABCCode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AltItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BackflushFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BackflushLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Buyer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PlanningCell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastGenDate" Type="DateTime" Precision="3" />
+          <Property Name="CharFld3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Commodity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="LowLevelCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DrawingNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FamilyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LotTrack" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderMinimum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="OrderMultiple" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PlannerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhantomFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UnitCost" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CharFld1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CharFld2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CharFld4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WeightUnits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ITAR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="HTSCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ECCN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ECCNLicense" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NAFTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduleB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USOnly" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DutyRate" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NominalThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ItemInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TestBolt" Type="Boolean" Nullable="false" />
+          <Property Name="TextKey" Type="Int32" />
+          <Property Name="CertTextKey" Type="Int32" />
+          <Property Name="LogicalField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastOccurence" Type="Int32" />
+          <Property Name="USOnly" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobLotParent">
+          <Key>
+            <PropertyRef Name="JobLotId" />
+            <PropertyRef Name="ParentJobLotId" />
+          </Key>
+          <Property Name="JobLotId" Type="Int32" Nullable="false" />
+          <Property Name="ParentJobLotId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobLot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ComponentLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ParentLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Operation" Type="Int32" />
+          <Property Name="QtyPer" Type="Int32" />
+          <Property Name="Sequence" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LotInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="HeatLotExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HeatLotBase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QtyReceived" Type="Int32" />
+          <Property Name="RefSuffix" Type="Int32" />
+          <Property Name="RefNbr" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RefRelease" Type="Int32" />
+          <Property Name="Ref" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="VendorLot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MillNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialId" Type="Int32" Nullable="false" />
+          <Property Name="ControlNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VendorNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MillNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaterialSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MfgDate" Type="DateTime" Precision="3" />
+          <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HeatNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VendorName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="QtyReceived" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="PONbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RecvdDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextKey" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="NewParagraph" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LineNbr" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OSP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LotNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AttachmentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RevNbr" Type="Int32" />
+          <Property Name="RevDate" Type="DateTime" Precision="3" />
+          <Property Name="Stage" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cert" Type="Int32" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Test" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sample1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ResultCycle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Minimum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Maximum" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PassFail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Suffix" Type="Int32" />
+          <Property Name="Test1" Type="Int32" />
+          <Property Name="Template" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditKey" Type="Int32" />
+          <Property Name="BoltSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CyclesSamples" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Frequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MasterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxInstall" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MaxValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MinBrkway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MinValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PassFail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PerformanceSpec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PrintMinMax" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Requirements" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResultCycles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SeatLoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TestResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BoltSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentCycle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentSample" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Frequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MasterKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MinValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NominalThreadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassFail_A" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PerformanceSpec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CycleSamples" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MaxInstall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MinBrkway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassFail_B" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PrintMinMax" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ResultCycles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SeatLoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Requirements" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cert" Type="Int32" />
+          <Property Name="Suffix" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Template" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TestBolt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Test" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Vendor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CertDetail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TestSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SpecType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Job" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suffix" Type="Int32" Nullable="false" />
+          <Property Name="Cert" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StateProv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sites" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CTR_FLS_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuditLogs" EntityType="Self.AuditLog" />
+          <EntitySet Name="Certs" EntityType="Self.Cert" />
+          <EntitySet Name="CTRUsers" EntityType="Self.CTRUser" />
+          <EntitySet Name="Interchanges" EntityType="Self.Interchange" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="ItemInfoes" EntityType="Self.ItemInfo" />
+          <EntitySet Name="JobLotParents" EntityType="Self.JobLotParent" />
+          <EntitySet Name="JobLots" EntityType="Self.JobLot" />
+          <EntitySet Name="LotInfoes" EntityType="Self.LotInfo" />
+          <EntitySet Name="Materials" EntityType="Self.Material" />
+          <EntitySet Name="Notes" EntityType="Self.Note" />
+          <EntitySet Name="OSPs" EntityType="Self.OSP" />
+          <EntitySet Name="Samples" EntityType="Self.Sample" />
+          <EntitySet Name="Tests" EntityType="Self.Test" />
+          <EntitySet Name="TestResults" EntityType="Self.TestResult" />
+          <EntitySet Name="TestSpecs" EntityType="Self.TestSpec" />
+          <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+          <EntitySet Name="ItemSpecs" EntityType="CTR_FLS_Model.ItemSpec" />
+          <EntitySet Name="JobInfoes" EntityType="CTR_FLS_Model.JobInfo" />
+          <EntitySet Name="MaterialTrans" EntityType="CTR_FLS_Model.MaterialTran" />
+          <EntitySet Name="Orders" EntityType="CTR_FLS_Model.Order" />
+          <EntitySet Name="PackItems" EntityType="CTR_FLS_Model.PackItem" />
+          <EntitySet Name="ShipLots" EntityType="CTR_FLS_Model.ShipLot" />
+          <EntitySet Name="CustomerOrderItems" EntityType="CTR_FLS_Model.CustomerOrderItem" />
+          <EntitySet Name="PackItemExtendeds" EntityType="CTR_FLS_Model.PackItemExtended" />
+          <EntitySet Name="DefaultTypes" EntityType="CTR_FLS_Model.DefaultType" />
+          <EntitySet Name="MasterSpecs" EntityType="CTR_FLS_Model.MasterSpec" />
+          <AssociationSet Name="FK__MasterSpe__Defau__4B7734FF" Association="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF">
+            <End Role="DefaultType" EntitySet="DefaultTypes" />
+            <End Role="MasterSpec" EntitySet="MasterSpecs" />
+          </AssociationSet>
+          <EntitySet Name="NominalThreads" EntityType="CTR_FLS_Model.NominalThread" />
+          <FunctionImport Name="GetCTRFormHeaderFooterFields" ReturnType="Collection(CTR_FLS_Model.GetCTRFormHeaderFooterFields_Result)">
+          <Parameter Name="LotNbr" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TestTemplate" EntityType="CTR_FLS_Model.TestTemplate" />
+          <EntitySet Name="ProductFamily" EntityType="CTR_FLS_Model.ProductFamily" />
+        </EntityContainer>
+        <EntityType Name="ItemSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Spec" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="AuditKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="JobInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Job" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suffix" Type="Int32" Nullable="false" />
+          <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Revision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Certificate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RequireCerts" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Completed" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ProductFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassedInspection" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CertTextKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReworkJob" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TextKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Occurrence" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PlanDate" Type="DateTime" Precision="3" />
+          <Property Name="NumericFormat" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NCMR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comments" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="JobInfoEnd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MaterialTran">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int64" Nullable="false" />
+          <Property Name="TransDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TransType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RefType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RefNbr" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RefRelease" Type="Int32" />
+          <Property Name="RefLineSuffix" Type="Int32" />
+          <Property Name="Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Decimal" Precision="19" Scale="9" />
+          <Property Name="WorkCtr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AwaitingEOP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Backflush" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAccount1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAccount2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAccount3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAccount4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAccount5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserInitials" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNbr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShipTo" Type="Int32" />
+          <Property Name="OrderType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NbrOfPackages" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="CloseDate" Type="DateTime" Precision="3" />
+          <Property Name="Contact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PackItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackingSlip" Type="Int32" Nullable="false" />
+          <Property Name="OrderNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderLine" Type="Int32" />
+          <Property Name="Release" Type="Int32" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QtyOrdered" Type="Int32" />
+          <Property Name="QtyPacked" Type="Int32" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ShipLot">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineNbr" Type="Int32" />
+          <Property Name="Release" Type="Int32" />
+          <Property Name="CustPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PackingSlip" Type="Int32" />
+          <Property Name="QtyShipped" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CustomerOrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNbr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineNbr" Type="Int32" />
+          <Property Name="Release" Type="Int32" />
+          <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrigSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShipTo" Type="Int32" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TextKey" Type="Int32" />
+          <Property Name="PackSlipPrintedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LastPickList" Type="DateTime" Precision="3" />
+          <Property Name="Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ordered" Type="Int32" />
+          <Property Name="Packed" Type="Int32" />
+          <Property Name="Shipped" Type="Int32" />
+          <Property Name="LRStat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="Warehouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastShip" Type="DateTime" Precision="3" />
+          <Property Name="ShipSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplUnits" Type="Int32" />
+          <Property Name="Commodity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ConsNbr" Type="Int32" />
+          <Property Name="BOLPrintedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PackItemExtended">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderLine" Type="Int32" />
+          <Property Name="OrderNbr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Release" Type="Int32" />
+          <Property Name="InvoicedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PackingSlip" Type="Int32" />
+          <Property Name="QtyInvoiced" Type="Int32" />
+          <Property Name="QtyPacked" Type="Int32" />
+          <Property Name="QtyShipped" Type="Int32" />
+          <Property Name="ShippedFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DefaultType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DefaultType1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MasterSpecs" Relationship="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF" FromRole="DefaultType" ToRole="MasterSpec" />
+        </EntityType>
+        <EntityType Name="MasterSpec">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Specification" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Master" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultTypeId" Type="Int32" Nullable="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DefaultType" Relationship="CTR_FLS_Model.FK__MasterSpe__Defau__4B7734FF" FromRole="MasterSpec" ToRole="DefaultType" />
+        </EntityType>
+        <Association Name="FK__MasterSpe__Defau__4B7734FF">
+          <End Type="CTR_FLS_Model.DefaultType" Role="DefaultType" Multiplicity="1" />
+          <End Type="CTR_FLS_Model.MasterSpec" Role="MasterSpec" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DefaultType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MasterSpec">
+              <PropertyRef Name="DefaultTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NominalThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DashNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NominalThreadSize" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="GetCTRFormHeaderFooterFields_Result">
+          <Property Type="String" Name="ComponentLot" Nullable="true" MaxLength="54" />
+          <Property Type="Int32" Name="CertNbr" Nullable="true" />
+          <Property Type="String" Name="SupplierItemNbr" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductFamily" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ApproverName" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="ApproverTitle" Nullable="false" MaxLength="14" />
+        </ComplexType>
+        <EntityType Name="TestTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UnitOfMeasure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CyclesSamples" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Frequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MaxInstall" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MaxValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMax" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MinBrkway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MinValueRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigDecMin" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PassFail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PrintMinMax" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Requirements" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResultCycles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SeatLoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProductFamily">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductFamily1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CTR_FLS_ModelStoreContainer" CdmEntityContainer="CTR_FLS_Entities">
+          <EntitySetMapping Name="AuditLogs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.AuditLog">
+              <MappingFragment StoreEntitySet="AuditLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Certs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Cert">
+              <MappingFragment StoreEntitySet="Cert">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CertNbr" ColumnName="CertNbr" />
+                <ScalarProperty Name="LotNbr" ColumnName="LotNbr" />
+                <ScalarProperty Name="CertDate" ColumnName="CertDate" />
+                <ScalarProperty Name="PartNbr" ColumnName="PartNbr" />
+                <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTRUsers">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.CTRUser">
+              <MappingFragment StoreEntitySet="CTRUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interchanges">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Interchange">
+              <MappingFragment StoreEntitySet="Interchange">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SupplierItemNbr" ColumnName="SupplierItemNbr" />
+                <ScalarProperty Name="InterchangePartNbr" ColumnName="InterchangePartNbr" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Item1" ColumnName="Item" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MaterialStatus" ColumnName="MaterialStatus" />
+                <ScalarProperty Name="StockedFlag" ColumnName="StockedFlag" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="ReservableFlag" ColumnName="ReservableFlag" />
+                <ScalarProperty Name="ABCCode" ColumnName="ABCCode" />
+                <ScalarProperty Name="AltItem" ColumnName="AltItem" />
+                <ScalarProperty Name="BackflushFlag" ColumnName="BackflushFlag" />
+                <ScalarProperty Name="BackflushLocation" ColumnName="BackflushLocation" />
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="PlanningCell" ColumnName="PlanningCell" />
+                <ScalarProperty Name="LastGenDate" ColumnName="LastGenDate" />
+                <ScalarProperty Name="CharFld3" ColumnName="CharFld3" />
+                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="LowLevelCode" ColumnName="LowLevelCode" />
+                <ScalarProperty Name="DrawingNbr" ColumnName="DrawingNbr" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+                <ScalarProperty Name="LotTrack" ColumnName="LotTrack" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OrderMinimum" ColumnName="OrderMinimum" />
+                <ScalarProperty Name="OrderMultiple" ColumnName="OrderMultiple" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="PlannerCode" ColumnName="PlannerCode" />
+                <ScalarProperty Name="ProductionType" ColumnName="ProductionType" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="PhantomFlag" ColumnName="PhantomFlag" />
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="CharFld1" ColumnName="CharFld1" />
+                <ScalarProperty Name="CharFld2" ColumnName="CharFld2" />
+                <ScalarProperty Name="CharFld4" ColumnName="CharFld4" />
+                <ScalarProperty Name="WeightUnits" ColumnName="WeightUnits" />
+                <ScalarProperty Name="ITAR" ColumnName="ITAR" />
+                <ScalarProperty Name="HTSCode" ColumnName="HTSCode" />
+                <ScalarProperty Name="ECCN" ColumnName="ECCN" />
+                <ScalarProperty Name="ECCNLicense" ColumnName="ECCNLicense" />
+                <ScalarProperty Name="NAFTA" ColumnName="NAFTA" />
+                <ScalarProperty Name="ScheduleB" ColumnName="ScheduleB" />
+                <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+                <ScalarProperty Name="USOnly" ColumnName="USOnly" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DutyRate" ColumnName="DutyRate" />
+                <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+                <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemInfoes">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.ItemInfo">
+              <MappingFragment StoreEntitySet="ItemInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ThreadSize" ColumnName="ThreadSize" />
+                <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+                <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+                <ScalarProperty Name="CertTextKey" ColumnName="CertTextKey" />
+                <ScalarProperty Name="LogicalField" ColumnName="LogicalField" />
+                <ScalarProperty Name="LastOccurence" ColumnName="LastOccurence" />
+                <ScalarProperty Name="USOnly" ColumnName="USOnly" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobLotParents">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.JobLotParent">
+              <MappingFragment StoreEntitySet="JobLotParent">
+                <ScalarProperty Name="JobLotId" ColumnName="JobLotId" />
+                <ScalarProperty Name="ParentJobLotId" ColumnName="ParentJobLotId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobLots">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.JobLot">
+              <MappingFragment StoreEntitySet="JobLots">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="ComponentLot" ColumnName="ComponentLot" />
+                <ScalarProperty Name="MaterialLot" ColumnName="MaterialLot" />
+                <ScalarProperty Name="ParentLot" ColumnName="ParentLot" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="QtyPer" ColumnName="QtyPer" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotInfoes">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.LotInfo">
+              <MappingFragment StoreEntitySet="LotInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="HeatLotExtension" ColumnName="HeatLotExtension" />
+                <ScalarProperty Name="HeatLotBase" ColumnName="HeatLotBase" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="MaterialSpec" ColumnName="MaterialSpec" />
+                <ScalarProperty Name="QtyReceived" ColumnName="QtyReceived" />
+                <ScalarProperty Name="RefSuffix" ColumnName="RefSuffix" />
+                <ScalarProperty Name="RefNbr" ColumnName="RefNbr" />
+                <ScalarProperty Name="RefRelease" ColumnName="RefRelease" />
+                <ScalarProperty Name="Ref" ColumnName="Ref" />
+                <ScalarProperty Name="VendorLot" ColumnName="VendorLot" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="MillNbr" ColumnName="MillNbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materials">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+                <ScalarProperty Name="ControlNbr" ColumnName="ControlNbr" />
+                <ScalarProperty Name="VendorNbr" ColumnName="VendorNbr" />
+                <ScalarProperty Name="MillNbr" ColumnName="MillNbr" />
+                <ScalarProperty Name="MaterialSpec" ColumnName="MaterialSpec" />
+                <ScalarProperty Name="MfgDate" ColumnName="MfgDate" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="HeatNbr" ColumnName="HeatNbr" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="QtyReceived" ColumnName="QtyReceived" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PONbr" ColumnName="PONbr" />
+                <ScalarProperty Name="RecvdDate" ColumnName="RecvdDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Note">
+              <MappingFragment StoreEntitySet="Note">
+                <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+                <ScalarProperty Name="NewParagraph" ColumnName="NewParagraph" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OSPs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.OSP">
+              <MappingFragment StoreEntitySet="OSP">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LotNbr" ColumnName="LotNbr" />
+                <ScalarProperty Name="AttachmentType" ColumnName="AttachmentType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="RevNbr" ColumnName="RevNbr" />
+                <ScalarProperty Name="RevDate" ColumnName="RevDate" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Samples">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Sample">
+              <MappingFragment StoreEntitySet="Sample">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cert" ColumnName="Cert" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Test" ColumnName="Test" />
+                <ScalarProperty Name="Sample1" ColumnName="Sample" />
+                <ScalarProperty Name="ResultCycle" ColumnName="ResultCycle" />
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+                <ScalarProperty Name="PassFail" ColumnName="PassFail" />
+                <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+                <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Test1" ColumnName="Test" />
+                <ScalarProperty Name="Template" ColumnName="Template" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+                <ScalarProperty Name="AuditKey" ColumnName="AuditKey" />
+                <ScalarProperty Name="BoltSpec" ColumnName="BoltSpec" />
+                <ScalarProperty Name="CyclesSamples" ColumnName="CyclesSamples" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="MasterKey" ColumnName="MasterKey" />
+                <ScalarProperty Name="MaxInstall" ColumnName="MaxInstall" />
+                <ScalarProperty Name="MaxValueRequired" ColumnName="MaxValueRequired" />
+                <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+                <ScalarProperty Name="MinBrkway" ColumnName="MinBrkway" />
+                <ScalarProperty Name="MinValueRequired" ColumnName="MinValueRequired" />
+                <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+                <ScalarProperty Name="PassFail" ColumnName="PassFail" />
+                <ScalarProperty Name="PerformanceSpec" ColumnName="PerformanceSpec" />
+                <ScalarProperty Name="PrintMinMax" ColumnName="PrintMinMax" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="ResultCycles" ColumnName="ResultCycles" />
+                <ScalarProperty Name="SeatLoad" ColumnName="SeatLoad" />
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestResults">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.TestResult">
+              <MappingFragment StoreEntitySet="TestResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BoltSpec" ColumnName="BoltSpec" />
+                <ScalarProperty Name="CurrentCycle" ColumnName="CurrentCycle" />
+                <ScalarProperty Name="CurrentSample" ColumnName="CurrentSample" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="MasterKey" ColumnName="MasterKey" />
+                <ScalarProperty Name="MaxValueRequired" ColumnName="MaxValueRequired" />
+                <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+                <ScalarProperty Name="MinValueRequired" ColumnName="MinValueRequired" />
+                <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+                <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+                <ScalarProperty Name="PassFail_A" ColumnName="PassFail_A" />
+                <ScalarProperty Name="PerformanceSpec" ColumnName="PerformanceSpec" />
+                <ScalarProperty Name="CycleSamples" ColumnName="CycleSamples" />
+                <ScalarProperty Name="MaxInstall" ColumnName="MaxInstall" />
+                <ScalarProperty Name="MinBrkway" ColumnName="MinBrkway" />
+                <ScalarProperty Name="PassFail_B" ColumnName="PassFail_B" />
+                <ScalarProperty Name="PrintMinMax" ColumnName="PrintMinMax" />
+                <ScalarProperty Name="ResultCycles" ColumnName="ResultCycles" />
+                <ScalarProperty Name="SeatLoad" ColumnName="SeatLoad" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="Cert" ColumnName="Cert" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Template" ColumnName="Template" />
+                <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Test" ColumnName="Test" />
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="CertDetail" ColumnName="CertDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestSpecs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.TestSpec">
+              <MappingFragment StoreEntitySet="TestSpec">
+                <ScalarProperty Name="Cert" ColumnName="Cert" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="SpecType" ColumnName="SpecType" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendors">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Vendor">
+              <MappingFragment StoreEntitySet="Vendor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address4" ColumnName="Address4" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateProv" ColumnName="StateProv" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Sites" ColumnName="Sites" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemSpecs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.ItemSpec">
+              <MappingFragment StoreEntitySet="ItemSpec">
+                <ScalarProperty Name="AuditKey" ColumnName="AuditKey" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="Spec" ColumnName="Spec" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobInfoes">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.JobInfo">
+              <MappingFragment StoreEntitySet="JobInfo">
+                <ScalarProperty Name="JobInfoEnd" ColumnName="JobInfoEnd" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="NCMR" ColumnName="NCMR" />
+                <ScalarProperty Name="NumericFormat" ColumnName="NumericFormat" />
+                <ScalarProperty Name="PlanDate" ColumnName="PlanDate" />
+                <ScalarProperty Name="Occurrence" ColumnName="Occurrence" />
+                <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+                <ScalarProperty Name="ReworkJob" ColumnName="ReworkJob" />
+                <ScalarProperty Name="CertTextKey" ColumnName="CertTextKey" />
+                <ScalarProperty Name="PassedInspection" ColumnName="PassedInspection" />
+                <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="RequireCerts" ColumnName="RequireCerts" />
+                <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialTrans">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.MaterialTran">
+              <MappingFragment StoreEntitySet="MaterialTrans">
+                <ScalarProperty Name="UserInitials" ColumnName="UserInitials" />
+                <ScalarProperty Name="MaterialAccount5" ColumnName="MaterialAccount5" />
+                <ScalarProperty Name="MaterialAccount4" ColumnName="MaterialAccount4" />
+                <ScalarProperty Name="MaterialAccount3" ColumnName="MaterialAccount3" />
+                <ScalarProperty Name="MaterialAccount2" ColumnName="MaterialAccount2" />
+                <ScalarProperty Name="MaterialAccount1" ColumnName="MaterialAccount1" />
+                <ScalarProperty Name="Backflush" ColumnName="Backflush" />
+                <ScalarProperty Name="AwaitingEOP" ColumnName="AwaitingEOP" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+                <ScalarProperty Name="WorkCtr" ColumnName="WorkCtr" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="RefLineSuffix" ColumnName="RefLineSuffix" />
+                <ScalarProperty Name="RefRelease" ColumnName="RefRelease" />
+                <ScalarProperty Name="RefNbr" ColumnName="RefNbr" />
+                <ScalarProperty Name="RefType" ColumnName="RefType" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="NbrOfPackages" ColumnName="NbrOfPackages" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackItems">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.PackItem">
+              <MappingFragment StoreEntitySet="PackItem">
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+                <ScalarProperty Name="QtyPacked" ColumnName="QtyPacked" />
+                <ScalarProperty Name="QtyOrdered" ColumnName="QtyOrdered" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Release" ColumnName="Release" />
+                <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+                <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+                <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipLots">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.ShipLot">
+              <MappingFragment StoreEntitySet="ShipLot">
+                <ScalarProperty Name="QtyShipped" ColumnName="QtyShipped" />
+                <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="CustPO" ColumnName="CustPO" />
+                <ScalarProperty Name="Release" ColumnName="Release" />
+                <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerOrderItems">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.CustomerOrderItem">
+              <MappingFragment StoreEntitySet="CustomerOrderItem">
+                <ScalarProperty Name="BOLPrintedFlag" ColumnName="BOLPrintedFlag" />
+                <ScalarProperty Name="ConsNbr" ColumnName="ConsNbr" />
+                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="SupplUnits" ColumnName="SupplUnits" />
+                <ScalarProperty Name="ShipSite" ColumnName="ShipSite" />
+                <ScalarProperty Name="LastShip" ColumnName="LastShip" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+                <ScalarProperty Name="LRStat" ColumnName="LRStat" />
+                <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+                <ScalarProperty Name="Packed" ColumnName="Packed" />
+                <ScalarProperty Name="Ordered" ColumnName="Ordered" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="LastPickList" ColumnName="LastPickList" />
+                <ScalarProperty Name="PackSlipPrintedFlag" ColumnName="PackSlipPrintedFlag" />
+                <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="CustomerNbr" ColumnName="CustomerNbr" />
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="OrigSite" ColumnName="OrigSite" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Release" ColumnName="Release" />
+                <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+                <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackItemExtendeds">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.PackItemExtended">
+              <MappingFragment StoreEntitySet="PackItemExtended">
+                <ScalarProperty Name="ShippedFlag" ColumnName="ShippedFlag" />
+                <ScalarProperty Name="QtyShipped" ColumnName="QtyShipped" />
+                <ScalarProperty Name="QtyPacked" ColumnName="QtyPacked" />
+                <ScalarProperty Name="QtyInvoiced" ColumnName="QtyInvoiced" />
+                <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="InvoicedFlag" ColumnName="InvoicedFlag" />
+                <ScalarProperty Name="Release" ColumnName="Release" />
+                <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+                <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultTypes">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.DefaultType">
+              <MappingFragment StoreEntitySet="DefaultType">
+                <ScalarProperty Name="DefaultType1" ColumnName="DefaultType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterSpecs">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.MasterSpec">
+              <MappingFragment StoreEntitySet="MasterSpec">
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="DefaultTypeId" ColumnName="DefaultTypeId" />
+                <ScalarProperty Name="Master" ColumnName="Master" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NominalThreads">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.NominalThread">
+              <MappingFragment StoreEntitySet="NominalThread">
+                <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+                <ScalarProperty Name="DashNumber" ColumnName="DashNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestTemplate">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.TestTemplate">
+              <MappingFragment StoreEntitySet="TestTemplate">
+                <ScalarProperty Name="SeatLoad" ColumnName="SeatLoad" />
+                <ScalarProperty Name="ResultCycles" ColumnName="ResultCycles" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="PrintMinMax" ColumnName="PrintMinMax" />
+                <ScalarProperty Name="PassFail" ColumnName="PassFail" />
+                <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+                <ScalarProperty Name="MinValueRequired" ColumnName="MinValueRequired" />
+                <ScalarProperty Name="MinBrkway" ColumnName="MinBrkway" />
+                <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+                <ScalarProperty Name="MaxValueRequired" ColumnName="MaxValueRequired" />
+                <ScalarProperty Name="MaxInstall" ColumnName="MaxInstall" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="CyclesSamples" ColumnName="CyclesSamples" />
+                <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Test" ColumnName="Test" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductFamily">
+            <EntityTypeMapping TypeName="CTR_FLS_Model.ProductFamily">
+              <MappingFragment StoreEntitySet="ProductFamily">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductFamily1" ColumnName="ProductFamily" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

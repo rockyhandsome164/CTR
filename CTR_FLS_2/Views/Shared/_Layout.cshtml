@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - CTR_FLS</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <!-- Use the CDN instead. Floating form field labels don't work with loaded Bootstrap for some reason... -->
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">*@
+    <!-- For Telerik reports -->
+    <link href="https://kendo.cdn.telerik.com/2019.1.115/styles/kendo.common.min.css" rel="stylesheet" id="common-css" />
+    <link href="https://kendo.cdn.telerik.com/2019.1.115/styles/kendo.blueopal.min.css" rel="stylesheet" id="skin-css" />
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+
+    <!-- For Telerik reports -->
+    <style>
+        #reportViewer1 {
+            position: relative;
+            width: 1100px;
+            height: 700px;
+            font-family: Verdana, Arial;
+            /* position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 160px;
+            bottom: 5px;
+            overflow: hidden;
+            clear: both;*/
+        }
+
+        .nav-item {
+            width: 15%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color:#fcfcfc">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #000000 !important;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/images/Howmet_Aerospace_horiz_rev.jpg" width="150" height="61" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-3 mb-lg-0" style="width:80%">
+                        <li class="nav-item">
+                            @Html.ActionLink("Job Tree", "View", "JobTree", new { area = "" }, new { @class = "nav-link active" });
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("OnBase", "View", "Onbase", new { area = "" }, new { @class = "nav-link" });
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Test Results</a>
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("CTR", "CertifiedTestReport", "ReportViews", new { area = "" }, new { @class = "nav-link" });
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Master Spec</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Test Template</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Item Spec</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Utilities</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="nav navbar-text">Hello, @User.Identity.Name!</p>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid body-content" style="background-color:ghostwhite;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div style="background-color:white">
+        <footer style="margin:100px 0 0 25px">
+            <p>
+                Version: @ViewContext.Controller.GetType().Assembly.GetName().Version
+                &nbsp;&nbsp;&nbsp; &copy; @DateTime.Now.Year - Howmet
+            </p>
+        </footer>
+    </div>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

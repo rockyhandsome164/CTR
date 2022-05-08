@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CTR_FLS_ModelStoreContainer" CdmEntityContainer="CTR_FLS_Entities">
+    <EntitySetMapping Name="AuditLogs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.AuditLog">
+        <MappingFragment StoreEntitySet="AuditLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Cert">
+        <MappingFragment StoreEntitySet="Cert">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CertNbr" ColumnName="CertNbr" />
+          <ScalarProperty Name="LotNbr" ColumnName="LotNbr" />
+          <ScalarProperty Name="CertDate" ColumnName="CertDate" />
+          <ScalarProperty Name="PartNbr" ColumnName="PartNbr" />
+          <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTRUsers">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.CTRUser">
+        <MappingFragment StoreEntitySet="CTRUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interchanges">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Interchange">
+        <MappingFragment StoreEntitySet="Interchange">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SupplierItemNbr" ColumnName="SupplierItemNbr" />
+          <ScalarProperty Name="InterchangePartNbr" ColumnName="InterchangePartNbr" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Item1" ColumnName="Item" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MaterialStatus" ColumnName="MaterialStatus" />
+          <ScalarProperty Name="StockedFlag" ColumnName="StockedFlag" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="ReservableFlag" ColumnName="ReservableFlag" />
+          <ScalarProperty Name="ABCCode" ColumnName="ABCCode" />
+          <ScalarProperty Name="AltItem" ColumnName="AltItem" />
+          <ScalarProperty Name="BackflushFlag" ColumnName="BackflushFlag" />
+          <ScalarProperty Name="BackflushLocation" ColumnName="BackflushLocation" />
+          <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+          <ScalarProperty Name="PlanningCell" ColumnName="PlanningCell" />
+          <ScalarProperty Name="LastGenDate" ColumnName="LastGenDate" />
+          <ScalarProperty Name="CharFld3" ColumnName="CharFld3" />
+          <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+          <ScalarProperty Name="LowLevelCode" ColumnName="LowLevelCode" />
+          <ScalarProperty Name="DrawingNbr" ColumnName="DrawingNbr" />
+          <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+          <ScalarProperty Name="LotTrack" ColumnName="LotTrack" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="OrderMinimum" ColumnName="OrderMinimum" />
+          <ScalarProperty Name="OrderMultiple" ColumnName="OrderMultiple" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="PlannerCode" ColumnName="PlannerCode" />
+          <ScalarProperty Name="ProductionType" ColumnName="ProductionType" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="PhantomFlag" ColumnName="PhantomFlag" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="CharFld1" ColumnName="CharFld1" />
+          <ScalarProperty Name="CharFld2" ColumnName="CharFld2" />
+          <ScalarProperty Name="CharFld4" ColumnName="CharFld4" />
+          <ScalarProperty Name="WeightUnits" ColumnName="WeightUnits" />
+          <ScalarProperty Name="ITAR" ColumnName="ITAR" />
+          <ScalarProperty Name="HTSCode" ColumnName="HTSCode" />
+          <ScalarProperty Name="ECCN" ColumnName="ECCN" />
+          <ScalarProperty Name="ECCNLicense" ColumnName="ECCNLicense" />
+          <ScalarProperty Name="NAFTA" ColumnName="NAFTA" />
+          <ScalarProperty Name="ScheduleB" ColumnName="ScheduleB" />
+          <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+          <ScalarProperty Name="USOnly" ColumnName="USOnly" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DutyRate" ColumnName="DutyRate" />
+          <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+          <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemInfoes">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.ItemInfo">
+        <MappingFragment StoreEntitySet="ItemInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ThreadSize" ColumnName="ThreadSize" />
+          <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+          <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+          <ScalarProperty Name="CertTextKey" ColumnName="CertTextKey" />
+          <ScalarProperty Name="LogicalField" ColumnName="LogicalField" />
+          <ScalarProperty Name="LastOccurence" ColumnName="LastOccurence" />
+          <ScalarProperty Name="USOnly" ColumnName="USOnly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobLotParents">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.JobLotParent">
+        <MappingFragment StoreEntitySet="JobLotParent">
+          <ScalarProperty Name="JobLotId" ColumnName="JobLotId" />
+          <ScalarProperty Name="ParentJobLotId" ColumnName="ParentJobLotId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobLots">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.JobLot">
+        <MappingFragment StoreEntitySet="JobLots">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ComponentLot" ColumnName="ComponentLot" />
+          <ScalarProperty Name="MaterialLot" ColumnName="MaterialLot" />
+          <ScalarProperty Name="ParentLot" ColumnName="ParentLot" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="QtyPer" ColumnName="QtyPer" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotInfoes">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.LotInfo">
+        <MappingFragment StoreEntitySet="LotInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="HeatLotExtension" ColumnName="HeatLotExtension" />
+          <ScalarProperty Name="HeatLotBase" ColumnName="HeatLotBase" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="MaterialSpec" ColumnName="MaterialSpec" />
+          <ScalarProperty Name="QtyReceived" ColumnName="QtyReceived" />
+          <ScalarProperty Name="RefSuffix" ColumnName="RefSuffix" />
+          <ScalarProperty Name="RefNbr" ColumnName="RefNbr" />
+          <ScalarProperty Name="RefRelease" ColumnName="RefRelease" />
+          <ScalarProperty Name="Ref" ColumnName="Ref" />
+          <ScalarProperty Name="VendorLot" ColumnName="VendorLot" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="MillNbr" ColumnName="MillNbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="ControlNbr" ColumnName="ControlNbr" />
+          <ScalarProperty Name="VendorNbr" ColumnName="VendorNbr" />
+          <ScalarProperty Name="MillNbr" ColumnName="MillNbr" />
+          <ScalarProperty Name="MaterialSpec" ColumnName="MaterialSpec" />
+          <ScalarProperty Name="MfgDate" ColumnName="MfgDate" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="HeatNbr" ColumnName="HeatNbr" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="QtyReceived" ColumnName="QtyReceived" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PONbr" ColumnName="PONbr" />
+          <ScalarProperty Name="RecvdDate" ColumnName="RecvdDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notes">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Note">
+        <MappingFragment StoreEntitySet="Note">
+          <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+          <ScalarProperty Name="NewParagraph" ColumnName="NewParagraph" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OSPs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.OSP">
+        <MappingFragment StoreEntitySet="OSP">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LotNbr" ColumnName="LotNbr" />
+          <ScalarProperty Name="AttachmentType" ColumnName="AttachmentType" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="RevNbr" ColumnName="RevNbr" />
+          <ScalarProperty Name="RevDate" ColumnName="RevDate" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Samples">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Sample">
+        <MappingFragment StoreEntitySet="Sample">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cert" ColumnName="Cert" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Test" ColumnName="Test" />
+          <ScalarProperty Name="Sample1" ColumnName="Sample" />
+          <ScalarProperty Name="ResultCycle" ColumnName="ResultCycle" />
+          <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+          <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+          <ScalarProperty Name="PassFail" ColumnName="PassFail" />
+          <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+          <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+          <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Test1" ColumnName="Test" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+          <ScalarProperty Name="AuditKey" ColumnName="AuditKey" />
+          <ScalarProperty Name="BoltSpec" ColumnName="BoltSpec" />
+          <ScalarProperty Name="CyclesSamples" ColumnName="CyclesSamples" />
+          <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="MasterKey" ColumnName="MasterKey" />
+          <ScalarProperty Name="MaxInstall" ColumnName="MaxInstall" />
+          <ScalarProperty Name="MaxValueRequired" ColumnName="MaxValueRequired" />
+          <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+          <ScalarProperty Name="MinBrkway" ColumnName="MinBrkway" />
+          <ScalarProperty Name="MinValueRequired" ColumnName="MinValueRequired" />
+          <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+          <ScalarProperty Name="PassFail" ColumnName="PassFail" />
+          <ScalarProperty Name="PerformanceSpec" ColumnName="PerformanceSpec" />
+          <ScalarProperty Name="PrintMinMax" ColumnName="PrintMinMax" />
+          <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+          <ScalarProperty Name="ResultCycles" ColumnName="ResultCycles" />
+          <ScalarProperty Name="SeatLoad" ColumnName="SeatLoad" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestResults">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.TestResult">
+        <MappingFragment StoreEntitySet="TestResult">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BoltSpec" ColumnName="BoltSpec" />
+          <ScalarProperty Name="CurrentCycle" ColumnName="CurrentCycle" />
+          <ScalarProperty Name="CurrentSample" ColumnName="CurrentSample" />
+          <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="MasterKey" ColumnName="MasterKey" />
+          <ScalarProperty Name="MaxValueRequired" ColumnName="MaxValueRequired" />
+          <ScalarProperty Name="SigDecMax" ColumnName="SigDecMax" />
+          <ScalarProperty Name="MinValueRequired" ColumnName="MinValueRequired" />
+          <ScalarProperty Name="SigDecMin" ColumnName="SigDecMin" />
+          <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+          <ScalarProperty Name="PassFail_A" ColumnName="PassFail_A" />
+          <ScalarProperty Name="PerformanceSpec" ColumnName="PerformanceSpec" />
+          <ScalarProperty Name="CycleSamples" ColumnName="CycleSamples" />
+          <ScalarProperty Name="MaxInstall" ColumnName="MaxInstall" />
+          <ScalarProperty Name="MinBrkway" ColumnName="MinBrkway" />
+          <ScalarProperty Name="PassFail_B" ColumnName="PassFail_B" />
+          <ScalarProperty Name="PrintMinMax" ColumnName="PrintMinMax" />
+          <ScalarProperty Name="ResultCycles" ColumnName="ResultCycles" />
+          <ScalarProperty Name="SeatLoad" ColumnName="SeatLoad" />
+          <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+          <ScalarProperty Name="Cert" ColumnName="Cert" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="TestBolt" ColumnName="TestBolt" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Test" ColumnName="Test" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="CertDetail" ColumnName="CertDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestSpecs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.TestSpec">
+        <MappingFragment StoreEntitySet="TestSpec">
+          <ScalarProperty Name="Cert" ColumnName="Cert" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="SpecType" ColumnName="SpecType" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateProv" ColumnName="StateProv" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Sites" ColumnName="Sites" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemSpecs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.ItemSpec">
+        <MappingFragment StoreEntitySet="ItemSpec">
+          <ScalarProperty Name="AuditKey" ColumnName="AuditKey" />
+          <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="Spec" ColumnName="Spec" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobInfoes">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.JobInfo">
+        <MappingFragment StoreEntitySet="JobInfo">
+          <ScalarProperty Name="JobInfoEnd" ColumnName="JobInfoEnd" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="NCMR" ColumnName="NCMR" />
+          <ScalarProperty Name="NumericFormat" ColumnName="NumericFormat" />
+          <ScalarProperty Name="PlanDate" ColumnName="PlanDate" />
+          <ScalarProperty Name="Occurrence" ColumnName="Occurrence" />
+          <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+          <ScalarProperty Name="ReworkJob" ColumnName="ReworkJob" />
+          <ScalarProperty Name="CertTextKey" ColumnName="CertTextKey" />
+          <ScalarProperty Name="PassedInspection" ColumnName="PassedInspection" />
+          <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="RequireCerts" ColumnName="RequireCerts" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialTrans">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.MaterialTran">
+        <MappingFragment StoreEntitySet="MaterialTrans">
+          <ScalarProperty Name="UserInitials" ColumnName="UserInitials" />
+          <ScalarProperty Name="MaterialAccount5" ColumnName="MaterialAccount5" />
+          <ScalarProperty Name="MaterialAccount4" ColumnName="MaterialAccount4" />
+          <ScalarProperty Name="MaterialAccount3" ColumnName="MaterialAccount3" />
+          <ScalarProperty Name="MaterialAccount2" ColumnName="MaterialAccount2" />
+          <ScalarProperty Name="MaterialAccount1" ColumnName="MaterialAccount1" />
+          <ScalarProperty Name="Backflush" ColumnName="Backflush" />
+          <ScalarProperty Name="AwaitingEOP" ColumnName="AwaitingEOP" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+          <ScalarProperty Name="WorkCtr" ColumnName="WorkCtr" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="RefLineSuffix" ColumnName="RefLineSuffix" />
+          <ScalarProperty Name="RefRelease" ColumnName="RefRelease" />
+          <ScalarProperty Name="RefNbr" ColumnName="RefNbr" />
+          <ScalarProperty Name="RefType" ColumnName="RefType" />
+          <ScalarProperty Name="TransType" ColumnName="TransType" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="NbrOfPackages" ColumnName="NbrOfPackages" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackItems">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.PackItem">
+        <MappingFragment StoreEntitySet="PackItem">
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="QtyPacked" ColumnName="QtyPacked" />
+          <ScalarProperty Name="QtyOrdered" ColumnName="QtyOrdered" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+          <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+          <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipLots">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.ShipLot">
+        <MappingFragment StoreEntitySet="ShipLot">
+          <ScalarProperty Name="QtyShipped" ColumnName="QtyShipped" />
+          <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="CustPO" ColumnName="CustPO" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerOrderItems">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.CustomerOrderItem">
+        <MappingFragment StoreEntitySet="CustomerOrderItem">
+          <ScalarProperty Name="BOLPrintedFlag" ColumnName="BOLPrintedFlag" />
+          <ScalarProperty Name="ConsNbr" ColumnName="ConsNbr" />
+          <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+          <ScalarProperty Name="SupplUnits" ColumnName="SupplUnits" />
+          <ScalarProperty Name="ShipSite" ColumnName="ShipSite" />
+          <ScalarProperty Name="LastShip" ColumnName="LastShip" />
+          <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="LRStat" ColumnName="LRStat" />
+          <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+          <ScalarProperty Name="Packed" ColumnName="Packed" />
+          <ScalarProperty Name="Ordered" ColumnName="Ordered" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="LastPickList" ColumnName="LastPickList" />
+          <ScalarProperty Name="PackSlipPrintedFlag" ColumnName="PackSlipPrintedFlag" />
+          <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="CustomerNbr" ColumnName="CustomerNbr" />
+          <ScalarProperty Name="CI" ColumnName="CI" />
+          <ScalarProperty Name="OrigSite" ColumnName="OrigSite" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="LineNbr" ColumnName="LineNbr" />
+          <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackItemExtendeds">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.PackItemExtended">
+        <MappingFragment StoreEntitySet="PackItemExtended">
+          <ScalarProperty Name="ShippedFlag" ColumnName="ShippedFlag" />
+          <ScalarProperty Name="QtyShipped" ColumnName="QtyShipped" />
+          <ScalarProperty Name="QtyPacked" ColumnName="QtyPacked" />
+          <ScalarProperty Name="QtyInvoiced" ColumnName="QtyInvoiced" />
+          <ScalarProperty Name="PackingSlip" ColumnName="PackingSlip" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="InvoicedFlag" ColumnName="InvoicedFlag" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="OrderNbr" ColumnName="OrderNbr" />
+          <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefaultTypes">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.DefaultType">
+        <MappingFragment StoreEntitySet="DefaultType">
+          <ScalarProperty Name="DefaultType1" ColumnName="DefaultType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterSpecs">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.MasterSpec">
+        <MappingFragment StoreEntitySet="MasterSpec">
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+          <ScalarProperty Name="DefaultTypeId" ColumnName="DefaultTypeId" />
+          <ScalarProperty Name="Master" ColumnName="Master" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NominalThreads">
+      <EntityTypeMapping TypeName="CTR_FLS_Model.NominalThread">
+        <MappingFragment StoreEntitySet="NominalThread">
+          <ScalarProperty Name="NominalThreadSize" ColumnName="NominalThreadSize" />
+          <ScalarProperty Name="DashNumber" ColumnName="DashNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetCTRFormHeaderFooterFields" FunctionName="CTR_FLS_Model.Store.GetCTRFormHeaderFooterFields">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CTR_FLS_Model.GetCTRFormHeaderFooterFields_Result">
+          <ScalarProperty Name="ComponentLot" ColumnName="ComponentLot" />
+          <ScalarProperty Name="CertNbr" ColumnName="CertNbr" />
+          <ScalarProperty Name="SupplierItemNbr" ColumnName="SupplierItemNbr" />
+          <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+          <ScalarProperty Name="ApproverName" ColumnName="ApproverName" />
+          <ScalarProperty Name="ApproverTitle" ColumnName="ApproverTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

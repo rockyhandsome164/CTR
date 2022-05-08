@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="abs_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="abs_shipfrom" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_id" Type="nvarchar(max)" />
+    <Property Name="abs_par_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_shipto" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_timezone" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_shp_date" Type="datetime" />
+    <Property Name="abs_shp_time" Type="int" />
+    <Property Name="abs_arr_date" Type="datetime" />
+    <Property Name="abs_arr_time" Type="int" />
+    <Property Name="abs_crt_date" Type="datetime" />
+    <Property Name="abs_crt_time" Type="int" />
+    <Property Name="abs_apr_date" Type="datetime" />
+    <Property Name="abs_apr_time" Type="int" />
+    <Property Name="abs_apr_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_gwt" Type="decimal" Precision="25" Scale="10" />
+    <Property Name="abs_nwt" Type="decimal" Precision="25" Scale="10" />
+    <Property Name="abs_vol" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_wt_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_vol_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_dim_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_fr_class" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_est_fcst" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_act_fcst" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_fr_curr" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_doc_data##1" Type="nvarchar" MaxLength="214" />
+    <Property Name="abs_doc_data##2" Type="nvarchar" MaxLength="214" />
+    <Property Name="abs_doc_data##3" Type="nvarchar" MaxLength="214" />
+    <Property Name="abs_doc_data##4" Type="nvarchar" MaxLength="214" />
+    <Property Name="abs_doc_data##5" Type="nvarchar" MaxLength="214" />
+    <Property Name="abs_dataset" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_order" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_line" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_inv_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_item" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_lotser" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_ship_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_cum_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_cust_ref" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_cmtindx" Type="int" />
+    <Property Name="abs__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec05" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec06" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec07" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec08" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec09" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__dec10" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs__qad01" Type="nvarchar" MaxLength="230" />
+    <Property Name="abs__qad02" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad03" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad04" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad05" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad06" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad07" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad08" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad09" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qad10" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_master_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_inv_mov" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_nr_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_format" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_cons_ship" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qadc01" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_lang" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_canceled" Type="bit" />
+    <Property Name="abs__qadd01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_trl_cmtindx" Type="int" />
+    <Property Name="abs_eff_date" Type="datetime" />
+    <Property Name="abs_cancel_date" Type="datetime" />
+    <Property Name="abs_preship_nr_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_preship_id" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_fa_lot" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_asn_crt_date" Type="datetime" />
+    <Property Name="abs_asn_crt_time" Type="int" />
+    <Property Name="abs_export_batch" Type="int" />
+    <Property Name="abs_export_date" Type="datetime" />
+    <Property Name="abs_export_time" Type="int" />
+    <Property Name="abs_charge_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_desc" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_master_shipfrom" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_abs_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_consigned_return" Type="bit" />
+    <Property Name="abs_vend_lot" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_rcpt_qty" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="abs_routing" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_bom_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_production_line" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_complete" Type="bit" />
+    <Property Name="abs_scrap_qty" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="abs_combined_invoice" Type="bit" />
+    <Property Name="abs_act_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_bulk_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_tax_in" Type="bit" />
+    <Property Name="abs_tax_env" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_tax_usage" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_taxc" Type="nvarchar" MaxLength="30" />
+    <Property Name="abs_taxable" Type="bit" />
+    <Property Name="abs_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="abs_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="abs_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="abs_proj" Type="nvarchar" MaxLength="20" />
+    <Property Name="abs__qadc02" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qadc03" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs__qadi01" Type="int" />
+    <Property Name="abs__qadl01" Type="bit" />
+    <Property Name="abs__qadt01" Type="datetime" />
+    <Property Name="abs_ship_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="oid_lgdd_det" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="abs_to_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="abs_to_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="prh_hist">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="prh_part" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_line" Type="int" />
+    <Property Name="prh_rcvd" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pur_cost" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pur_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_rcp_date" Type="datetime" />
+    <Property Name="prh_vend" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_receiver" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_lot" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_ps_nbr" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_ps_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_bo_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qadc02" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_xinvoice" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_xinv_dt" Type="datetime" />
+    <Property Name="prh__qadd01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_xinv_cst" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qadc03" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__qadc04" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__qadc05" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_rev" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_print" Type="bit" />
+    <Property Name="prh_lbr_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_mtl_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_bdn_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_sub_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_buyer" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__qad03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__qad02" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_shipto" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_cst_up" Type="bit" />
+    <Property Name="prh_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_um_conv" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_curr" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_ex_rate" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_curr_amt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_pay_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_pum_conv" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_ovh_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_ship" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_qty_ord" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_per_date" Type="datetime" />
+    <Property Name="prh_rcp_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_reason" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_request" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_approve" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__qad04" Type="int" />
+    <Property Name="prh_tax_at" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__dte01" Type="datetime" />
+    <Property Name="prh__dte02" Type="datetime" />
+    <Property Name="prh__dte03" Type="datetime" />
+    <Property Name="prh__dte04" Type="datetime" />
+    <Property Name="prh__dte05" Type="datetime" />
+    <Property Name="prh__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__dec05" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh__log01" Type="bit" />
+    <Property Name="prh__log02" Type="bit" />
+    <Property Name="prh_rma_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_fix_rate" Type="bit" />
+    <Property Name="prh_po_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_cum_req" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_cum_rcvd" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_fsm_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_bank" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_curr_rlse_id##1" Type="nvarchar" MaxLength="82" />
+    <Property Name="prh_curr_rlse_id##2" Type="nvarchar" MaxLength="82" />
+    <Property Name="prh_curr_rlse_id##3" Type="nvarchar" MaxLength="82" />
+    <Property Name="prh_element" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_fix_pr" Type="bit" />
+    <Property Name="prh_tax_usage" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_tax_env" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_crt_int" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_tax_in" Type="bit" />
+    <Property Name="prh_taxc" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_vend_lot" Type="nvarchar" MaxLength="30" />
+    <Property Name="prh_ship_date" Type="datetime" />
+    <Property Name="prh__qadi01" Type="int" />
+    <Property Name="prh_ex_rate2" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="prh_ex_ratetype" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_exru_seq" Type="int" />
+    <Property Name="prh__qadc06" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh__qadc01" Type="nvarchar" MaxLength="80" />
+    <Property Name="prh_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_prh_hist" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="oid_lgd_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="pt_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="pt_part" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_desc1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_desc2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt__qad13" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt__qad12" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_draw" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_prod_line" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_group" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_part_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_abc" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_iss_pol" Type="bit" />
+    <Property Name="pt_phantom" Type="bit" />
+    <Property Name="pt_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__qad01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_abc_amt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_avg_int" Type="int" />
+    <Property Name="pt__qad05" Type="datetime" />
+    <Property Name="pt_cyc_int" Type="int" />
+    <Property Name="pt__qad06" Type="datetime" />
+    <Property Name="pt__qad07" Type="datetime" />
+    <Property Name="pt__qad08" Type="datetime" />
+    <Property Name="pt_ms" Type="bit" />
+    <Property Name="pt_plan_ord" Type="bit" />
+    <Property Name="pt_mrp" Type="bit" />
+    <Property Name="pt_ord_pol" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_ord_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_ord_per" Type="int" />
+    <Property Name="pt_sfty_stk" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_sfty_time" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_rop" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_buyer" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_vend" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__qad09" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pm_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_mfg_lead" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_pur_lead" Type="int" />
+    <Property Name="pt_insp_rqd" Type="bit" />
+    <Property Name="pt_insp_lead" Type="int" />
+    <Property Name="pt_cum_lead" Type="int" />
+    <Property Name="pt_ord_min" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_ord_max" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_ord_mult" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_yield_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad16" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_setup" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_setup_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_run_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_run" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xmtl_tl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_tl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_tl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_tl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xmtl_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xtot_cur" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_cur_date" Type="datetime" />
+    <Property Name="pt_xmtl_stdtl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_stdtl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_stdtl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_stdtl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xtot_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_std_date" Type="datetime" />
+    <Property Name="pt_ll_code" Type="int" />
+    <Property Name="pt_abc_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad10" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad11" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_routing" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_lot_ser" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_timefence" Type="int" />
+    <Property Name="pt_xmtl_stdll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xlbr_stdll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xbdn_stdll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xsub_stdll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_rev" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_last_eco" Type="datetime" />
+    <Property Name="pt__qad15" Type="bit" />
+    <Property Name="pt__qad17" Type="bit" />
+    <Property Name="pt_qc_lead" Type="int" />
+    <Property Name="pt_auto_lot" Type="bit" />
+    <Property Name="pt_assay" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_batch" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad14" Type="datetime" />
+    <Property Name="pt_user3" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_net_wt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_net_wt_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_size" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_size_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_taxable" Type="bit" />
+    <Property Name="pt_taxc" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_rollup" Type="bit" />
+    <Property Name="pt_xovh_ll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_tl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_stdll" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_xovh_stdtl" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_shelflife" Type="int" />
+    <Property Name="pt_critical" Type="bit" />
+    <Property Name="pt_sngl_lot" Type="bit" />
+    <Property Name="pt_upc" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_hazard" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_added" Type="datetime" />
+    <Property Name="pt__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt__dte01" Type="datetime" />
+    <Property Name="pt__dte02" Type="datetime" />
+    <Property Name="pt__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__log01" Type="bit" />
+    <Property Name="pt__log02" Type="bit" />
+    <Property Name="pt__qad18" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad21" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad19" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt__qad20" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_length" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_height" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_width" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_dim_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_pkg_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_network" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_ll_drp" Type="int" />
+    <Property Name="pt_fr_class" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_spec_hdlg" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_bom_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_loc_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_transtype" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_cover" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_unit_isb" Type="bit" />
+    <Property Name="pt_article" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_po_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_ship_wt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_ship_wt_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_formula" Type="bit" />
+    <Property Name="pt_dea" Type="bit" />
+    <Property Name="pt__qad26" Type="bit" />
+    <Property Name="pt__qad22" Type="bit" />
+    <Property Name="pt__qad25" Type="int" />
+    <Property Name="pt__qad24" Type="int" />
+    <Property Name="pt__qad23" Type="int" />
+    <Property Name="pt_comm_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_inst_call" Type="bit" />
+    <Property Name="pt_sys_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_tariff" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_origin" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_sttr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mfg_mtbf" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mfg_mttr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_fru" Type="bit" />
+    <Property Name="pt_ven_warr" Type="bit" />
+    <Property Name="pt_svc_group" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_svc_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_mtbf" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_mttr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_isb" Type="bit" />
+    <Property Name="pt_pvm_days" Type="int" />
+    <Property Name="pt_warr_cd" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_mod_date" Type="datetime" />
+    <Property Name="pt_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_obs_date" Type="datetime" />
+    <Property Name="pt_pvm_bom" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_pvm_route" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_pvm_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_rp_bom" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_rp_route" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_rp_vendor" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_rctpo_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_rollup_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_spec_grav" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_joint_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_mfg_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pur_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_drp_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pou_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_wks_avg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_wks_max" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_wks_min" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_pick_logic" Type="int" />
+    <Property Name="pt_fiscal_class" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_dsgn_grp" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_drwg_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_ecn_rev" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_drwg_size" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_model" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_repairable" Type="bit" />
+    <Property Name="pt_rctwo_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_lot_grp" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_rctpo_active" Type="bit" />
+    <Property Name="pt_rctwo_active" Type="bit" />
+    <Property Name="pt_break_cat" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_fsc_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_trace_active" Type="bit" />
+    <Property Name="pt_trace_detail" Type="bit" />
+    <Property Name="pt_pm_mrp" Type="bit" />
+    <Property Name="pt_ins_call_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_ins_bom" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_ins_route" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_promo" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_meter_interval" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_meter_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_wh" Type="bit" />
+    <Property Name="pt_btb_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_cfg_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_app_owner" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_op_yield" Type="bit" />
+    <Property Name="pt_run_seq1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_run_seq2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_atp_enforcement" Type="nvarchar" MaxLength="30" />
+    <Property Name="pt_atp_family" Type="bit" />
+    <Property Name="pt_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_pt_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_classification" Type="nvarchar" MaxLength="12" />
+    <Property Name="pt_memo_type" Type="nvarchar" MaxLength="1" />
+    <Property Name="pt_um_group" Type="nvarchar" MaxLength="16" />
+    <Property Name="pt_opc_threshold" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="pt_pop_code" Type="nvarchar" MaxLength="16" />
+    <Property Name="pt_whse_part_type" Type="nvarchar" MaxLength="16" />
+    <Property Name="pt_issue_method" Type="nvarchar" MaxLength="16" />
+    <Property Name="pt_rep_type" Type="nvarchar" MaxLength="16" />
+    <Property Name="pt_same_days##1" Type="int" />
+    <Property Name="pt_same_days##2" Type="int" />
+    <Property Name="pt_same_days##3" Type="int" />
+    <Property Name="pt_same_days##4" Type="int" />
+    <Property Name="pt_same_days##5" Type="int" />
+    <Property Name="pt_same_days##6" Type="int" />
+    <Property Name="pt_same_days##7" Type="int" />
+    <Property Name="pt_same_days##8" Type="int" />
+    <Property Name="pt_same_days##9" Type="int" />
+    <Property Name="pt_same_days##10" Type="int" />
+    <Property Name="pt_invent_days##1" Type="int" />
+    <Property Name="pt_invent_days##2" Type="int" />
+    <Property Name="pt_invent_days##3" Type="int" />
+    <Property Name="pt_invent_days##4" Type="int" />
+    <Property Name="pt_invent_days##5" Type="int" />
+    <Property Name="pt_invent_days##6" Type="int" />
+    <Property Name="pt_invent_days##7" Type="int" />
+    <Property Name="pt_invent_days##8" Type="int" />
+    <Property Name="pt_invent_days##9" Type="int" />
+    <Property Name="pt_invent_days##10" Type="int" />
+    <Property Name="pt_crit_days" Type="int" />
+    <Property Name="pt_shelf_offset" Type="int" />
+    <Property Name="pt_single_trans" Type="bit" />
+    <Property Name="pt_print_id" Type="bit" />
+    <Property Name="pt_id_qty" Type="int" />
+    <Property Name="pt_insp_req" Type="bit" />
+    <Property Name="pt__qad27" Type="int" />
+    <Property Name="pt_sample_pct" Type="int" />
+    <Property Name="pt_insp_freq" Type="int" />
+    <Property Name="pt_destructive" Type="bit" />
+    <Property Name="pt_insp_days" Type="int" />
+    <Property Name="pt_barcode1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_barcode2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_insp_ref" Type="bit" />
+    <Property Name="pt_random_insp_pct" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="pt_atp_horizon" Type="int" />
+    <Property Name="pt_gcfg_type" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_replenishment_mthd" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_gtin_barcode1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_gtin_barcode2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_fiscal_type" Type="nvarchar" MaxLength="2" />
+    <Property Name="pt_service_code" Type="nvarchar" MaxLength="4" />
+    <Property Name="pt_freight_nature" Type="nvarchar" MaxLength="1" />
+    <Property Name="pt_trade_class" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_serialized" Type="int" />
+    <Property Name="pt_sample_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="pt_sourcetype" Type="nvarchar" MaxLength="80" />
+    <Property Name="pt_nve1_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve2_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve3_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve4_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve5_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve6_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve7_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_nve8_code" Type="nvarchar" MaxLength="6" />
+    <Property Name="pt_cest_code" Type="nvarchar" MaxLength="9" />
+    <Property Name="pt_enforce_cert" Type="bit" />
+    <Property Name="pt_relev_scale" Type="bit" />
+    <Property Name="pt_service_type" Type="nvarchar" MaxLength="9" />
+    <Property Name="pt_xml_group" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_anp_code" Type="nvarchar" MaxLength="9" />
+    <Property Name="pt_pk_ord" Type="int" />
+    <Property Name="pt_pk_ord_ascend" Type="bit" />
+    <Property Name="pt_pick_pol" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_all_pol" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_xfer_all_pol" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_picklist_ord_mult" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_picklist_ord_max" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_picklist_ord_min" Type="decimal" Precision="38" Scale="0" />
+    <Property Name="pt_comp_iss_pol" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_po_buyer" Type="nvarchar" MaxLength="11" />
+    <Property Name="pt_plan_pos_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="pt_plan_neg_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="pt_ship_pos_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="pt_ship_neg_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="pt_schedule_type" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_smoothing_rule" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_avg_period" Type="int" />
+    <Property Name="pt_period_type" Type="nvarchar" MaxLength="8" />
+    <Property Name="pt_anp_desc" Type="nvarchar" MaxLength="24" />
+    <Property Name="pt_relevant_scale" Type="nvarchar" MaxLength="1" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sod_det">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="sod_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_due_date" Type="datetime" />
+    <Property Name="sod_per_date" Type="datetime" />
+    <Property Name="sod_req_date" Type="datetime" />
+    <Property Name="sod_line" Type="int" />
+    <Property Name="sod_part" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_qty_ord" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_all" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_pick" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_ship" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_inv" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_std_cost" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_bo_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_abnormal" Type="bit" />
+    <Property Name="sod_taxable" Type="bit" />
+    <Property Name="sod_serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="sod_desc" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_comment##1" Type="nvarchar" MaxLength="82" />
+    <Property Name="sod_comment##2" Type="nvarchar" MaxLength="82" />
+    <Property Name="sod_comment##3" Type="nvarchar" MaxLength="82" />
+    <Property Name="sod_comment##4" Type="nvarchar" MaxLength="82" />
+    <Property Name="sod_comment##5" Type="nvarchar" MaxLength="82" />
+    <Property Name="sod_lot" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_um_conv" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fa_nbr" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_disc_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_project" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_cmtindx" Type="int" />
+    <Property Name="sod_custpart" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qad01" Type="int" />
+    <Property Name="sod_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_xslspsn##1" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_xslspsn##2" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_xslspsn##3" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_xcomm_pct##1" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_xcomm_pct##2" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_dsc_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_dsc_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_list_pr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_sob_rev" Type="datetime" />
+    <Property Name="sod_sob_std" Type="bit" />
+    <Property Name="sod_qty_qote" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_consume" Type="bit" />
+    <Property Name="sod_expire" Type="datetime" />
+    <Property Name="sod__qad02" Type="bit" />
+    <Property Name="sod_taxc" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_inv_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_partial" Type="bit" />
+    <Property Name="sod_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_prodline" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_tax_in" Type="bit" />
+    <Property Name="sod_fst_list" Type="bit" />
+    <Property Name="sod_pst" Type="bit" />
+    <Property Name="sod__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__dte01" Type="datetime" />
+    <Property Name="sod__dte02" Type="datetime" />
+    <Property Name="sod__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod__log01" Type="bit" />
+    <Property Name="sod_calc_isb" Type="bit" />
+    <Property Name="sod_owner" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_rma_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_qty_item" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_per" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ref" Type="int" />
+    <Property Name="sod_for" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_tax_max" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_contr_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_pickdate" Type="datetime" />
+    <Property Name="sod_confirm" Type="bit" />
+    <Property Name="sod_cum_qty##1" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty##2" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty##3" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_qty##4" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_date##1" Type="datetime" />
+    <Property Name="sod_cum_date##2" Type="datetime" />
+    <Property Name="sod_cum_date##3" Type="datetime" />
+    <Property Name="sod_cum_date##4" Type="datetime" />
+    <Property Name="sod_fr_rate" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_slspsn##1" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_slspsn##2" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_slspsn##3" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_slspsn##4" Type="nvarchar" MaxLength="10" />
+    <Property Name="sod_comm_pct##1" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct##2" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct##3" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_comm_pct##4" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ord_mult" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="sod_pkg_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_curr_rlse_id##1" Type="nvarchar" MaxLength="32" />
+    <Property Name="sod_curr_rlse_id##2" Type="nvarchar" MaxLength="32" />
+    <Property Name="sod_curr_rlse_id##3" Type="nvarchar" MaxLength="32" />
+    <Property Name="sod_sched" Type="bit" />
+    <Property Name="sod_sch_data" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_sch_mrp" Type="bit" />
+    <Property Name="sod_rlse_nbr" Type="int" />
+    <Property Name="sod_translt_days" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fsm_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_conrep" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_start_eff##1" Type="datetime" />
+    <Property Name="sod_start_eff##2" Type="datetime" />
+    <Property Name="sod_start_eff##3" Type="datetime" />
+    <Property Name="sod_start_eff##4" Type="datetime" />
+    <Property Name="sod_end_eff##1" Type="datetime" />
+    <Property Name="sod_end_eff##2" Type="datetime" />
+    <Property Name="sod_end_eff##3" Type="datetime" />
+    <Property Name="sod_end_eff##4" Type="datetime" />
+    <Property Name="sod_dock" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_pr_list" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_translt_hrs" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_out_po" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_raw_days" Type="int" />
+    <Property Name="sod_fab_days" Type="int" />
+    <Property Name="sod_tax_usage" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_rbkt_days" Type="int" />
+    <Property Name="sod_rbkt_weeks" Type="int" />
+    <Property Name="sod_rbkt_mths" Type="int" />
+    <Property Name="sod_sched_chgd" Type="bit" />
+    <Property Name="sod_pastdue" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_fix_pr" Type="bit" />
+    <Property Name="sod_fr_wt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fr_wt_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_fr_class" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_fr_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sa_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_isb_loc" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_ship" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_auto_ins" Type="bit" />
+    <Property Name="sod_drp_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_tax_env" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_upd_isb" Type="bit" />
+    <Property Name="sod_isb_ref" Type="int" />
+    <Property Name="sod_enduser" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_crt_int" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_fr_list" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_pricing_dt" Type="datetime" />
+    <Property Name="sod_act_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_covered_amt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_ca_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_fixed_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_inv_cost" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_car_load" Type="bit" />
+    <Property Name="sod_ca_line" Type="int" />
+    <Property Name="sod_qty_cons" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_ret" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_qty_pend" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_to_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_to_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_to_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_ln_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_qty_exch" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sad_line" Type="int" />
+    <Property Name="sod_warr_start" Type="datetime" />
+    <Property Name="sod_mod_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_mod_date" Type="datetime" />
+    <Property Name="sod_sv_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_alt_pkg" Type="bit" />
+    <Property Name="sod_for_serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="sod_override_lmt" Type="bit" />
+    <Property Name="sod__qadc01" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qadc02" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qadc03" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qadc04" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qadt01" Type="datetime" />
+    <Property Name="sod__qadt02" Type="datetime" />
+    <Property Name="sod__qadt03" Type="datetime" />
+    <Property Name="sod__qadt04" Type="datetime" />
+    <Property Name="sod__qadd01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadd02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadd03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod__qadl01" Type="bit" />
+    <Property Name="sod__qadl02" Type="bit" />
+    <Property Name="sod__qadl03" Type="bit" />
+    <Property Name="sod__qadi01" Type="int" />
+    <Property Name="sod__qadi02" Type="int" />
+    <Property Name="sod_bonus" Type="bit" />
+    <Property Name="sod_btb_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_btb_po" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_btb_pod_line" Type="int" />
+    <Property Name="sod_btb_vend" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_exp_del" Type="datetime" />
+    <Property Name="sod_dir_all" Type="bit" />
+    <Property Name="sod_cfg_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_div" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_pl_priority" Type="int" />
+    <Property Name="sod_prig1" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_prig2" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod__qadd04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_dsc_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_dsc_project" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_qty_ivcd" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_cum_time##1" Type="int" />
+    <Property Name="sod_cum_time##2" Type="int" />
+    <Property Name="sod_cum_time##3" Type="int" />
+    <Property Name="sod_cum_time##4" Type="int" />
+    <Property Name="sod_ship_part" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_promise_date" Type="datetime" />
+    <Property Name="sod_charge_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_order_category" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_modelyr" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_custref" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_consignment" Type="bit" />
+    <Property Name="sod_max_aging_days" Type="int" />
+    <Property Name="sod_consign_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_intrans_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="sod_auto_replenish" Type="bit" />
+    <Property Name="sod_manual_fr_list" Type="bit" />
+    <Property Name="sod_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_sod_det" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_trade_sale_po" Type="nvarchar" MaxLength="16" />
+    <Property Name="sod_trade_sale_po_line" Type="int" />
+    <Property Name="sod_trade_sale_vend" Type="nvarchar" MaxLength="16" />
+    <Property Name="sod_fsrev_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_fsrev_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_fsrev_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="sod_req_time" Type="nvarchar" MaxLength="8" />
+    <Property Name="sod_shipvia" Type="nvarchar" MaxLength="30" />
+    <Property Name="sod_compl_stat" Type="nvarchar" MaxLength="8" />
+    <Property Name="sod_compl_date" Type="datetime" />
+    <Property Name="sod_hold_stat" Type="nvarchar" MaxLength="8" />
+    <Property Name="sod_unadjust_cum_qty" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="sod_config_id" Type="nvarchar" MaxLength="16" />
+    <Property Name="sod_bg_offer_id" Type="nvarchar" MaxLength="72" />
+    <Property Name="sod_po_line" Type="int" />
+    <Property Name="sod_plan_pos_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="sod_plan_neg_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="sod_ship_pos_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="sod_ship_neg_var" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="sod_origin_line" Type="int" />
+    <Property Name="sod_bulk_supply" Type="bit" />
+    <Property Name="sod_supply_mthd" Type="nvarchar" MaxLength="1" />
+    <Property Name="sod_supply_rop" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="sod_contract_start" Type="datetime" />
+    <Property Name="sod_contract_end" Type="datetime" />
+    <Property Name="sod_due_time" Type="nvarchar" MaxLength="30" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tr_hist">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="tr_part" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_date" Type="datetime" />
+    <Property Name="tr_per_date" Type="datetime" />
+    <Property Name="tr_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_loc_begin" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_begin_qoh" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_req" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_short" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_um" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_last_date" Type="datetime" />
+    <Property Name="tr_nbr" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_so_job" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_ship_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_addr" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_rmks" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_xdr_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_xcr_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_mtl_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_lbr_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_bdn_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_price" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_trnbr" Type="bigint" />
+    <Property Name="tr_gl_amt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_xdr_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_xcr_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_lot" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_sub_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_gl_date" Type="datetime" />
+    <Property Name="tr_qty_loc" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="tr_effdate" Type="datetime" />
+    <Property Name="tr_prod_line" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_xslspsn1" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_xslspsn2" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_xcr_proj" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_xdr_proj" Type="nvarchar" MaxLength="20" />
+    <Property Name="tr_line" Type="int" />
+    <Property Name="tr_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_curr" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_ex_rate" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_rev" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_time" Type="int" />
+    <Property Name="tr_ovh_std" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_status" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_grade" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_expire" Type="datetime" />
+    <Property Name="tr_assay" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_xgl_ref" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr11" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr12" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr13" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr14" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__chr15" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr__dte01" Type="datetime" />
+    <Property Name="tr__dte02" Type="datetime" />
+    <Property Name="tr__dte03" Type="datetime" />
+    <Property Name="tr__dte04" Type="datetime" />
+    <Property Name="tr__dte05" Type="datetime" />
+    <Property Name="tr__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr__dec05" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr__log01" Type="bit" />
+    <Property Name="tr__log02" Type="bit" />
+    <Property Name="tr_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_msg" Type="int" />
+    <Property Name="tr_program" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_ord_rev" Type="int" />
+    <Property Name="tr_ref_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_rsn_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_vend_lot" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_vend_date" Type="datetime" />
+    <Property Name="tr_daycode" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_for" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_slspsn##1" Type="nvarchar" MaxLength="82" />
+    <Property Name="tr_slspsn##2" Type="nvarchar" MaxLength="82" />
+    <Property Name="tr_slspsn##3" Type="nvarchar" MaxLength="82" />
+    <Property Name="tr_slspsn##4" Type="nvarchar" MaxLength="82" />
+    <Property Name="tr_fsm_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_upd_isb" Type="bit" />
+    <Property Name="tr_auto_install" Type="bit" />
+    <Property Name="tr_ca_int_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_covered_amt" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_fcg_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_batch" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_fsc_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_sa_nbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_sv_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_eng_area" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_sys_prod" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_svc_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_ca_opn_date" Type="datetime" />
+    <Property Name="tr_cprice" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_eng_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_wod_op" Type="int" />
+    <Property Name="tr_enduser" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_ship_inv_mov" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_ship_date" Type="datetime" />
+    <Property Name="tr_ship_id" Type="nvarchar" MaxLength="30" />
+    <Property Name="tr_ex_rate2" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_ex_ratetype" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_exru_seq" Type="int" />
+    <Property Name="tr_promise_date" Type="datetime" />
+    <Property Name="tr_fldchg_cmtindx" Type="int" />
+    <Property Name="tr_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_tr_hist" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_qty_cn_adj" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_doc_id" Type="nvarchar" MaxLength="24" />
+    <Property Name="oid_lgd_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_due_date" Type="datetime" />
+    <Property Name="tr_wo_line" Type="nvarchar" MaxLength="80" />
+    <Property Name="tr_wo_qty_comp" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_qty_ord" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_wo_yield_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_intercompanyref" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="tr_pc_sequence" Type="bigint" />
+    <Property Name="tr_gl_amt_sc" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="vd_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="vd_addr" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_cr_terms" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_buyer" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_disc_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_shipvia" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_partial" Type="bit" />
+    <Property Name="vd_rmks" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_ap_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_ap_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_pur_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_pur_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_pur_cntct" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_ap_cntct" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_1099" Type="bit" />
+    <Property Name="vd_sort" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_last_ck" Type="datetime" />
+    <Property Name="vd_balance" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_hold" Type="bit" />
+    <Property Name="vd_tax_id" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_taxable" Type="bit" />
+    <Property Name="vd_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_curr" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_lang" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_vt_id" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr06" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr07" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr08" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr09" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__chr10" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__dte01" Type="datetime" />
+    <Property Name="vd__dte02" Type="datetime" />
+    <Property Name="vd__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd__log01" Type="bit" />
+    <Property Name="vd_fob" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_debtor" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_bank" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_ckfrm" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_pay_spec" Type="bit" />
+    <Property Name="vd_remit" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_mod_date" Type="datetime" />
+    <Property Name="vd_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_prepay" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_conrep_logic" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_pr_list" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_fr_list" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_fr_terms" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_fr_min_wt" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="vd_drft_bal" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_lc_bal" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_pr_list2" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_fix_pr" Type="bit" />
+    <Property Name="vd_tid_notice" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_promo" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_misc_cr" Type="bit" />
+    <Property Name="vd_rcv_so_price" Type="bit" />
+    <Property Name="vd_rcv_held_so" Type="bit" />
+    <Property Name="vd_tp_use_pct" Type="bit" />
+    <Property Name="vd_tp_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_ex_ratetype" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_db" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd__qadc01" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__qadc02" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__qadc03" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__qadc04" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd__qadd01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd__qadd02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd__qadl01" Type="bit" />
+    <Property Name="vd__qadl02" Type="bit" />
+    <Property Name="vd__qadt01" Type="datetime" />
+    <Property Name="vd__qadt02" Type="datetime" />
+    <Property Name="vd__qadi01" Type="int" />
+    <Property Name="vd__qadi02" Type="int" />
+    <Property Name="vd__qadl03" Type="bit" />
+    <Property Name="vd__qadl04" Type="bit" />
+    <Property Name="vd_ap_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_pur_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="vd_tot_terms_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_vd_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_carrier_id" Type="nvarchar" MaxLength="8" />
+    <Property Name="vd_kanban_supplier" Type="bit" />
+    <Property Name="oid_btr_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="vd_active" Type="bit" />
+    <Property Name="vd_data_complete" Type="bit" />
+    <Property Name="vd_tax_zone" Type="nvarchar" MaxLength="16" />
+    <Property Name="vd_taxc" Type="nvarchar" MaxLength="30" />
+    <Property Name="vd_tax_usage" Type="nvarchar" MaxLength="8" />
+    <Property Name="vd_gst_id" Type="nvarchar" MaxLength="18" />
+    <Property Name="vd_pst_id" Type="nvarchar" MaxLength="18" />
+    <Property Name="vd_misc1_id" Type="nvarchar" MaxLength="18" />
+    <Property Name="vd_misc2_id" Type="nvarchar" MaxLength="18" />
+    <Property Name="vd_misc3_id" Type="nvarchar" MaxLength="18" />
+    <Property Name="vd_tax_in" Type="bit" />
+    <Property Name="vd_tax_in_city" Type="bit" />
+    <Property Name="vd_daybookset" Type="nvarchar" MaxLength="8" />
+    <Property Name="vd_site" Type="nvarchar" MaxLength="8" />
+    <Property Name="vd_def_rlse_status" Type="nvarchar" MaxLength="8" />
+    <Property Name="vd_supply_cust" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_supply_shipto" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_control_supply" Type="bit" />
+    <Property Name="vd_bulk_supply" Type="bit" />
+    <Property Name="vd_subcnt_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="vd_auto_horizon" Type="int" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="wo_mstr">
+    <Key>
+      <PropertyRef Name="prrowid" />
+    </Key>
+    <Property Name="prrowid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="wo_nbr" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_lot" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_so_job" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_ord_date" Type="datetime" />
+    <Property Name="wo_rel_date" Type="datetime" />
+    <Property Name="wo_due_date" Type="datetime" />
+    <Property Name="wo_per_date" Type="datetime" />
+    <Property Name="wo_part" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_qty_ord" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_comp" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_rjct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_status" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_vend" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_rmks" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_qty_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rjct_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bo_chg" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_yield_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rev" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo__qad01" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_lot_prev" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_schd_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_cmtindx" Type="int" />
+    <Property Name="wo_project" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_lead_time" Type="int" />
+    <Property Name="wo_wip_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mtl_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_user1" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_user2" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_ovh_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_loc" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="wo_routing" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_bom_code" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_queue_eff" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_draw" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_lbr_up" Type="bit" />
+    <Property Name="wo_bdn_up" Type="bit" />
+    <Property Name="wo_gl_lbr" Type="bit" />
+    <Property Name="wo_gl_bdn" Type="bit" />
+    <Property Name="wo__chr01" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__chr02" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__chr03" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__chr04" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__chr05" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__dte01" Type="datetime" />
+    <Property Name="wo__dte02" Type="datetime" />
+    <Property Name="wo__dec01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo__dec02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo__log01" Type="bit" />
+    <Property Name="wo_line" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_var" Type="bit" />
+    <Property Name="wo_mtl_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mvar_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_mvar_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_mvrr_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_mvrr_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svar_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svar_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svrr_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svrr_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_flr_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_flr_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo__dec03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rjct_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mthd_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rval_tot" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_acct_close" Type="bit" />
+    <Property Name="wo_close_date" Type="datetime" />
+    <Property Name="wo_close_eff" Type="datetime" />
+    <Property Name="wo_fsm_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_xvar_acct" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_xvar_cc" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_myld_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_joint_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_prod_pct" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_type" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo__dec04" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_base_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_unit_cost" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mix_var" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_bdn_totx" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_lbr_totx" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mtl_totx" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_sub_totx" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_ovh_totx" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_rctstat_active" Type="bit" />
+    <Property Name="wo_batch" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_assay" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_grade" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_expire" Type="datetime" />
+    <Property Name="wo_rctstat" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_lot_next" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_lot_rcpt" Type="bit" />
+    <Property Name="wo_ca_int_type" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_iss_site" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_itm_line" Type="int" />
+    <Property Name="wo_date_posted" Type="datetime" />
+    <Property Name="wo__qadc01" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__qadc02" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__qadc03" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo__qadt01" Type="datetime" />
+    <Property Name="wo__qadt02" Type="datetime" />
+    <Property Name="wo__qade01" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qade02" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qade03" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo__qadi01" Type="int" />
+    <Property Name="wo__qadi02" Type="int" />
+    <Property Name="wo__qadl01" Type="bit" />
+    <Property Name="wo__qadl02" Type="bit" />
+    <Property Name="wo_eng_code" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_flr_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_mvar_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_mvrr_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svar_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_svrr_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_xvar_sub" Type="nvarchar" MaxLength="20" />
+    <Property Name="wo_ref" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_record_date" Type="datetime" />
+    <Property Name="wo_stat_close_date" Type="datetime" />
+    <Property Name="wo_stat_close_userid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_app_owner" Type="nvarchar" MaxLength="30" />
+    <Property Name="wo_domain" Type="nvarchar" MaxLength="8" />
+    <Property Name="oid_wo_mstr" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_doc_id" Type="nvarchar" MaxLength="24" />
+    <Property Name="wo_rate" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_selected_for_print" Type="bit" />
+    <Property Name="wo_seq" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="wo_shift" Type="nvarchar" MaxLength="2" />
+    <Property Name="wo_order_sheet_printed" Type="bit" />
+    <Property Name="wo_setup_time" Type="int" />
+    <Property Name="wo_due_date_anchor" Type="bit" />
+    <Property Name="wo_tool" Type="nvarchar" MaxLength="8" />
+    <Property Name="wo_run_size" Type="int" />
+    <Property Name="wo_nbr_lines" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="wo_duration_buffer" Type="int" />
+    <Property Name="wo_qty_booked" Type="int" />
+    <Property Name="wo_need_date" Type="datetime" />
+    <Property Name="wo_priority" Type="int" />
+    <Property Name="wo_restriction" Type="nvarchar" MaxLength="8" />
+    <Property Name="wo_allow_splits" Type="bit" />
+    <Property Name="wo_qty_exp_complete" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_qty_exp_scrap" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_mfg_type" Type="nvarchar" MaxLength="1" />
+    <Property Name="wo_cum_lot_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wo_need_time" Type="int" />
+    <Property Name="wo_mps_auto_reschedule" Type="bit" />
+    <Property Name="oid_wo_demand" Type="decimal" Precision="38" Scale="10" />
+    <Property Name="wo_demand_dataset" Type="nvarchar" MaxLength="30" />
+    <Property Name="Pro2SrcPDB" Type="nvarchar" MaxLength="12" />
+    <Property Name="pro2created" Type="datetime" />
+    <Property Name="pro2modified" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="QADModelStoreContainer">
+    <EntitySet Name="abs_mstr" EntityType="Self.abs_mstr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prh_hist" EntityType="Self.prh_hist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pt_mstr" EntityType="Self.pt_mstr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sod_det" EntityType="Self.sod_det" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tr_hist" EntityType="Self.tr_hist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vd_mstr" EntityType="Self.vd_mstr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wo_mstr" EntityType="Self.wo_mstr" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

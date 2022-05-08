@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.ClearScript.V8.Native.win-arm64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-arm64.props" Condition="Exists('packages\Microsoft.ClearScript.V8.Native.win-arm64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-arm64.props')" />
+  <Import Project="packages\Microsoft.ClearScript.V8.Native.win-x86.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x86.props" Condition="Exists('packages\Microsoft.ClearScript.V8.Native.win-x86.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x86.props')" />
+  <Import Project="packages\Microsoft.ClearScript.V8.Native.win-x64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x64.props" Condition="Exists('packages\Microsoft.ClearScript.V8.Native.win-x64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x64.props')" />
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0C9600C-3A7E-4831-9D3E-04285F0637C5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CTR_FLS_2</RootNamespace>
+    <AssemblyName>CTR_FLS_2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44325</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript.Core, Version=7.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ClearScript.Core.7.2.4\lib\net45\ClearScript.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript.V8, Version=7.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ClearScript.V8.7.2.4\lib\net45\ClearScript.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hyland.Types, Version=20.3.6.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External_DLLs\Hyland.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Hyland.Unity, Version=20.3.6.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External_DLLs\Hyland.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>packages\JavaScriptEngineSwitcher.Core.3.3.0\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=3.17.4.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>packages\JavaScriptEngineSwitcher.V8.3.17.4\lib\net45\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>packages\JSPool.4.0.0\lib\net45\JSPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Core, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>packages\React.Core.5.2.12\lib\net45\React.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Web, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>packages\React.Web.5.2.12\lib\net40\React.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Web.Mvc4, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>packages\React.Web.Mvc4.5.2.12\lib\net40\React.Web.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.Reporting.OpenXmlRendering.2.7.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.Reporting.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.WebServiceDataSource, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.Reporting.WebServiceDataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.Reporting.XpsRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.Mvc, Version=15.1.21.616, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Telerik.Reporting_DLLs\Telerik.ReportViewer.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ReactConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CTRController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemSpecController.cs" />
+    <Compile Include="Controllers\JobTreeController.cs" />
+    <Compile Include="Controllers\NominalThreadController.cs" />
+    <Compile Include="Controllers\OnBaseController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\ReportViewsController.cs" />
+    <Compile Include="Controllers\UtilityController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\abs_mstr.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuditLog.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cert.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComponentMaterialSpecs.cs" />
+    <Compile Include="Models\CTRUser.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTR_FLS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR_FLS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTR_FLS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTR_FLS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR_FLS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerOrderItem.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DefaultType.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCTRFormHeaderFooterFields_Result.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Interchange.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemInfo.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemSpec.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobInfo.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobLot.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobLotParent.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobTreeItem.cs" />
+    <Compile Include="Models\LotInfo.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterSpec.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NominalThread.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\prh_hist.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductFamily.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pt_mstr.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QAD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QAD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QAD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QAD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QAD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sod_det.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tr_hist.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vd_mstr.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\wo_mstr.cs">
+      <DependentUpon>QAD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestTemplate.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestTemplateType.cs" />
+    <Compile Include="Services\Constants.cs" />
+    <Compile Include="Services\Interfaces\IItemSpecServices.cs" />
+    <Compile Include="Services\Interfaces\INominalThreadServices.cs" />
+    <Compile Include="Services\Interfaces\IQADServices.cs" />
+    <Compile Include="Services\ItemSpecServices.cs" />
+    <Compile Include="Services\Interfaces\ITestTemplateService.cs" />
+    <Compile Include="Services\Interfaces\IUtilityServices.cs" />
+    <Compile Include="Services\NominalThreadServices.cs" />
+    <Compile Include="Services\QADServices.cs" />
+    <Compile Include="Services\TestTemplateService.cs" />
+    <Compile Include="Services\UtilityServices.cs" />
+    <Compile Include="ViewModels\ItemSpecsViewModel.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="Models\Material.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaterialTran.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Note.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnBaseDocMeta.cs" />
+    <Compile Include="Models\OnBaseQueryCriteria.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OSP.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PackItem.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PackItemExtended.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sample.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShipLot.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestResult.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestSpec.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vendor.cs">
+      <DependentUpon>CTR_FLS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CommonServices.cs" />
+    <Compile Include="Services\Interfaces\ICommonServices.cs" />
+    <Compile Include="Services\Interfaces\IJobTreeServices.cs" />
+    <Compile Include="Services\Interfaces\IOnBaseServices.cs" />
+    <Compile Include="Services\Interfaces\IReportServices.cs" />
+    <Compile Include="Services\Interfaces\ILoggingServices.cs" />
+    <Compile Include="Services\JobTreeServices.cs" />
+    <Compile Include="Services\JobTreeViewIterationResults.cs" />
+    <Compile Include="Services\OnBaseServices.cs" />
+    <Compile Include="Services\ReportServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="Services\LoggingServices.cs" />
+    <Compile Include="ViewModels\JobTreeMaterialViewModel.cs" />
+    <Compile Include="ViewModels\JobTreeViewModel.cs" />
+    <Compile Include="ViewModels\MasterSpecViewModel.cs" />
+    <Compile Include="ViewModels\NominalThreadViewModel.cs" />
+    <Compile Include="ViewModels\NoteViewModel.cs" />
+    <Compile Include="ViewModels\OnBaseViewModel.cs" />
+    <Compile Include="ViewModels\ProductFamilyViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ReactJS\ItemSpecification\Tabs\Tests\TestTemplateForm.jsx" />
+    <Content Include="Content\ReactJS\NominalThread\AddNominalThreads.jsx" />
+    <Content Include="Content\ReactJS\Common\ModalFooter.jsx" />
+    <Content Include="Content\ReactJS\Common\SearchForm.Jsx" />
+    <Content Include="Content\ReactJS\Common\SharedForm.jsx" />
+    <Content Include="Content\ReactJS\Common\SharedModal.jsx" />
+    <Content Include="Content\ReactJS\Common\SharedTable.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\AddItemSpec.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\ItemSpecHeader.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\ItemSpecLandingPage.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Notes\Note.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Notes\NoteView.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Tabs\AddItemSpec.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Tabs\Bolts.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Tabs\Specification.jsx" />
+    <Content Include="Content\ReactJS\ItemSpecification\Tabs\Tests\Tests.jsx" />
+    <Content Include="Content\ReactJS\NominalThread\NominalThreadTableView.jsx" />
+    <Content Include="Content\ReactJS\NominalThread\SearchNominalThread.jsx" />
+    <Content Include="External_DLLs\Hyland.Types.dll" />
+    <Content Include="External_DLLs\Hyland.Unity.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\HowmetSplash.png" />
+    <Content Include="Images\Howmet_Aerospace_horiz_rev.jpg" />
+    <Content Include="Models\CTR_FLS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CTR_FLS.edmx</DependentUpon>
+      <LastGenOutput>CTR_FLS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CTR_FLS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CTR_FLS.edmx</DependentUpon>
+      <LastGenOutput>CTR_FLS.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QAD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QAD.edmx</DependentUpon>
+      <LastGenOutput>QAD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QAD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QAD.edmx</DependentUpon>
+      <LastGenOutput>QAD.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\CTR_FLS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CTR_FLS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CTR_FLS.edmx.diagram">
+      <DependentUpon>CTR_FLS.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\react\react-dom-server.js" />
+    <Content Include="Scripts\react\react-dom-server.min.js" />
+    <Content Include="Scripts\react\react-dom.js" />
+    <Content Include="Scripts\react\react-dom.min.js" />
+    <Content Include="Scripts\react\react-with-addons.js" />
+    <Content Include="Scripts\react\react-with-addons.min.js" />
+    <Content Include="Scripts\react\react.js" />
+    <Content Include="Scripts\react\react.min.js" />
+    <Content Include="SQL Scripts\GetFinalReqtsJobHistRptData.sql" />
+    <Content Include="SQL Scripts\GetFinalReqtsMainItemSpecRptData.sql" />
+    <Content Include="SQL Scripts\GetFinalReqtsMainRptData.sql" />
+    <Content Include="SQL Scripts\GetFinalReqtsTestsRptData.sql" />
+    <Content Include="SQL Scripts\GetItemSpecDetailSpecRptData.sql" />
+    <EntityDeploy Include="Models\QAD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QAD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QAD.edmx.diagram">
+      <DependentUpon>QAD.edmx</DependentUpon>
+    </Content>
+    <Content Include="Reports\ReportObjectsInTRDXFormat\AuthorizedReleaseCert.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRComponentSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRContainer.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRInterchangeSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRMaterialSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRMfgItemInfoSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRNotesSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRTestResultsSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\CTRTestSpecSubReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsContainer.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsJobHistSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsMainItemSpecSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsMainSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsNotesSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\FinalReqtsTestsSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\ItemSpecDetailsSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\ItemSpecReport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\ItemSpecTestDetailSubreport.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\QAJobCard.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\QAJobCardContainer.trdx" />
+    <Content Include="Reports\ReportObjectsInTRDXFormat\QAJobCardLockingTorque.trdx" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\telerikReportViewer-15.1.21.616.min.js" />
+    <Content Include="SQL Scripts\GetAuthorizeCertRptData.sql" />
+    <Content Include="SQL Scripts\GetCTRFormComponentFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormHeaderFooterFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormInterchangeFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormManufacturingFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormMaterialFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormNotesData.sql" />
+    <Content Include="SQL Scripts\GetCTRFormTestResultsFields.sql" />
+    <Content Include="SQL Scripts\GetCTRFormTestSpecData.sql" />
+    <Content Include="SQL Scripts\GetItemSpecRptData.sql" />
+    <Content Include="SQL Scripts\GetItemTestRptData.sql" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\JobTree\JobTree.cshtml" />
+    <Content Include="Views\OnBase\OnBase.cshtml" />
+    <Content Include="Views\ReportViews\CertifiedTestReport.cshtml" />
+    <Content Include="Views\ReportViews\ReportViewer.cshtml" />
+    <Content Include="Views\Shared\CTRFLS_Layout.cshtml" />
+    <Content Include="Views\OnBase\CertPackage.cshtml" />
+    <Content Include="Views\ReportViews\ItemSpecReport.cshtml" />
+    <Content Include="Views\ReportViews\AuthorizedReleaseCert.cshtml" />
+    <Content Include="Views\ReportViews\QAJobLogReport.cshtml" />
+    <Content Include="Views\ReportViews\TestTemplates.cshtml" />
+    <Content Include="Views\NominalThread\NominalThread.cshtml" />
+    <Content Include="Views\Utility\MasterSpec.cshtml" />
+    <Content Include="Views\ItemSpec\ItemSpec.cshtml" />
+    <Content Include="Views\ReportViews\GetTestTemplateDetails.cshtml" />
+    <Content Include="Views\ReportViews\CreateTestTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\CTR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65410</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44326/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.ClearScript.V8.Native.win-x64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.ClearScript.V8.Native.win-x64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x64.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.ClearScript.V8.Native.win-x86.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.ClearScript.V8.Native.win-x86.7.2.4\build\Microsoft.ClearScript.V8.Native.win-x86.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.ClearScript.V8.Native.win-arm64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-arm64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.ClearScript.V8.Native.win-arm64.7.2.4\build\Microsoft.ClearScript.V8.Native.win-arm64.props'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

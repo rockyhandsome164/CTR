@@ -1,0 +1,201 @@
+﻿@{
+    Layout = null;
+}
+
+@using Telerik.Reporting
+@using Telerik.ReportViewer.Mvc
+@using System.Configuration
+
+
+<script>var AutoPrint = false;</script>
+
+@{
+    var ViewerID = "reportViewer1";
+
+    TypeReportSource typeReportSource = new TypeReportSource();
+    UriReportSource UriRptSrc = new UriReportSource();
+
+    string ReportType = TempData["RptType"].ToString();
+
+    switch (ReportType)
+    {
+        case "AuthorizeCert":
+
+            UriRptSrc.Uri = Path.Combine(HttpContext.Current.Server.MapPath("~/Reports/ReportObjectsInTRDXFormat/"), "AuthorizedReleaseCert.trdx");
+            UriRptSrc.Parameters.Add("PackSlipNbr", TempData["ShipperNbr"]);
+            UriRptSrc.Parameters.Add("FormType", TempData["FormType"]);
+            UriRptSrc.Parameters.Add("AuthorizeName", TempData["AuthName"]);
+            UriRptSrc.Parameters.Add("AuthorizeDate", TempData["AuthDate"]);
+            UriRptSrc.Parameters.Add("Remark1", TempData["Remark1"]);
+            UriRptSrc.Parameters.Add("Remark2", TempData["Remark2"]);
+            UriRptSrc.Parameters.Add("Remark3", TempData["Remark3"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+            <script>AutoPrint = false;</script>
+            break;
+
+        case "ItemSpec":
+
+            UriRptSrc.Uri = Path.Combine(HttpContext.Current.Server.MapPath("~/Reports/ReportObjectsInTRDXFormat/"), "ItemSpecReport.trdx");
+            UriRptSrc.Parameters.Add("StartingItem", TempData["ItemStart"]);
+            UriRptSrc.Parameters.Add("EndingItem", TempData["ItemEnd"]);
+            UriRptSrc.Parameters.Add("SpecStatus", TempData["ListOfStatuses"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+            <script>AutoPrint = false;</script>
+            break;
+
+        case "CertifiedTestReport":
+
+            // In the case of displaying the CTR report, the report file name (TRDX file) will be generated dynamically
+            // So the name will be passed in. For other reports that do not need this functionality, the name can be
+            // set from a constant property in some constant class or even hard coded directly.
+            UriRptSrc.Uri = TempData["RptFileName"].ToString();
+            UriRptSrc.Parameters.Add("LotNbr", TempData["LotNbr"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+            <script>AutoPrint = false;</script>
+            break;
+
+        case "QAJobLogReport":
+
+            UriRptSrc.Uri = Path.Combine(HttpContext.Current.Server.MapPath("~/Reports/ReportObjectsInTRDXFormat/"),
+                "FinalReqtsContainer.trdx");
+            UriRptSrc.Parameters.Add("Item", TempData["Item"]);
+            UriRptSrc.Parameters.Add("Job", TempData["Job"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+            <script>AutoPrint = false;</script>
+            break;
+
+        case "QAJobCardContainer":
+            UriRptSrc.Uri = Path.Combine(HttpContext.Current.Server.MapPath("~/Reports/ReportObjectsInTRDXFormat/"), "QAJobCardContainer.trdx");
+            UriRptSrc.Parameters.Add("ItemNbr", TempData["Item"]);
+            UriRptSrc.Parameters.Add("LotNbr", TempData["Job"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+
+            break;
+
+        case "QAJobCardLockingTorqueRpt":
+            UriRptSrc.Uri = Path.Combine(HttpContext.Current.Server.MapPath("~/Reports/ReportObjectsInTRDXFormat/"), "QAJobCardLockingTorque.trdx");
+            UriRptSrc.Parameters.Add("LotNbr", TempData["Job"]);
+            UriRptSrc.Parameters.Add("ConnectionString", ConfigurationManager.ConnectionStrings["CTR_FLS"].ConnectionString);
+            ViewerID = "reportViewer2";
+            break;
+    }
+
+        }
+
+@(Html.TelerikReporting().ReportViewer()
+        // Each report viewer must have an id - it will be used by the initialization script
+        // to find the element and initialize the report viewer.
+        .Id(ViewerID)
+        // The URL of the service which will serve reports.
+        // The URL corresponds to the name of the controller class (ReportsController).
+        // For more information on how to configure the service please check http://www.telerik.com/help/reporting/telerik-reporting-rest-conception.html.
+        .ServiceUrl(Url.Content("~/api/reports"))
+        // The URL for the report viewer template. The template can be edited -
+        // new functionalities can be added and unneeded ones can be removed.
+        // For more information please check http://www.telerik.com/help/reporting/html5-report-viewer-templates.html.
+        //
+        // Strongly typed ReportSource - TypeReportSource or UriReportSource.
+        .ReportSource(UriRptSrc)
+        // Specifies whether the viewer is in interactive or print preview mode.
+        // PrintPreview - Displays the paginated report as if it is printed on paper. Interactivity is not enabled.
+        // Interactive - Displays the report in its original width and height with no paging. Additionally interactivity is enabled.
+        .ViewMode(ViewMode.Interactive)
+        // Sets the scale mode of the viewer.
+        // Three modes exist currently:
+        // FitPage - The whole report will fit on the page (will zoom in or out), regardless of its width and height.
+        // FitPageWidth - The report will be zoomed in or out so that the width of the screen and the width of the report match.
+        // Specific - Uses the scale to zoom in and out the report.
+        .ScaleMode(ScaleMode.Specific)
+        // Zoom in and out the report using the scale
+        // 1.0 is equal to 100%, i.e. the original size of the report
+        .Scale(1.0)
+        // Sets whether the viewer’s client session to be persisted between the page’s refreshes(ex. postback).
+        // The session is stored in the browser’s sessionStorage and is available for the duration of the page session.
+        .PersistSession(false)
+        // Sets the print mode of the viewer.
+        .PrintMode(PrintMode.ForcePDFPlugin)
+        //If set to true shows the Send Mail Message toolbar button
+        .SendEmail(new SendEmail { Enabled = false })
+        //Switches accessibility mode ON or OFF.
+        .EnableAccessibility(true)
+        .ClientEvents(ev => ev
+                .RenderingEnd("OnRenderingEnd")
+        )
+)
+
+
+<script>
+
+    // This will fire up the browser's print functionality
+    // Enabled this if needed
+    function OnRenderingEnd(e, args) {
+        //if (AutoPrint) {
+        //    var rv = $("#reportViewer1").data("telerik_ReportViewer");
+        //    rv.commands.print.exec();
+        //}
+    }
+</script>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //$("#reportViewer1")
+        //    .telerik_ReportViewer({
+        //        // The URL of the service which will serve reports.
+        //        // The URL corresponds to the name of the controller class (ReportsController).
+        //        // For more information on how to configure the service please check http://www.telerik.com/help/reporting/telerik-reporting-rest-conception.html.
+        //        serviceUrl: "/api/reports/",
+
+        //        // The URL for the report viewer template. The template can be edited -
+        //        // new functionalities can be added and unneeded ones can be removed.
+        //        // For more information please check http://www.telerik.com/help/reporting/html5-report-viewer-templates.html.
+        //        //
+
+        //        //ReportSource - report description
+        //        reportSource: {
+
+        //            // The report can be set to a report file name (.trdx or .trdp report definition)
+        //            // or CLR type name (report class definition).
+        //            report: "../Reports/ReportObjectsInTRDXFormat/CTRContainer.trdx",
+        //            // Parameters name value dictionary
+        //            //parameters: {}
+        //        },
+
+        //        //parameters: {
+        //        //    editors: {
+        //        //        singleSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+        //        //        multiSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+        //        //    }
+        //        //},
+
+        //        // Specifies whether the viewer is in interactive or print preview mode.
+        //        // PRINT_PREVIEW - Displays the paginated report as if it is printed on paper. Interactivity is not enabled.
+        //        // INTERACTIVE - Displays the report in its original width and height without paging. Additionally interactivity is enabled.
+        //        viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
+
+        //        // Sets the scale mode of the viewer.
+        //        // Three modes exist currently:
+        //        // FIT_PAGE - The whole report will fit on the page (will zoom in or out), regardless of its width and height.
+        //        // FIT_PAGE_WIDTH - The report will be zoomed in or out so that the width of the screen and the width of the report match.
+        //        // SPECIFIC - Uses the scale to zoom in and out the report.
+        //        scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
+
+        //        // Zoom in and out the report using the scale
+        //        // 1.0 is equal to 100%, i.e. the original size of the report
+        //        scale: 1.0,
+
+        //        //Enables or disables the accessibility features of the report viewer and its contents.
+        //        enableAccessibility: false,
+
+        //        //If set to true shows the Send Mail Message toolbar button
+        //        sendEmail: { enabled: true }
+        //    });
+    });
+
+</script>
+
+

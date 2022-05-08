@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="7.5in" SkipBlankPages="False" Name="CTRTestResultsSubReport" Zoom="1.5" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style>
+    <BorderWidth Bottom="0pt" />
+  </Style>
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@LotNbr&quot;:&quot;7001383&quot;,&quot;@LotSuffix&quot;:&quot;0&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetCTRFormTestResultsFields" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotNbr">
+          <Value>
+            <String>= Parameters.LotNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@LotSuffix">
+          <Value>
+            <String>= Parameters.LotSuffix.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1">
+      <Style Visible="False" TextAlign="Center" VerticalAlign="Middle" />
+    </PageHeaderSection>
+    <DetailSection CanShrink="True" KeepTogether="False" Height="0.208in" Name="detailSection1">
+      <Items>
+        <TextBox Width="2.243in" Height="0.174in" Left="0in" Top="0.021in" Value="= Fields.TestInfo" Name="textBox11">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.535in" Height="0.174in" Left="2.337in" Top="0.021in" Value="= IIF(Fields.UOM = Previous(Fields.UOM), &quot;&quot;, Fields.UOM)" Name="textBox12">
+          <Style TextAlign="Center">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.556in" Height="0.174in" Left="2.914in" Top="0.021in" Value="= IIF(Fields.SampleNbr = Previous(Fields.SampleNbr), &quot;&quot;, IIF(Fields.SampleNbr = 0, &quot;&quot;, Fields.SampleNbr))" Format="{0:# ###}" Name="textBox13">
+          <Style TextAlign="Center">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.556in" Height="0.174in" Left="3.47in" Top="0.021in" Value="= IIF(Fields.ResultCycle = 0, &quot;&quot;, Fields.ResultCycle)" Name="textBox14">
+          <Style TextAlign="Center">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.619in" Height="0.174in" Left="4.027in" Top="0.021in" Value="= IIF(Fields.MinVal = &quot;0&quot;, &quot;&quot;, IIF(Fields.MinVal = &quot;0.00&quot;, &quot;&quot;, Fields.MinVal))" Name="textBox15">
+          <Style TextAlign="Right">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.785in" Height="0.174in" Left="5.778in" Top="0.021in" Value="= IIF(Fields.MinReq = Previous(Fields.MinReq), &quot;&quot;, IIF(Fields.MinReq = &quot;0&quot;, &quot;&quot;, Fields.MinReq))" Name="textBox16">
+          <Style TextAlign="Right">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.91in" Height="0.174in" Left="6.562in" Top="0.021in" Value="= IIF(Fields.MaxReq = Previous(Fields.MaxReq), &quot;&quot;, IIF(Fields.MaxReq = &quot;0&quot;, &quot;&quot;, Fields.MaxReq))" Name="textBox17">
+          <Style TextAlign="Right">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.68in" Height="0.174in" Left="4.645in" Top="0.021in" Value="= IIF(Fields.MaxVal = &quot;0&quot;, &quot;&quot;, IIF(Fields.MaxVal = &quot;0.00&quot;, &quot;&quot;, Fields.MaxVal))" Name="textBox18">
+          <Style TextAlign="Right">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.452in" Height="0.174in" Left="5.326in" Top="0.021in" Value="= Fields.PassFail" Name="textBox19">
+          <Style TextAlign="Center">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="SubReportHeader">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.75in" Name="groupHeaderSection">
+          <Items>
+            <TextBox Width="2.358in" Height="0.465in" Left="0in" Top="0.259in" Value="- - - - - - - - - - - - T E S T - - - - - - - - - - -  No.  Description" Name="textBox2">
+              <Style TextAlign="Left" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="7.5in" Height="0.252in" Left="0in" Top="0.007in" Value="T E S T   R E S U L T S" Name="textBox1">
+              <Style BackgroundColor="Silver" TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" Bold="True" />
+                <BorderStyle Default="Solid" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.535in" Height="0.465in" Left="2.347in" Top="0.259in" Value="UOM" Name="textBox3">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.598in" Height="0.465in" Left="2.883in" Top="0.259in" Value="SAMPLE Number" Name="textBox4">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.556in" Height="0.465in" Left="3.481in" Top="0.259in" Value="RESULT Cycle" Name="textBox5">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.619in" Height="0.465in" Left="4.037in" Top="0.259in" Value="MINIMUM Value" Name="textBox6">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.681in" Height="0.465in" Left="4.656in" Top="0.259in" Value="MAXIMUM Value" Name="textBox7">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.452in" Height="0.465in" Left="5.336in" Top="0.259in" Value="PASS/Fail" Name="textBox8">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.774in" Height="0.465in" Left="5.788in" Top="0.259in" Value="MINIMUM Requirement" Name="textBox9">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.931in" Height="0.465in" Left="6.562in" Top="0.259in" Value="MAXIMUM Requirement" Name="textBox10">
+              <Style TextAlign="Center" VerticalAlign="Middle">
+                <Font Size="9pt" />
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+              </Style>
+            </TextBox>
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= IIF(COUNT(Fields.TestInfo) = 0, false, true)" />
+            <Binding Path="Height" Expression="= IIF(COUNT(Fields.TestInfo) = 0, &quot;0in&quot;, &quot;0.75in&quot;)" />
+          </Bindings>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0in" Name="groupFooterSection" />
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="LotNbr" Text="LotNbr">
+      <Value>
+        <String>7001621</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="LotSuffix" Text="LotSuffix">
+      <Value>
+        <String>9</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

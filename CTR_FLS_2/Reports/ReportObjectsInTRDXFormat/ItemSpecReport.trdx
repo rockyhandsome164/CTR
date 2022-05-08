@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="9.523in" SkipBlankPages="False" Name="ItemSpecReport" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@ItemStartPattern&quot;:&quot;A1A&quot;,&quot;@ItemEndPattern&quot;:&quot;A1A&quot;,&quot;@ItemStatusList&quot;:&quot;[\&quot;C\&quot;, \&quot;I\&quot;]&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;&#xA;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetItemSpecRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@ItemStartPattern">
+          <Value>
+            <String>= Parameters.StartingItem.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@ItemEndPattern">
+          <Value>
+            <String>= Parameters.EndingItem.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@ItemStatusList">
+          <Value>
+            <String>= Parameters.SpecStatus.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0.738in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="1.9in" Height="0.2in" Left="3.921in" Top="0.048in" Value="Alcoa Fastening Systems" Name="textBox1">
+          <Style TextAlign="Center">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.088in" Height="0.2in" Left="3.817in" Top="0.248in" Value="Specifications Master Report" Name="textBox2">
+          <Style TextAlign="Center">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.606in" Height="0.2in" Left="7.833in" Top="0.048in" Value="= Now()" Format="{0:G}" Name="textBox3">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="0.9in" Height="0.2in" Left="0.075in" Top="0.048in" Value="Starting Item:" Name="textBox4">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="0.9in" Height="0.2in" Left="0.075in" Top="0.248in" Value="Ending Item:" Name="textBox5">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="0.9in" Height="0.2in" Left="0.075in" Top="0.448in" Value="Spec Status:" Name="textBox6">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="1.2in" Height="0.2in" Left="1.075in" Top="0.048in" Value="= Parameters.StartingItem.Value" Name="textBox7" />
+        <TextBox Width="1.2in" Height="0.2in" Left="1.075in" Top="0.248in" Value="= Parameters.EndingItem.Value" Name="textBox8" />
+        <TextBox Width="1.2in" Height="0.2in" Left="1.075in" Top="0.448in" Value="= Parameters.SpecStatus.Value" Name="textBox9" />
+      </Items>
+    </PageHeaderSection>
+    <DetailSection Height="1.723in" Name="detailSection1">
+      <Items>
+        <TextBox Width="1.181in" Height="0.184in" Left="0.044in" Top="0.038in" Value="Item" Name="textBox10">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.098in" Height="0.184in" Left="1.675in" Top="0.038in" Value="Description" Name="textBox11">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.184in" Left="4.9in" Top="0.049in" Value="Product Code" Name="textBox12">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.441in" Height="0.184in" Left="6.458in" Top="0.049in" Value="Type" Name="textBox13">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.629in" Height="0.184in" Left="7.017in" Top="0.049in" Value="Compl?" Name="textBox14">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.691in" Height="0.184in" Left="7.748in" Top="0.049in" Value="Nom Thrd Size" Name="textBox15">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.184in" Left="0.044in" Top="0.274in" Value="= Fields.Item" Name="textBox16" />
+        <TextBox Width="3.098in" Height="0.184in" Left="1.675in" Top="0.274in" Value="= Fields.Description" Name="textBox17" />
+        <TextBox Width="3.098in" Height="0.184in" Left="1.675in" Top="0.459in" Value="= Fields.Description1" Name="textBox18" />
+        <TextBox Width="1.181in" Height="0.184in" Left="4.906in" Top="0.274in" Value="= Fields.ProductCode" Name="textBox19" />
+        <TextBox Width="0.441in" Height="0.184in" Left="6.458in" Top="0.274in" Value="= Fields.Type" Name="textBox20">
+          <Style TextAlign="Center" />
+        </TextBox>
+        <TextBox Width="0.629in" Height="0.184in" Left="7.017in" Top="0.274in" Value="= Fields.Status" Name="textBox21">
+          <Style TextAlign="Center" />
+        </TextBox>
+        <TextBox Width="1.691in" Height="0.184in" Left="7.748in" Top="0.274in" Value="= Fields.NominalThreadSize" Name="textBox22" />
+        <Shape Width="9.415in" Height="0.083in" Left="0.044in" Top="0.17in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <SubReport Width="6.458in" Height="0.327in" Left="0.442in" Top="0.816in" Name="ItemSpecDetailSubReport">
+          <ReportSource>
+            <UriReportSource Uri="ItemSpecDetailsSubreport.trdx">
+              <Parameters>
+                <Parameter Name="Item">
+                  <Value>
+                    <String>= Fields.Item</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+        <SubReport Width="9.073in" Height="0.309in" Left="0.212in" Top="1.247in" Name="ItemSpecTestSubReport">
+          <ReportSource>
+            <UriReportSource Uri="ItemSpecTestDetailSubreport.trdx">
+              <Parameters>
+                <Parameter Name="Item">
+                  <Value>
+                    <String>= Fields.Item</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="ConnectionString">
+                  <Value>
+                    <String>= Parameters.ConnectionString.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="True" ColumnCount="1" ColumnSpacing="0in" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="StartingItem">
+      <Value>
+        <String>A1A102</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="EndingItem">
+      <Value>
+        <String>AA0440</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="SpecStatus">
+      <Value>
+        <String>["C", "I"]</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value&#xD;
+</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

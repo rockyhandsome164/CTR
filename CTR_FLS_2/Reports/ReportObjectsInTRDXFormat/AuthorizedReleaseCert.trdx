@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="CTRFLS" Width="9.767in" SkipBlankPages="False" Name="AuthorizedReleaseCert" Zoom="1.5" SnapToGrid="False" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style Visible="True" LineWidth="0in">
+    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+    <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+    <BorderWidth Default="0in" Top="0pt" Bottom="0pt" Left="0pt" Right="0pt" />
+  </Style>
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="{&quot;@PackingSlip&quot;:&quot;8247207&quot;}" ConnectionString="Data Source=EXPBDC-DFSSQL21.epfco.com;initial catalog=CTR_FLS_Dev;Trusted_Connection=True;&#xD;&#xA;" ProviderName="System.Data.SqlClient" SelectCommand="dbo.GetAuthorizeCertRptData" SelectCommandType="StoredProcedure" Name="CTRFLS">
+      <Parameters>
+        <SqlDataSourceParameter DbType="Int32" Name="@PackingSlip">
+          <Value>
+            <String>= Parameters.PackSlipNbr.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0in" Name="pageHeaderSection1" />
+    <DetailSection Height="7.24in" Name="detailSection1">
+      <Style Visible="True" LineWidth="0pt">
+        <Font Name="Tahoma" />
+        <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+        <BorderWidth Default="0pt" Top="0pt" Bottom="0pt" Left="0pt" Right="0pt" />
+      </Style>
+      <Items>
+        <TextBox Width="2.792in" Height="0.164in" Left="0.453in" Top="4.337in" Value="        Non-approved design data specified in Block 12" Name="textBox69">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.181in" Height="0.2in" Left="0.1in" Top="0.1in" Value="1." Name="textBox1">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.556in" Height="0.34in" Left="0.218in" Top="0.1in" Value="Approving Civil Aviation Authority/Country:" Name="textBox2">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.556in" Height="0.184in" Left="0.218in" Top="0.44in" Value="FAA/United States" Name="textBox3">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="2.242in" Top="0.1in" Value="2." Name="textBox4">
+          <Style>
+            <Font Name="Times New Roman" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="7.529in" Top="0.1in" Value="3." Name="textBox5">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.556in" Height="0.204in" Left="7.72in" Top="0.1in" Value="Form Tracking Number:" Name="textBox6">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.254in" Height="0.257in" Left="2.704in" Top="0.163in" Value="AUTHORIZED RELEASE CERTIFICATE" Name="textBox7">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="16pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.254in" Height="0.153in" Left="2.704in" Top="0.44in" Value="FAA Form 8130-3, AIRWORTHINESS APPROVAL TAG" Name="textBox8">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="10pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.556in" Height="0.215in" Left="7.72in" Top="0.357in" Value="= &quot;994&quot; + Parameters.PackSlipNbr.Value" Name="textBox9">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.6in" Height="0.073in" Left="0.052in" Top="0.677in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.104in" Height="0.677in" Left="2.113in" Top="0.042in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.104in" Height="1.802in" Left="7.456in" Top="0.042in" Name="shape3">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.6in" Height="0.084in" Left="0.052in" Top="1.146in" Name="shape4">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.181in" Height="0.2in" Left="0.1in" Top="0.75in" Value="4." Name="textBox10">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="7.529in" Top="0.75in" Value="5." Name="textBox11">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.869in" Height="0.298in" Left="7.658in" Top="0.746in" Value="Work Order/Contract/Invoice Number:" Name="textBox12">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.875in" Height="0.184in" Left="0.235in" Top="0.767in" Value="Organization Name and Address:" Name="textBox13">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.6in" Height="0.115in" Left="0.052in" Top="1.427in" Name="shape5">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.181in" Height="0.2in" Left="0.1in" Top="1.227in" Value="6." Name="textBox14">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.417in" Height="0.174in" Left="0.307in" Top="1.243in" Value="Item:" Name="textBox15">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="1.075in" Top="1.227in" Value="7." Name="textBox17">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.06in" Height="0.174in" Left="1.282in" Top="1.243in" Value="Description:" Name="textBox16">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="2.529in" Top="1.227in" Value="8." Name="textBox19">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.122in" Height="0.174in" Left="2.736in" Top="1.243in" Value="Part Number:" Name="textBox18">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.191in" Height="0.2in" Left="4.067in" Top="1.237in" Value="9." Name="textBox21">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.039in" Height="0.174in" Left="4.274in" Top="1.253in" Value="Quantity:" Name="textBox20">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.249in" Height="0.2in" Left="5.417in" Top="1.247in" Value="10." Name="textBox23">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.697in" Height="0.174in" Left="5.728in" Top="1.263in" Value="Serial Number:" Name="textBox22">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.249in" Height="0.2in" Left="7.529in" Top="1.247in" Value="11." Name="textBox25">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.68in" Height="0.174in" Left="7.807in" Top="1.263in" Value="Status/Work:" Name="textBox24">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.6in" Height="0.094in" Left="0.052in" Top="1.802in" Name="shape6">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.243in" Height="0.179in" Left="0.1in" Top="1.879in" Value="12." Name="textBox27">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.688in" Height="0.174in" Left="0.453in" Top="1.879in" Value="Remarks:" Name="textBox26">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.6in" Height="0.094in" Left="0.052in" Top="3.635in" Name="shape7">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.306in" Height="0.179in" Left="0.1in" Top="3.74in" Value="13a." Name="textBox29">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.25in" Height="0.174in" Left="0.453in" Top="3.74in" Value="Certified then items identified above were manufactured in conformity to:" Name="textBox28">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.251in" Height="0.174in" Left="0.453in" Top="4.101in" Value="X   Approved design data and are in a condition for safe operation." Name="textBox30">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.599in" Height="0.073in" Left="0.052in" Top="4.521in" Name="shape8">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.368in" Height="0.158in" Left="5.13in" Top="3.74in" Value="14a." Name="textBox31">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.313in" Height="0.591in" Left="5.151in" Top="3.929in" Value="Certifies that unless otherwise specified in Block 12, the work identified in Block 11 and described in Block 12 was accomplished in accordance with Title 14, Code of Federal Regulations, part 43 and in respect to that work, the items are approved for return to service." Name="textBox32">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.599in" Height="0.084in" Left="0.052in" Top="5.031in" Name="shape9">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="0.316in" Height="0.179in" Left="0.1in" Top="4.61in" Value="13b." Name="textBox34">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.519in" Height="0.174in" Left="0.453in" Top="4.61in" Value="Authorized Signature:" Name="textBox33">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.316in" Height="0.179in" Left="2.713in" Top="4.61in" Value="13c." Name="textBox36">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.825in" Height="0.174in" Left="3.066in" Top="4.61in" Value="Approval/Authorization No.:" Name="textBox35">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.316in" Height="0.158in" Left="0.1in" Top="5.146in" Value="13d." Name="textBox40">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.644in" Height="0.174in" Left="0.453in" Top="5.146in" Value="Name (Typed or Printed):" Name="textBox39">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.316in" Height="0.179in" Left="2.713in" Top="5.146in" Value="13e." Name="textBox38">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.825in" Height="0.174in" Left="3.066in" Top="5.146in" Value="Date (dd/mmm/yyyy):" Name="textBox37">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.599in" Height="0.084in" Left="0.052in" Top="5.573in" Name="shape10">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="9.599in" Height="0.084in" Left="0.052in" Top="5.802in" Name="shape11">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="2.282in" Height="0.164in" Left="3.384in" Top="5.67in" Value="User/Installer Responsibilities" Name="textBox41">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="9.356in" Height="0.174in" Left="0.131in" Top="5.959in" Value="It is important to understand that the existence of this document alone does not automatically constitute authority to install aircraft engine/propeller/article." Name="textBox42">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="9.356in" Height="0.445in" Left="0.131in" Top="6.194in" Value="Where the user/installer performs work in accordance with the national regulations of an airworthiness authority different than the airworthiness authority of the country specified in Block 1, it is essential that the user/installer ensures that his/her airworthiness authority accepts aircraft engine(s)/properller(s)/article(s) from the airworthiness authority of the country specified in Block 1." Name="textBox43">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="9.356in" Height="0.298in" Left="0.131in" Top="6.681in" Value="Statements in Block 13a and 14a do not constitute installation certification. In all cases, aircraft maintenance records must contain an installation certification issued in accordance with the national regulations by the user/installer before the aircraft may be flown." Name="textBox44">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.394in" Height="0.153in" Left="0.048in" Top="7.073in" Value="FAA Form 8130-3 (02-14)" Name="textBox45">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.394in" Height="0.153in" Left="8.143in" Top="7.073in" Value="NSN: 0052-00-012-9005" Name="textBox46">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="8pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.62in" Height="0.084in" Left="0.037in" Top="6.979in" Name="shape12">
+          <Style LineWidth="1pt" />
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="4.133in" Height="0.163in" Left="2.154in" Top="0.75in" Value="Howmet Global Fastening Systems, Inc., dba Howmet Fastening Systems" Name="textBox47">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.132in" Height="0.163in" Left="2.155in" Top="0.913in" Value="800 S. State College Blvd. Fullerton, CA 92831" Name="textBox48">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.104in" Height="0.646in" Left="0.825in" Top="1.198in" Name="shape13">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.104in" Height="0.646in" Left="2.425in" Top="1.198in" Name="shape14">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.104in" Height="0.646in" Left="3.858in" Top="1.198in" Name="shape15">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.104in" Height="0.646in" Left="5.313in" Top="1.198in" Name="shape16">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.138in" Height="0.167in" Left="6.287in" Top="0.75in" Value="=iif (Parameters.FormType.Value = &quot;T&quot;, &quot;PT1351NM&quot;, &quot;PMA# PQ1351NM&quot;)" Name="textBox49">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.104in" Height="1.916in" Left="5.037in" Top="3.688in" Name="shape17">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.697in" Height="0.174in" Left="5.728in" Top="1.584in" Value="N/A" Name="textBox50">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.68in" Height="0.174in" Left="7.807in" Top="1.584in" Value="NEW" Name="textBox51">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.538in" Height="0.216in" Left="2.713in" Top="4.784in" Value="ODA-602094-NM" Name="textBox52">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="12pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="6.647in" Height="0.164in" Left="0.1in" Top="3.489in" Value="Airworthiness Approval Parts" Name="textBox53">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="6.647in" Height="0.163in" Left="0.1in" Top="3.315in" Value="=iif (Parameters.FormType.Value = &quot;T&quot;, &quot;TSO-C148 Authorized&quot;, &quot;This PMA part is not a critical component&quot;)" Name="textBox54">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <Shape Width="9.62in" Height="0.084in" Left="0.037in" Top="0in" Name="shape18">
+          <Style LineWidth="1pt" />
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.083in" Height="6.977in" Left="9.604in" Top="0.055in" Name="shape19">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <Shape Width="0.083in" Height="6.966in" Left="0in" Top="0.052in" Name="shape20">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="2.333in" Height="0.174in" Left="0.1in" Top="5.389in" Value="= Parameters.AuthorizeName.Value" Name="textBox55">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="10pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.496in" Height="0.174in" Left="2.713in" Top="5.389in" Value="= Format('{0:dd MMM yyyy}', CDate(Parameters.AuthorizeDate.Value))" Format="" Name="textBox56">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="10pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.104in" Height="1.062in" Left="2.529in" Top="4.563in" Name="shape21">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="9.36in" Height="0.174in" Left="0.1in" Top="2.576in" Value="= Parameters.Remark1.Value" Name="textBox57">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="9.36in" Height="0.174in" Left="0.1in" Top="2.75in" Value="= Parameters.Remark2.Value" Name="textBox58">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="9.36in" Height="0.174in" Left="0.1in" Top="2.923in" Value="= Parameters.Remark3.Value" Name="textBox59">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.117in" Height="0.174in" Left="0.1in" Top="2.402in" Value="= &quot;SHIPPER #994&quot; + Parameters.PackSlipNbr.Value" Name="textBox60">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.344in" Height="0.174in" Left="0.307in" Top="1.563in" Value="1" Name="textBox61">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.181in" Height="0.174in" Left="4.067in" Top="1.584in" Value="= Fields.QtyPacked" Format="{0:N0}" Name="textBox62">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.348in" Height="0.205in" Left="8.212in" Top="0.913in" Value="= &quot;P.O. #:&quot; + Fields.PO" Name="textBox63">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.327in" Height="0.174in" Left="2.542in" Top="1.584in" Value="= Fields.Description" Name="textBox64">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.494in" Height="0.268in" Left="0.917in" Top="1.522in" Value="= Fields.Description1" Name="textBox65">
+          <Style TextAlign="Center">
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.285in" Height="0.174in" Left="1.199in" Top="1.879in" Value="= &quot;LOT #&quot; + Fields.Lot" Name="textBox66">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.213in" Height="0.174in" Left="0.1in" Top="2.061in" Value="= &quot;CONFORMS TO DRAWING &quot; + Fields.Description" Name="textBox67">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.213in" Height="0.174in" Left="0.1in" Top="2.235in" Value="= IIF(Len(Fields.InterchangePartNbr) &gt; 0, &quot;CONFORMS TO &quot; + Fields.InterchangePartNbr + IIF(Fields.Revision = &quot;&quot;, &quot;&quot;, &quot; Rev. &quot; + Fields.Revision), &quot;&quot;)" Name="textBox68">
+          <Style>
+            <Font Name="Times New Roman" Size="9pt" />
+          </Style>
+          <Bindings>
+            <Binding Path="Visible" Expression="= IIF(Parameters.FormType.Value = &quot;T&quot;, &quot;true&quot;, &quot;false&quot;)" />
+          </Bindings>
+        </TextBox>
+        <Shape Width="0.188in" Height="0.115in" Left="0.432in" Top="4.354in" Name="shape22">
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.749in" Height="0.133in" Left="5.571in" Top="3.74in" Value="     14 CFR 43.9 Return to service" Name="textBox70">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.188in" Height="0.115in" Left="5.54in" Top="3.761in" Name="shape23">
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="2.145in" Height="0.133in" Left="7.455in" Top="3.74in" Value="     Other regulation specified in Block 12" Name="textBox71">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.188in" Height="0.115in" Left="7.435in" Top="3.761in" Name="shape24">
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="2.43in" Height="0.442in" Left="5.13in" Top="4.589in" Value="14b. Authorized signature" Name="textBox72">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.42in" Height="0.442in" Left="5.13in" Top="5.125in" Value="14d. Name (Typed or Printed):" Name="textBox73">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.982in" Height="0.442in" Left="7.628in" Top="4.589in" Value="14c. Approval/Certificate No." Name="textBox74">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.982in" Height="0.442in" Left="7.628in" Top="5.125in" Value="14e. Date(dd-mmm-yyyy):" Name="textBox75">
+          <Style BackgroundColor="Transparent" TextAlign="Left">
+            <BackgroundImage ImageData="/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAOAA8DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD96vF/i3SvAfhTUtc1zU9P0XRNFtZb/UNQvrlLe1sLeJC8k0srkJHGiKWZmIAUEkgV5f8ACz/hKvjz47sfHmsjxB4P8F6X5jeFvDMnnWF9qvmRtGdU1iI7ZE3Ru32fTZQPIV/PukN4YoNM5/4bH/htfxhdeLta+X4d+BfFWpaT4e8NMf8AkJ6voupz2M+r6j/DJ5N9ZymxtgWjj8uO9kL3TW0em/QEf8+RQB//2Q==" MimeType="image/jpeg" />
+            <Font Name="Times New Roman" Size="9pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <Shape Width="0.104in" Height="1.073in" Left="7.55in" Top="4.542in" Name="shape25">
+          <ShapeType>
+            <LineShape Direction="NS" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="6.647in" Height="0.164in" Left="0.1in" Top="3.144in" Value="PMA Authorized" Name="textBox76">
+          <Style TextAlign="Left">
+            <Font Name="Times New Roman" Size="9pt" Bold="False" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0in" Name="pageFooterSection1">
+      <Style Visible="False" />
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="True" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="PackSlipNbr">
+      <Value>
+        <String>8247207</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="FormType">
+      <Value>
+        <String>P</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="AuthorizeName">
+      <Value>
+        <String>TestAuthName</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="AuthorizeDate">
+      <Value>
+        <String>06/01/2022</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Remark1">
+      <Value>
+        <String>PER FAA-PMA SUPPLEMENT #9, PHS1472-4 IS AN APPROVED REPLACEMENT FOR GE PIN 9100923F</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Remark2">
+      <Value>
+        <String>Test Remark Line 2</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Remark3">
+      <Value>
+        <String>Test Remark Line 3</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ConnectionString">
+      <Value>
+        <String>= Parameters.ConnectionString.Value&#xD;
+</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+  <Bindings>
+    <Binding Path="DataSource.ConnectionString" Expression="= Parameters.ConnectionString.Value" />
+  </Bindings>
+</Report>

@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTR_FLS_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuditLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="Cert">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CertNbr" Type="int" Nullable="false" />
+    <Property Name="LotNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CertDate" Type="datetime" />
+    <Property Name="PartNbr" Type="varchar" MaxLength="50" />
+    <Property Name="PartDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Revision" Type="int" Nullable="false" />
+    <Property Name="Stage" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="CTRUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="255" />
+    <Property Name="Title" Type="varchar" MaxLength="255" />
+    <Property Name="Signature" Type="image" Nullable="false" />
+    <Property Name="AccessLevel" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerOrderItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LineNbr" Type="int" />
+    <Property Name="Release" Type="int" />
+    <Property Name="Customer" Type="varchar" MaxLength="50" />
+    <Property Name="OrigSite" Type="varchar" MaxLength="50" />
+    <Property Name="CI" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerNbr" Type="varchar" MaxLength="50" />
+    <Property Name="PO" Type="varchar" MaxLength="50" />
+    <Property Name="ShipTo" Type="int" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="TextKey" Type="int" />
+    <Property Name="PackSlipPrintedFlag" Type="varchar" MaxLength="10" />
+    <Property Name="LastPickList" Type="datetime" />
+    <Property Name="Origin" Type="varchar" MaxLength="50" />
+    <Property Name="Ordered" Type="int" />
+    <Property Name="Packed" Type="int" />
+    <Property Name="Shipped" Type="int" />
+    <Property Name="LRStat" Type="varchar" MaxLength="10" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+    <Property Name="Weight" Type="decimal" Precision="12" Scale="5" />
+    <Property Name="Warehouse" Type="varchar" MaxLength="50" />
+    <Property Name="LastShip" Type="datetime" />
+    <Property Name="ShipSite" Type="varchar" MaxLength="50" />
+    <Property Name="SupplUnits" Type="int" />
+    <Property Name="Commodity" Type="varchar" MaxLength="25" />
+    <Property Name="ConsNbr" Type="int" />
+    <Property Name="BOLPrintedFlag" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DefaultType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefaultType" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Interchange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierItemNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="InterchangePartNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Revision" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="MaterialStatus" Type="varchar" MaxLength="25" />
+    <Property Name="StockedFlag" Type="varchar" MaxLength="10" />
+    <Property Name="Revision" Type="varchar" MaxLength="10" />
+    <Property Name="ReservableFlag" Type="varchar" MaxLength="10" />
+    <Property Name="ABCCode" Type="varchar" MaxLength="25" />
+    <Property Name="AltItem" Type="varchar" MaxLength="50" />
+    <Property Name="BackflushFlag" Type="varchar" MaxLength="10" />
+    <Property Name="BackflushLocation" Type="varchar" MaxLength="255" />
+    <Property Name="Buyer" Type="varchar" MaxLength="255" />
+    <Property Name="PlanningCell" Type="varchar" MaxLength="50" />
+    <Property Name="LastGenDate" Type="datetime" />
+    <Property Name="CharFld3" Type="varchar" MaxLength="255" />
+    <Property Name="Commodity" Type="varchar" MaxLength="25" />
+    <Property Name="LowLevelCode" Type="varchar" MaxLength="50" />
+    <Property Name="DrawingNbr" Type="varchar" MaxLength="50" />
+    <Property Name="FamilyCode" Type="varchar" MaxLength="255" />
+    <Property Name="LotTrack" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="OrderMinimum" Type="varchar" MaxLength="25" />
+    <Property Name="OrderMultiple" Type="varchar" MaxLength="25" />
+    <Property Name="Origin" Type="varchar" MaxLength="255" />
+    <Property Name="Source" Type="varchar" MaxLength="255" />
+    <Property Name="PlannerCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductionType" Type="varchar" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+    <Property Name="PhantomFlag" Type="varchar" MaxLength="10" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+    <Property Name="UnitCost" Type="varchar" MaxLength="25" />
+    <Property Name="CharFld1" Type="varchar" MaxLength="255" />
+    <Property Name="CharFld2" Type="varchar" MaxLength="255" />
+    <Property Name="CharFld4" Type="varchar" MaxLength="255" />
+    <Property Name="WeightUnits" Type="varchar" MaxLength="50" />
+    <Property Name="ITAR" Type="varchar" MaxLength="25" />
+    <Property Name="HTSCode" Type="varchar" MaxLength="50" />
+    <Property Name="ECCN" Type="varchar" MaxLength="50" />
+    <Property Name="ECCNLicense" Type="varchar" MaxLength="255" />
+    <Property Name="NAFTA" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduleB" Type="varchar" MaxLength="50" />
+    <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+    <Property Name="USOnly" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="DutyRate" Type="varchar" MaxLength="25" />
+    <Property Name="NominalThreadSize" Type="varchar" MaxLength="50" />
+    <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ItemInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="ThreadSize" Type="varchar" MaxLength="50" />
+    <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="25" />
+    <Property Name="TestBolt" Type="bit" Nullable="false" />
+    <Property Name="TextKey" Type="int" />
+    <Property Name="CertTextKey" Type="int" />
+    <Property Name="LogicalField" Type="varchar" MaxLength="50" />
+    <Property Name="LastOccurence" Type="int" />
+    <Property Name="USOnly" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Spec" Type="varchar" MaxLength="255" />
+    <Property Name="ItemType" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+    <Property Name="DateEntered" Type="datetime" />
+    <Property Name="AuditKey" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Suffix" Type="int" Nullable="false" />
+    <Property Name="Lot" Type="varchar" MaxLength="50" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="Revision" Type="varchar" MaxLength="10" />
+    <Property Name="Certificate" Type="varchar" MaxLength="10" />
+    <Property Name="RequireCerts" Type="varchar" MaxLength="10" />
+    <Property Name="Completed" Type="varchar" MaxLength="10" />
+    <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+    <Property Name="PassedInspection" Type="varchar" MaxLength="10" />
+    <Property Name="CertTextKey" Type="varchar" MaxLength="50" />
+    <Property Name="ReworkJob" Type="varchar" MaxLength="25" />
+    <Property Name="TextKey" Type="varchar" MaxLength="50" />
+    <Property Name="Occurrence" Type="varchar" MaxLength="10" />
+    <Property Name="PlanDate" Type="datetime" />
+    <Property Name="NumericFormat" Type="varchar" MaxLength="25" />
+    <Property Name="NCMR" Type="varchar" MaxLength="50" />
+    <Property Name="Comments" Type="varchar" MaxLength="8000" />
+    <Property Name="JobInfoEnd" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="JobLotParent">
+    <Key>
+      <PropertyRef Name="JobLotId" />
+      <PropertyRef Name="ParentJobLotId" />
+    </Key>
+    <Property Name="JobLotId" Type="int" Nullable="false" />
+    <Property Name="ParentJobLotId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobLots">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ComponentLot" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialLot" Type="varchar" MaxLength="50" />
+    <Property Name="ParentLot" Type="varchar" MaxLength="50" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Operation" Type="int" />
+    <Property Name="QtyPer" Type="int" />
+    <Property Name="Sequence" Type="int" />
+  </EntityType>
+  <EntityType Name="LotInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="HeatLotExtension" Type="varchar" MaxLength="50" />
+    <Property Name="HeatLotBase" Type="varchar" MaxLength="50" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="Lot" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialSpec" Type="varchar" MaxLength="50" />
+    <Property Name="QtyReceived" Type="int" />
+    <Property Name="RefSuffix" Type="int" />
+    <Property Name="RefNbr" Type="varchar" MaxLength="25" />
+    <Property Name="RefRelease" Type="int" />
+    <Property Name="Ref" Type="varchar" MaxLength="25" />
+    <Property Name="VendorLot" Type="varchar" MaxLength="50" />
+    <Property Name="VendorId" Type="varchar" MaxLength="50" />
+    <Property Name="MillNbr" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MasterSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Specification" Type="varchar" MaxLength="255" />
+    <Property Name="Master" Type="varchar" MaxLength="255" />
+    <Property Name="DefaultTypeId" Type="int" Nullable="false" />
+    <Property Name="DateEntered" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaterialId" Type="int" Nullable="false" />
+    <Property Name="ControlNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VendorNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MillNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialSpec" Type="varchar" MaxLength="50" />
+    <Property Name="MfgDate" Type="datetime" />
+    <Property Name="Stage" Type="varchar" MaxLength="50" />
+    <Property Name="HeatNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VendorName" Type="varchar" MaxLength="256" />
+    <Property Name="QtyReceived" Type="int" />
+    <Property Name="FileName" Type="varchar" MaxLength="256" />
+    <Property Name="Description" Type="varchar" MaxLength="256" />
+    <Property Name="PONbr" Type="varchar" MaxLength="50" />
+    <Property Name="RecvdDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MaterialTrans">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="bigint" Nullable="false" />
+    <Property Name="TransDate" Type="datetime" Nullable="false" />
+    <Property Name="TransType" Type="varchar" MaxLength="10" />
+    <Property Name="RefType" Type="varchar" MaxLength="10" />
+    <Property Name="RefNbr" Type="varchar" MaxLength="25" />
+    <Property Name="RefRelease" Type="int" />
+    <Property Name="RefLineSuffix" Type="int" />
+    <Property Name="Reason" Type="varchar" MaxLength="255" />
+    <Property Name="Qty" Type="decimal" Precision="19" Scale="9" />
+    <Property Name="WorkCtr" Type="varchar" MaxLength="50" />
+    <Property Name="Warehouse" Type="varchar" MaxLength="50" />
+    <Property Name="Lot" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="AwaitingEOP" Type="varchar" MaxLength="10" />
+    <Property Name="Backflush" Type="varchar" MaxLength="10" />
+    <Property Name="MaterialAccount1" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialAccount2" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialAccount3" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialAccount4" Type="varchar" MaxLength="50" />
+    <Property Name="MaterialAccount5" Type="varchar" MaxLength="50" />
+    <Property Name="UserInitials" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="NominalThread">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DashNumber" Type="varchar" MaxLength="50" />
+    <Property Name="NominalThreadSize" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextKey" Type="int" />
+    <Property Name="NewParagraph" Type="varchar" MaxLength="10" />
+    <Property Name="LineNbr" Type="int" />
+    <Property Name="Notes" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer" Type="varchar" MaxLength="50" />
+    <Property Name="PO" Type="varchar" MaxLength="50" />
+    <Property Name="ShipTo" Type="int" />
+    <Property Name="OrderType" Type="varchar" MaxLength="25" />
+    <Property Name="Status" Type="varchar" MaxLength="25" />
+    <Property Name="NbrOfPackages" Type="int" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CloseDate" Type="datetime" />
+    <Property Name="Contact" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="OSP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LotNbr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttachmentType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="255" />
+    <Property Name="RevNbr" Type="int" />
+    <Property Name="RevDate" Type="datetime" />
+    <Property Name="Stage" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PackItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackingSlip" Type="int" Nullable="false" />
+    <Property Name="OrderNbr" Type="varchar" MaxLength="50" />
+    <Property Name="OrderLine" Type="int" />
+    <Property Name="Release" Type="int" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="QtyOrdered" Type="int" />
+    <Property Name="QtyPacked" Type="int" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PackItemExtended">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderLine" Type="int" />
+    <Property Name="OrderNbr" Type="varchar" MaxLength="50" />
+    <Property Name="Release" Type="int" />
+    <Property Name="InvoicedFlag" Type="varchar" MaxLength="10" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Lot" Type="varchar" MaxLength="50" />
+    <Property Name="PackingSlip" Type="int" />
+    <Property Name="QtyInvoiced" Type="int" />
+    <Property Name="QtyPacked" Type="int" />
+    <Property Name="QtyShipped" Type="int" />
+    <Property Name="ShippedFlag" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ProductFamily">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductFamily" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Sample">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cert" Type="int" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Test" Type="varchar" MaxLength="25" />
+    <Property Name="Sample" Type="varchar" MaxLength="25" />
+    <Property Name="ResultCycle" Type="varchar" MaxLength="25" />
+    <Property Name="Minimum" Type="varchar" MaxLength="25" />
+    <Property Name="Maximum" Type="varchar" MaxLength="25" />
+    <Property Name="PassFail" Type="varchar" MaxLength="25" />
+    <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+    <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+    <Property Name="DateEntered" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ShipLot">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineNbr" Type="int" />
+    <Property Name="Release" Type="int" />
+    <Property Name="CustPO" Type="varchar" MaxLength="100" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="Lot" Type="varchar" MaxLength="50" />
+    <Property Name="PackingSlip" Type="int" />
+    <Property Name="QtyShipped" Type="int" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Suffix" Type="int" />
+    <Property Name="Test" Type="int" />
+    <Property Name="Template" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+    <Property Name="AuditKey" Type="int" />
+    <Property Name="BoltSpec" Type="varchar" MaxLength="50" />
+    <Property Name="CyclesSamples" Type="varchar" MaxLength="255" />
+    <Property Name="DateEntered" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+    <Property Name="Frequency" Type="varchar" MaxLength="25" />
+    <Property Name="MasterKey" Type="varchar" MaxLength="50" />
+    <Property Name="MaxInstall" Type="nchar" MaxLength="10" />
+    <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+    <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+    <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+    <Property Name="PassFail" Type="varchar" MaxLength="25" />
+    <Property Name="PerformanceSpec" Type="varchar" MaxLength="255" />
+    <Property Name="PrintMinMax" Type="varchar" MaxLength="255" />
+    <Property Name="Requirements" Type="varchar" MaxLength="255" />
+    <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+    <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="TestResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoltSpec" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentCycle" Type="varchar" MaxLength="25" />
+    <Property Name="CurrentSample" Type="varchar" MaxLength="25" />
+    <Property Name="DateEntered" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+    <Property Name="Frequency" Type="varchar" MaxLength="25" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="Job" Type="varchar" MaxLength="50" />
+    <Property Name="MasterKey" Type="varchar" MaxLength="50" />
+    <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+    <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+    <Property Name="NominalThreadSize" Type="varchar" MaxLength="50" />
+    <Property Name="PassFail_A" Type="varchar" MaxLength="25" />
+    <Property Name="PerformanceSpec" Type="varchar" MaxLength="255" />
+    <Property Name="CycleSamples" Type="varchar" MaxLength="255" />
+    <Property Name="MaxInstall" Type="varchar" MaxLength="50" />
+    <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+    <Property Name="PassFail_B" Type="varchar" MaxLength="25" />
+    <Property Name="PrintMinMax" Type="varchar" MaxLength="250" />
+    <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+    <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+    <Property Name="Requirements" Type="varchar" MaxLength="255" />
+    <Property Name="Cert" Type="int" />
+    <Property Name="Suffix" Type="varchar" MaxLength="25" />
+    <Property Name="Template" Type="varchar" MaxLength="255" />
+    <Property Name="TestBolt" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Test" Type="varchar" MaxLength="255" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+    <Property Name="Vendor" Type="varchar" MaxLength="255" />
+    <Property Name="CertDetail" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TestSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Suffix" Type="int" Nullable="false" />
+    <Property Name="Cert" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Specification" Type="varchar" MaxLength="255" />
+    <Property Name="SpecType" Type="varchar" MaxLength="50" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TestTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Test" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="UnitOfMeasure" Type="varchar" MaxLength="25" />
+    <Property Name="CyclesSamples" Type="varchar" MaxLength="255" />
+    <Property Name="Frequency" Type="varchar" MaxLength="25" />
+    <Property Name="MaxInstall" Type="nchar" MaxLength="10" />
+    <Property Name="MaxValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMax" Type="varchar" MaxLength="25" />
+    <Property Name="MinBrkway" Type="varchar" MaxLength="50" />
+    <Property Name="MinValueRequired" Type="varchar" MaxLength="50" />
+    <Property Name="SigDecMin" Type="varchar" MaxLength="25" />
+    <Property Name="PassFail" Type="varchar" MaxLength="25" />
+    <Property Name="PrintMinMax" Type="varchar" MaxLength="255" />
+    <Property Name="Requirements" Type="varchar" MaxLength="255" />
+    <Property Name="ResultCycles" Type="varchar" MaxLength="255" />
+    <Property Name="SeatLoad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" MaxLength="25" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="255" />
+    <Property Name="Address1" Type="varchar" MaxLength="255" />
+    <Property Name="Address2" Type="varchar" MaxLength="255" />
+    <Property Name="Address3" Type="varchar" MaxLength="255" />
+    <Property Name="Address4" Type="varchar" MaxLength="255" />
+    <Property Name="City" Type="varchar" MaxLength="255" />
+    <Property Name="StateProv" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="25" />
+    <Property Name="County" Type="varchar" MaxLength="100" />
+    <Property Name="Fax" Type="varchar" MaxLength="25" />
+    <Property Name="Sites" Type="varchar" MaxLength="255" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="CTR_FLS_ModelStoreContainer">
+    <EntitySet Name="AuditLog" EntityType="Self.AuditLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cert" EntityType="Self.Cert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTRUser" EntityType="Self.CTRUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrderItem" EntityType="Self.CustomerOrderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DefaultType" EntityType="Self.DefaultType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Interchange" EntityType="Self.Interchange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemInfo" EntityType="Self.ItemInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemSpec" EntityType="Self.ItemSpec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobInfo" EntityType="Self.JobInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobLotParent" EntityType="Self.JobLotParent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobLots" EntityType="Self.JobLots" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LotInfo" EntityType="Self.LotInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MasterSpec" EntityType="Self.MasterSpec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaterialTrans" EntityType="Self.MaterialTrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NominalThread" EntityType="Self.NominalThread" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Note" EntityType="Self.Note" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OSP" EntityType="Self.OSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PackItem" EntityType="Self.PackItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PackItemExtended" EntityType="Self.PackItemExtended" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductFamily" EntityType="Self.ProductFamily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sample" EntityType="Self.Sample" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShipLot" EntityType="Self.ShipLot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestResult" EntityType="Self.TestResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestSpec" EntityType="Self.TestSpec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestTemplate" EntityType="Self.TestTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
